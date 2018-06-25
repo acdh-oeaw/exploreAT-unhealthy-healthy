@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 3a5df967c303241b4be5bf98de11121c
+timeCreated: 1528711580
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - RightSide: {instanceID: 0}
+  - SpawnerHorizontal: {instanceID: 0}
+  - Roller: {fileID: 1354130693008390, guid: ec288ca89dcc44961b718adf1661e037, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
