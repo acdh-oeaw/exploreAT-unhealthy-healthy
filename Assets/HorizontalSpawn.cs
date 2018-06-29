@@ -58,7 +58,12 @@ public class HorizontalSpawn : MonoBehaviour {
 		float randomSpeed = 0f;
 
 		Vector3 pos = new Vector3 (posX, -4.2f, 0); 
-		GameObject newObject = Instantiate (Roller, pos, gameObject.transform.rotation);
+		GameObject newObject = null;
+		if (!goingLeft) {
+			newObject = Instantiate (Roller, pos, gameObject.transform.rotation);
+		} else {
+			newObject = Instantiate (Roller, pos, gameObject.transform.rotation);
+		}
 
 		// Each time a spawn occur, the objects rolls faster
 		if (string.Equals(SceneManager.GetActiveScene ().name,"scene")) {

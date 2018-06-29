@@ -8,6 +8,12 @@ TagManager:
   - Bad
   - Roller
   - Ground
+  - Live
+  - Star
+  - Bomb
+  - Bicycle
+  - Exercise
+  - ItemChanger
   layers:
   - Default
   - TransparentFX

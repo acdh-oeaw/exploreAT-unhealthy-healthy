@@ -10,6 +10,11 @@ public class ItemSpawn : MonoBehaviour {
 	public float startDelay, repeatRate;
 	public Sprite[] fruitSprites;
 	public Sprite[] fastFoodSprites;
+	public Sprite[] liveSprites;
+	public Sprite[] starSprites;
+	public Sprite[] bombSprites;
+	public Sprite[] bicycleSprites;
+	public Sprite[] changerSprites;
 
 
 	// Use this for initialization
@@ -42,38 +47,56 @@ public class ItemSpawn : MonoBehaviour {
 
 	void Spawn () {
 		Vector3 pos = new Vector3 (Random.Range (gameObject.transform.position.x, RightSide.transform.position.x), gameObject.transform.position.y, 0); 
-		int elemType = Random.Range (0, items.Length);
-		GameObject newObject = Instantiate (items [elemType], pos, gameObject.transform.rotation);
+		int elemType = Random.Range (0, 2);
+
+		if (Random.Range (0, 20) > 16 && ApplicationModel.lives < 3) {elemType = 2;} // Live generation
+		if (Random.Range (0, 40) > 32 && !ApplicationModel.isPowered) {elemType = 3;} // Star generation
+		if (Random.Range (0, 40) > 32 && !ApplicationModel.isPowered) {elemType = 4;} // Bomb generation
+		if (Random.Range (0, 20) > 16 && !ApplicationModel.isPowered) {elemType = 6;} // Changer generation
+		if (Random.Range (0, 20) > 16 && transform.localScale.x > 0.6 && ApplicationModel.lives < 3) {elemType = 5;} // Bicycle generation
+
+		GameObject newObject = Instantiate (items [elemType], pos, Quaternion.Euler(new Vector3(0,0,Random.Range (-55, 55))));
 		if (elemType == 0) { // If fruit, random sprite
 			int num = 0;
 			// As we advance we see more/different items appear
-			if (string.Equals(SceneManager.GetActiveScene ().name,"scene")) {
+			if (string.Equals (SceneManager.GetActiveScene ().name, "scene")) {
 				num = UnityEngine.Random.Range (0, 2);
-			}
-			else if (string.Equals(SceneManager.GetActiveScene ().name,"scene2")) {
+			} else if (string.Equals (SceneManager.GetActiveScene ().name, "scene2")) {
 				num = UnityEngine.Random.Range (0, 4);
-			}
-			else if (string.Equals(SceneManager.GetActiveScene ().name,"scene3")) {
+			} else if (string.Equals (SceneManager.GetActiveScene ().name, "scene3")) {
 				num = UnityEngine.Random.Range (0, fruitSprites.Length);
 			}
 			newObject.AddComponent<SpriteRenderer> ();
 			newObject.GetComponent<SpriteRenderer> ().sprite = fruitSprites [num];
 
-		} else {
+		} else if (elemType == 1) { // fastFood sprite
 			int num = 0;
-			num = UnityEngine.Random.Range(0, fastFoodSprites.Length);
+			num = UnityEngine.Random.Range (0, fastFoodSprites.Length);
 			// As we advance we see more/different items appear
-			if (string.Equals(SceneManager.GetActiveScene ().name,"scene")) {
+			if (string.Equals (SceneManager.GetActiveScene ().name, "scene")) {
 				num = UnityEngine.Random.Range (0, 2);
-			}
-			else if (string.Equals(SceneManager.GetActiveScene ().name,"scene2")) {
+			} else if (string.Equals (SceneManager.GetActiveScene ().name, "scene2")) {
 				num = UnityEngine.Random.Range (0, 4);
-			}
-			else if (string.Equals(SceneManager.GetActiveScene ().name,"scene3")) {
+			} else if (string.Equals (SceneManager.GetActiveScene ().name, "scene3")) {
 				num = UnityEngine.Random.Range (0, fastFoodSprites.Length);
 			}
-			newObject.AddComponent<SpriteRenderer>();
-			newObject.GetComponent<SpriteRenderer>().sprite = fastFoodSprites[num];
+			newObject.AddComponent<SpriteRenderer> ();
+			newObject.GetComponent<SpriteRenderer> ().sprite = fastFoodSprites [num];
+		} else if(elemType == 2){ // live sprite
+			newObject.AddComponent<SpriteRenderer> ();
+			newObject.GetComponent<SpriteRenderer> ().sprite = liveSprites [0];
+		}
+		else if(elemType == 3){ // star sprite
+			newObject.AddComponent<SpriteRenderer> ();
+			newObject.GetComponent<SpriteRenderer> ().sprite = starSprites [0];
+		}
+		else if(elemType == 4){ // bomb sprite
+			newObject.AddComponent<SpriteRenderer> ();
+			newObject.GetComponent<SpriteRenderer> ().sprite = bombSprites [0];
+		}
+		else if(elemType == 4){ // bicycle sprite
+			newObject.AddComponent<SpriteRenderer> ();
+			newObject.GetComponent<SpriteRenderer> ().sprite = bicycleSprites [0];
 		}
 
 		// Each time a spawn occur, the objects fall faster

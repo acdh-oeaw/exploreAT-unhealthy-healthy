@@ -9,6 +9,8 @@ public class ApplicationModel {
 	static public int totalScore;
 	static public float totalTime;
 	static public int totalCalories;
+	static public bool isJumping;
+	static public bool isPowered;
 
 	// Use this for initialization
 	void Start () {
@@ -17,6 +19,8 @@ public class ApplicationModel {
 		totalScore = 0;
 		totalTime = 0f;
 		totalCalories = 0;
+		isJumping = false;
+		isPowered = false;
 	}
 	
 	// Update is called once per frame
