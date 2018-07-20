@@ -47,9 +47,23 @@ public class playerInitializer : MonoBehaviour {
 
 	public void ShareToTW()
 	{
-		string text = "I've just played the game consuming ";//this is limited in text length 
-		text += ApplicationModel.totalScore;
-		text += " calories !!! #VeggieGame #ExploreAT!";
-		Application.OpenURL(TWITTER_ADDRESS + "?text=" + WWW.EscapeURL(text));
+		if (ApplicationModel.language == "en") {
+			string text = ApplicationModel.en_scoreHandler_twitterText1;//this is limited in text length 
+			text += ApplicationModel.totalScore;
+			text += ApplicationModel.en_scoreHandler_twitterText2;
+			Application.OpenURL(TWITTER_ADDRESS + "?text=" + WWW.EscapeURL(text));
+		}
+		else if(ApplicationModel.language == "es") {
+			string text = ApplicationModel.es_scoreHandler_twitterText1;//this is limited in text length 
+			text += ApplicationModel.totalScore;
+			text += ApplicationModel.es_scoreHandler_twitterText2;
+			Application.OpenURL(TWITTER_ADDRESS + "?text=" + WWW.EscapeURL(text));
+		}
+		else if(ApplicationModel.language == "de") {
+			string text = ApplicationModel.de_scoreHandler_twitterText1;//this is limited in text length 
+			text += ApplicationModel.totalScore;
+			text += ApplicationModel.de_scoreHandler_twitterText2;
+			Application.OpenURL(TWITTER_ADDRESS + "?text=" + WWW.EscapeURL(text));
+		}
 	}
 }

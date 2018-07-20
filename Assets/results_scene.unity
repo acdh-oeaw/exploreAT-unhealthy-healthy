@@ -160,6 +160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 004e9626308184e8f82a9cc8e41f99d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controlsText: {fileID: 0}
+  startText: {fileID: 0}
 --- !u!114 &3877514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,7 +368,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 522090331}
   CaloriesObject: {fileID: 0}
-  sprites: []
+  sprites:
+  - {fileID: 21300000, guid: d461ab63f97de4053b211f98469d1bd9, type: 3}
+  - {fileID: 21300002, guid: d461ab63f97de4053b211f98469d1bd9, type: 3}
+  - {fileID: 21300006, guid: d461ab63f97de4053b211f98469d1bd9, type: 3}
+  - {fileID: 21300008, guid: d461ab63f97de4053b211f98469d1bd9, type: 3}
+  - {fileID: 21300010, guid: d461ab63f97de4053b211f98469d1bd9, type: 3}
+  - {fileID: 21300012, guid: d461ab63f97de4053b211f98469d1bd9, type: 3}
+  - {fileID: 21300014, guid: d461ab63f97de4053b211f98469d1bd9, type: 3}
+  - {fileID: 21300016, guid: d461ab63f97de4053b211f98469d1bd9, type: 3}
+  - {fileID: 21300018, guid: d461ab63f97de4053b211f98469d1bd9, type: 3}
+  - {fileID: 21300020, guid: d461ab63f97de4053b211f98469d1bd9, type: 3}
+  - {fileID: 21300022, guid: d461ab63f97de4053b211f98469d1bd9, type: 3}
+  congratsObjectText: {fileID: 3877514}
+  congratsCaloriesObjectText: {fileID: 1526355706}
+  shareTwitterObjectText: {fileID: 1842626710}
 --- !u!1 &1218379998
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,6 +527,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 004e9626308184e8f82a9cc8e41f99d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controlsText: {fileID: 0}
+  startText: {fileID: 0}
 --- !u!114 &1526355706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -670,6 +688,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 004e9626308184e8f82a9cc8e41f99d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controlsText: {fileID: 0}
+  startText: {fileID: 0}
 --- !u!114 &1743678935
 MonoBehaviour:
   m_ObjectHideFlags: 0

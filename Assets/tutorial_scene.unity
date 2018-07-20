@@ -321,8 +321,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000027418, y: -155}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -0.012512, y: -181.3}
+  m_SizeDelta: {x: 800.02, y: 35.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1280683973
 MonoBehaviour:
@@ -374,6 +374,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8edc06d31ee454e9344412ad9e09d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rawimage: {fileID: 2080097360}
+  en_firstTexture: {fileID: 2800000, guid: b18c0ed93271c40c69e8136537002938, type: 3}
+  es_firstTexture: {fileID: 2800000, guid: df9236780e3d7459c88d9f3872c9b686, type: 3}
+  de_firstTexture: {fileID: 2800000, guid: 3dcbc2ac31fc046a3b7fe356315b4b36, type: 3}
+  en_secondTexture: {fileID: 2800000, guid: 4dcd20263cf834498a5f8f61ee5358ae, type: 3}
+  es_secondTexture: {fileID: 2800000, guid: 7a8850f3555cf4734bd2369f71a20d29, type: 3}
+  de_secondTexture: {fileID: 2800000, guid: b85c41782582d4cb9999982d657c4fe9, type: 3}
+  advanceText: {fileID: 1280683973}
 --- !u!1 &2080097358
 GameObject:
   m_ObjectHideFlags: 0

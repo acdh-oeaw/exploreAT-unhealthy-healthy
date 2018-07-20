@@ -13,11 +13,15 @@ public class ItemChecker : MonoBehaviour {
 	Text scoreText; 
 	public GameObject LivesObject;
 	public GameObject BarPointsObject;
+	public GameObject BarLiveObject;
 	public GameObject GameOverObject;
+	public GameObject LevelObject;
 	public GameObject NextLevelObject;
 	public GameObject TweetObject;
 	public Sprite heart1,heart2,heart3;
 	public Sprite bar0,bar5,bar10,bar15,bar20,bar25,bar30;
+	public Sprite barLive0,barLive5,barLive10,barLive15,barLive20,barLive25,barLive30;
+	public int barLiveState;
 	public Sprite poweredCharacterSprite;
 	public Sprite[] sprites;
 	public float nextLevelScore;
@@ -28,6 +32,7 @@ public class ItemChecker : MonoBehaviour {
 	void Start () {
 		scoreText = ScoreObject.GetComponent < Text >();
 		lives = 3; ApplicationModel.lives = lives;
+		barLiveState = 0;
 		score = 0;
 		ApplicationModel.isPowered = false;
 		nextLevelScore = 30;
@@ -36,12 +41,71 @@ public class ItemChecker : MonoBehaviour {
 		ScoreObject.SetActive(true);
 		PopUpObject.SetActive(false);
 
-		scoreText.text = ApplicationModel.totalScore.ToString()+" Total Calories"; 
+
+		// Free lives bar decreases its filling speed depending on the level
+		if (string.Equals (SceneManager.GetActiveScene ().name, "scene")) {
+			InvokeRepeating("increaseLiveBar", 0, 2);
+		} else if (string.Equals (SceneManager.GetActiveScene ().name, "scene2")) {
+			InvokeRepeating("increaseLiveBar", 0, 4);
+		} else if (string.Equals (SceneManager.GetActiveScene ().name, "scene3")) {
+			InvokeRepeating("increaseLiveBar", 0, 6);
+		}
+
+
+		if (ApplicationModel.language == "en") {
+			scoreText.text = ApplicationModel.totalScore.ToString()+ApplicationModel.en_scene_scoreText; 
+			GameOverObject.GetComponent < Text >().text = ApplicationModel.en_scene_gameOverText;
+			TweetObject.GetComponent < Text >().text = ApplicationModel.en_scene_TweetObjectText;
+			PopUpObject.GetComponent < Text >().text = ApplicationModel.en_scene_popUpText;
+			LevelObject.GetComponent < Text >().text = ApplicationModel.en_scene_levelText;
+			NextLevelObject.GetComponent < Text >().text = ApplicationModel.en_scene_nextLevelText;
+		}
+		else if (ApplicationModel.language == "es") {
+			scoreText.text = ApplicationModel.totalScore.ToString()+ApplicationModel.es_scene_scoreText; 
+			GameOverObject.GetComponent < Text >().text = ApplicationModel.es_scene_gameOverText;
+			TweetObject.GetComponent < Text >().text = ApplicationModel.es_scene_TweetObjectText;
+			PopUpObject.GetComponent < Text >().text = ApplicationModel.es_scene_popUpText;
+			LevelObject.GetComponent < Text >().text = ApplicationModel.es_scene_levelText;
+			NextLevelObject.GetComponent < Text >().text = ApplicationModel.es_scene_nextLevelText;
+		}
+		else if (ApplicationModel.language == "de") {
+			scoreText.text = ApplicationModel.totalScore.ToString()+ApplicationModel.de_scene_scoreText; 
+			GameOverObject.GetComponent < Text >().text = ApplicationModel.de_scene_gameOverText;
+			TweetObject.GetComponent < Text >().text = ApplicationModel.de_scene_TweetObjectText;
+			PopUpObject.GetComponent < Text >().text = ApplicationModel.de_scene_popUpText; 
+			LevelObject.GetComponent < Text >().text = ApplicationModel.de_scene_levelText;
+			NextLevelObject.GetComponent < Text >().text = ApplicationModel.de_scene_nextLevelText;
+		}
+
+		if (string.Equals (SceneManager.GetActiveScene ().name, "scene")) {
+			LevelObject.GetComponent < Text > ().text += 1;
+		} else if (string.Equals (SceneManager.GetActiveScene ().name, "scene2")) {
+			LevelObject.GetComponent < Text > ().text += 2;
+		} else if (string.Equals (SceneManager.GetActiveScene ().name, "scene3")) {
+			LevelObject.GetComponent < Text > ().text += 3;
+		}
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		ApplicationModel.totalTime += Time.deltaTime;
+		if (lives > 3) {
+			lives = 3;
+			ApplicationModel.lives = lives;
+		}
+	}
+
+	void updateScoreText(){
+		if (ApplicationModel.language == "en") {
+			scoreText.text = ApplicationModel.totalScore.ToString () + ApplicationModel.en_scene_scoreText; 
+		}
+		else if (ApplicationModel.language == "es") {
+			scoreText.text = ApplicationModel.totalScore.ToString()+ApplicationModel.es_scene_scoreText; 
+		}
+		else if (ApplicationModel.language == "de") {
+			scoreText.text = ApplicationModel.totalScore.ToString()+ApplicationModel.de_scene_scoreText; 
+		}
 	}
 
 	void OnTriggerEnter2D (Collider2D other) { 
@@ -53,7 +117,7 @@ public class ItemChecker : MonoBehaviour {
 			if (lives > 0 && score < nextLevelScore) {
 
 				changeCaloriesPopUpText (other.gameObject.GetComponent<SpriteRenderer> ().sprite.name);
-				scoreText.text = ApplicationModel.totalScore.ToString()+" Total Calories"; 
+				updateScoreText ();
 
 				if (other.gameObject.GetComponent<SpriteRenderer> ().sprite.name == "fruits_0" ||
 					other.gameObject.GetComponent<SpriteRenderer> ().sprite.name == "fruits_1" ||
@@ -105,7 +169,7 @@ public class ItemChecker : MonoBehaviour {
 				if (lives > 0 && score < nextLevelScore) {
 
 					changeCaloriesPopUpText (other.gameObject.GetComponent<SpriteRenderer> ().sprite.name);
-					scoreText.text = ApplicationModel.totalScore.ToString()+" Total Calories"; 
+					updateScoreText ();
 
 					score = score - 10;
 
@@ -132,6 +196,10 @@ public class ItemChecker : MonoBehaviour {
 					if (lives == 3) {LivesObject.GetComponent<SpriteRenderer>().sprite = heart2; lives -= 1;}
 					else if (lives == 2) {LivesObject.GetComponent<SpriteRenderer>().sprite = heart1; lives -= 1;}
 					else {LivesObject.GetComponent<SpriteRenderer>().sprite = null; lives -= 1;}
+
+					// Unfill the free lives bar
+					BarLiveObject.GetComponent<SpriteRenderer>().sprite = barLive0;
+					barLiveState = 0;
 
 					ApplicationModel.lives = lives;
 
@@ -229,68 +297,78 @@ public class ItemChecker : MonoBehaviour {
 		int value = 0;
 		if (item == "fruits_0") { // apple
 			value = 55;
-			PopUpObject.GetComponent < Text >().text = "+"+value+" Calories !!!";
+			PopUpObject.GetComponent < Text >().text = "+"+value;
 		}
 		else if (item == "fruits_1") { // pineapple
 			value = 50;
-			PopUpObject.GetComponent < Text >().text = "+"+value+" Calories !!!";
+			PopUpObject.GetComponent < Text > ().text = "+" + value;
 		}
 		else if (item == "fruits_2") { // watermelon
 			value = 30;
-			PopUpObject.GetComponent < Text >().text = "+"+value+" Calories !!!";
+			PopUpObject.GetComponent < Text >().text = "+"+value;
 		}
 		else if (item == "fruits_3") { // strawberry
 			value = 35;
-			PopUpObject.GetComponent < Text >().text = "+"+value+" Calories !!!";
+			PopUpObject.GetComponent < Text >().text = "+"+value;
 		}
 		else if (item == "fruits_4") { // pear
 			value = 55;
-			PopUpObject.GetComponent < Text >().text = "+"+value+" Calories !!!";
+			PopUpObject.GetComponent < Text >().text = "+"+value;
 		}
 		else if (item == "fruits_5") { // orange
 			value = 45;
-			PopUpObject.GetComponent < Text >().text = "+"+value+" Calories !!!";
+			PopUpObject.GetComponent < Text >().text = "+"+value;
 		}
 		else if (item == "fruits_6") { // cherry
 			value = 50;
-			PopUpObject.GetComponent < Text >().text = "+"+value+" Calories !!!";
+			PopUpObject.GetComponent < Text >().text = "+"+value;
 		}
 		else if (item == "fruits_7") { // banana
 			value = 90;
-			PopUpObject.GetComponent < Text >().text = "+"+value+" Calories !!!";
+			PopUpObject.GetComponent < Text >().text = "+"+value;
 		}
 
 		else if (item == "fastfood_0") { // egg
 			value = -190;
-			PopUpObject.GetComponent < Text >().text = ""+value+" Calories !!!";
+			PopUpObject.GetComponent < Text >().text = ""+value;
 		}
 		else if (item == "fastfood_1") { // fries
 			value = -300;
-			PopUpObject.GetComponent < Text >().text = ""+value+" Calories !!!";
+			PopUpObject.GetComponent < Text >().text = ""+value;
 		}
 		else if (item == "fastfood_2") { // pizza
 			value = -260;
-			PopUpObject.GetComponent < Text >().text = ""+value+" Calories !!!";
+			PopUpObject.GetComponent < Text >().text = ""+value;
 		}
 		else if (item == "fastfood_3") { // steak
 			value = -80;
-			PopUpObject.GetComponent < Text >().text = ""+value+" Calories !!!";
+			PopUpObject.GetComponent < Text >().text = ""+value;
 		}
 		else if (item == "fastfood_4") { // bacon
 			value = -350;
-			PopUpObject.GetComponent < Text >().text = ""+value+" Calories !!!";
+			PopUpObject.GetComponent < Text >().text = ""+value;
 		}
 		else if (item == "fastfood_5") { // hotdog
 			value = -290;
-			PopUpObject.GetComponent < Text >().text = ""+value+" Calories !!!";
+			PopUpObject.GetComponent < Text >().text = ""+value;
 		}
 		else if (item == "fastfood_6") { // burger
 			value = -275;
-			PopUpObject.GetComponent < Text >().text = ""+value+" Calories !!!";
+			PopUpObject.GetComponent < Text >().text = ""+value;
 		}
 		else if (item == "roller") { // pizza roll
 			value = -130;
-			PopUpObject.GetComponent < Text >().text = ""+value+" Calories !!!";
+			PopUpObject.GetComponent < Text >().text = ""+value;
+		}
+
+		if (ApplicationModel.language == "en") {
+			PopUpObject.GetComponent < Text >().text += ApplicationModel.en_scene_popUpText;
+		}
+		else if (ApplicationModel.language == "es") {
+			PopUpObject.GetComponent < Text >().text += ApplicationModel.es_scene_popUpText;
+		}
+		else if (ApplicationModel.language == "de") {
+			PopUpObject.GetComponent < Text >().text += ApplicationModel.de_scene_popUpText; 
 		}
 
 		updateTotalScore (value);
@@ -313,5 +391,24 @@ public class ItemChecker : MonoBehaviour {
 		GetComponent<BoxCollider2D>().size = S;
 		GetComponent<BoxCollider2D>().offset = new Vector2 ((S.x / 2), 0);
 		gameObject.SendMessage("HandleStarItemCollision",true);
+	}
+
+	IEnumerator increaseLiveBar(){
+		if (lives < 3) {
+			if (barLiveState == 0) {BarLiveObject.GetComponent<SpriteRenderer>().sprite = barLive5; barLiveState = 5;}
+			else if (barLiveState == 5) {BarLiveObject.GetComponent<SpriteRenderer>().sprite = barLive10; barLiveState = 10;}
+			else if (barLiveState == 10) {BarLiveObject.GetComponent<SpriteRenderer>().sprite = barLive15; barLiveState = 15;}
+			else if (barLiveState == 15) {BarLiveObject.GetComponent<SpriteRenderer>().sprite = barLive20; barLiveState = 20;}
+			else if (barLiveState == 20) {BarLiveObject.GetComponent<SpriteRenderer>().sprite = barLive25; barLiveState = 25;}
+			else if (barLiveState == 25) {BarLiveObject.GetComponent<SpriteRenderer>().sprite = barLive30; barLiveState = 30;}
+			else if (barLiveState == 30) {
+				BarLiveObject.GetComponent<SpriteRenderer>().sprite = barLive0;
+				barLiveState = 0;
+				if (lives == 2) {LivesObject.GetComponent<SpriteRenderer>().sprite = heart3; lives += 1;}
+				else if (lives == 1) {LivesObject.GetComponent<SpriteRenderer>().sprite = heart2; lives += 1;}
+				ApplicationModel.lives = lives;
+			}
+		}
+		return null;
 	}
 }

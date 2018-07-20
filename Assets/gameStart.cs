@@ -6,9 +6,23 @@ using UnityEngine.SceneManagement;
 
 public class gameStart : MonoBehaviour {
 
+	public Text controlsText;
+	public Text startText;
+
 	// Use this for initialization
 	void Start () {
-		
+		if (ApplicationModel.language == "en") {
+			controlsText.text = ApplicationModel.en_gameStart_controlsText;
+			startText.text = ApplicationModel.en_gameStart_startText;
+		}
+		else if(ApplicationModel.language == "es") {
+			controlsText.text = ApplicationModel.es_gameStart_controlsText;
+			startText.text = ApplicationModel.es_gameStart_startText;
+		}
+		else if(ApplicationModel.language == "de") {
+			controlsText.text = ApplicationModel.de_gameStart_controlsText;
+			startText.text = ApplicationModel.de_gameStart_startText;
+		}
 	}
 	
 	// Update is called once per frame
