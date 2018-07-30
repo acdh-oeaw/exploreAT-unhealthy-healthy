@@ -101,13 +101,13 @@ public class ItemSpawn : MonoBehaviour {
 
 		// Each time a spawn occur, the objects fall faster
 		if (string.Equals(SceneManager.GetActiveScene ().name,"scene")) {
-			newObject.GetComponent<Rigidbody2D>().gravityScale += (float)0.25f;
+			newObject.GetComponent<Rigidbody2D>().gravityScale += (float)0.15f;
 		}
 		else if (string.Equals(SceneManager.GetActiveScene ().name,"scene2")) {
-			newObject.GetComponent<Rigidbody2D>().gravityScale += (float)0.5f;
+			newObject.GetComponent<Rigidbody2D>().gravityScale += (float)0.3f;
 		}
 		else if (string.Equals(SceneManager.GetActiveScene ().name,"scene3")) {
-			newObject.GetComponent<Rigidbody2D>().gravityScale += (float)0.75f;
+			newObject.GetComponent<Rigidbody2D>().gravityScale += (float)0.45f;
 		}
 
 

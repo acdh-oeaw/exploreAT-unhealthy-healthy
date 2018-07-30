@@ -22,15 +22,15 @@ public class HorizontalSpawn : MonoBehaviour {
 
 		if (string.Equals(SceneManager.GetActiveScene ().name,"scene")) {
 			startDelay = 2.5f;
-			repeatRate = 3.5f;
+			repeatRate = 5.5f;
 		}
 		else if (string.Equals(SceneManager.GetActiveScene ().name,"scene2")) {
 			startDelay = 2.0f;
-			repeatRate = 3.0f;
+			repeatRate = 4.5f;
 		}
 		else if (string.Equals(SceneManager.GetActiveScene ().name,"scene3")) {
 			startDelay = 1.5f;
-			repeatRate = 2.5f;
+			repeatRate = 3.5f;
 		}
 
 		while(true)
@@ -68,15 +68,15 @@ public class HorizontalSpawn : MonoBehaviour {
 		// Each time a spawn occur, the objects rolls faster
 		if (string.Equals(SceneManager.GetActiveScene ().name,"scene")) {
 			newObject.GetComponent<Rigidbody2D>().gravityScale += (float)0.75;
-			randomSpeed = UnityEngine.Random.Range (5,10);
+			randomSpeed = UnityEngine.Random.Range (3,7);
 		}
 		else if (string.Equals(SceneManager.GetActiveScene ().name,"scene2")) {
 			newObject.GetComponent<Rigidbody2D>().gravityScale += (float)1.25;
-			randomSpeed = UnityEngine.Random.Range (11,16);
+			randomSpeed = UnityEngine.Random.Range (8,14);
 		}
 		else if (string.Equals(SceneManager.GetActiveScene ().name,"scene3")) {
 			newObject.GetComponent<Rigidbody2D>().gravityScale += (float)1.75;
-			randomSpeed = UnityEngine.Random.Range (17,24);
+			randomSpeed = UnityEngine.Random.Range (15,21);
 		}
 
 		if (!goingLeft) {randomSpeed = -randomSpeed;}
