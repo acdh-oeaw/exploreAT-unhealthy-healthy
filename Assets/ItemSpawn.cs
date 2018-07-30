@@ -51,7 +51,7 @@ public class ItemSpawn : MonoBehaviour {
 
 		if (Random.Range (0, 20) > 16 && ApplicationModel.lives < 3) {elemType = 2;} // Live generation
 		if (Random.Range (0, 40) > 32 && !ApplicationModel.isPowered) {elemType = 3;} // Star generation
-		if (Random.Range (0, 40) > 32 && !ApplicationModel.isPowered) {elemType = 4;} // Bomb generation
+		//if (Random.Range (0, 40) > 32 && !ApplicationModel.isPowered) {elemType = 4;} // Bomb generation
 		if (Random.Range (0, 20) > 16 && !ApplicationModel.isPowered) {elemType = 6;} // Changer generation
 		if (Random.Range (0, 20) > 16 && transform.localScale.x > 0.6 && ApplicationModel.lives < 3) {elemType = 5;} // Bicycle generation
 

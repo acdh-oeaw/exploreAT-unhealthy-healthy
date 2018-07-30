@@ -1296,7 +1296,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ac82a1904a2de4d4a9f7186daba05725, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 480c5a318a1d54fe8b61e2ba7ec7327c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1313,7 +1313,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1085731486}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.28, y: 4.05, z: 2.447763}
+  m_LocalPosition: {x: 5.72, y: 4.05, z: 2.447763}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2148,9 +2148,11 @@ MonoBehaviour:
   LevelObject: {fileID: 1214443207}
   NextLevelObject: {fileID: 1743678932}
   TweetObject: {fileID: 387334506}
-  heart1: {fileID: 21300000, guid: 3257eb21d661b480a8ae3c32dc2dd7d1, type: 3}
-  heart2: {fileID: 21300000, guid: 073a16708c0884210a5eced1139c31a8, type: 3}
-  heart3: {fileID: 21300000, guid: ac82a1904a2de4d4a9f7186daba05725, type: 3}
+  heart1: {fileID: 21300000, guid: 2d88de46e142048b896b96b1e1d120b5, type: 3}
+  heart2: {fileID: 21300000, guid: e6fba0e2c50e14a0bbe6275b6b9d148d, type: 3}
+  heart3: {fileID: 21300000, guid: 464a759863c044c5cb550620b7a59ecf, type: 3}
+  heart4: {fileID: 21300000, guid: 9872d1ce2f97a47d9a4ac6466d3b5ce0, type: 3}
+  heart5: {fileID: 21300000, guid: 480c5a318a1d54fe8b61e2ba7ec7327c, type: 3}
   bar0: {fileID: 21300000, guid: 514abae656b8d4a9f864b2e68b20da13, type: 3}
   bar5: {fileID: 21300000, guid: d2e8f37fae79d4d61bb81f6dfea19544, type: 3}
   bar10: {fileID: 21300000, guid: c9ea4758a77524b80b4484ade4632980, type: 3}

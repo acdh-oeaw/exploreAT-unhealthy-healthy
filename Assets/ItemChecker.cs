@@ -18,7 +18,7 @@ public class ItemChecker : MonoBehaviour {
 	public GameObject LevelObject;
 	public GameObject NextLevelObject;
 	public GameObject TweetObject;
-	public Sprite heart1,heart2,heart3;
+	public Sprite heart1,heart2,heart3,heart4,heart5;
 	public Sprite bar0,bar5,bar10,bar15,bar20,bar25,bar30;
 	public Sprite barLive0,barLive5,barLive10,barLive15,barLive20,barLive25,barLive30;
 	public int barLiveState;
@@ -31,7 +31,7 @@ public class ItemChecker : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		scoreText = ScoreObject.GetComponent < Text >();
-		lives = 3; ApplicationModel.lives = lives;
+		lives = 5; ApplicationModel.lives = lives;
 		barLiveState = 0;
 		score = 0;
 		ApplicationModel.isPowered = false;
@@ -90,8 +90,8 @@ public class ItemChecker : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		ApplicationModel.totalTime += Time.deltaTime;
-		if (lives > 3) {
-			lives = 3;
+		if (lives > 5) {
+			lives = 5;
 			ApplicationModel.lives = lives;
 		}
 	}
@@ -193,7 +193,9 @@ public class ItemChecker : MonoBehaviour {
 
 					// Update the lives
 
-					if (lives == 3) {LivesObject.GetComponent<SpriteRenderer>().sprite = heart2; lives -= 1;}
+					if (lives == 5) {LivesObject.GetComponent<SpriteRenderer>().sprite = heart4; lives -= 1;}
+					else if (lives == 4) {LivesObject.GetComponent<SpriteRenderer>().sprite = heart3; lives -= 1;}
+					else if (lives == 3) {LivesObject.GetComponent<SpriteRenderer>().sprite = heart2; lives -= 1;}
 					else if (lives == 2) {LivesObject.GetComponent<SpriteRenderer>().sprite = heart1; lives -= 1;}
 					else {LivesObject.GetComponent<SpriteRenderer>().sprite = null; lives -= 1;}
 
@@ -218,10 +220,12 @@ public class ItemChecker : MonoBehaviour {
 
 			Destroy (other.gameObject);
 
-			if (lives < 3) {
+			if (lives < 5) {
 				lives += 1;
 				ApplicationModel.lives = lives;
-				if (lives == 3) {LivesObject.GetComponent<SpriteRenderer>().sprite = heart3;}
+				if (lives == 5) {LivesObject.GetComponent<SpriteRenderer>().sprite = heart5;}
+				else if (lives == 4) {LivesObject.GetComponent<SpriteRenderer>().sprite = heart4;}
+				else if (lives == 3) {LivesObject.GetComponent<SpriteRenderer>().sprite = heart3;}
 				else if (lives == 2) {LivesObject.GetComponent<SpriteRenderer>().sprite = heart2;}
 				else {LivesObject.GetComponent<SpriteRenderer>().sprite = heart1;}
 			}
@@ -394,7 +398,7 @@ public class ItemChecker : MonoBehaviour {
 	}
 
 	IEnumerator increaseLiveBar(){
-		if (lives < 3) {
+		if (lives < 5) {
 			if (barLiveState == 0) {BarLiveObject.GetComponent<SpriteRenderer>().sprite = barLive5; barLiveState = 5;}
 			else if (barLiveState == 5) {BarLiveObject.GetComponent<SpriteRenderer>().sprite = barLive10; barLiveState = 10;}
 			else if (barLiveState == 10) {BarLiveObject.GetComponent<SpriteRenderer>().sprite = barLive15; barLiveState = 15;}
@@ -404,7 +408,9 @@ public class ItemChecker : MonoBehaviour {
 			else if (barLiveState == 30) {
 				BarLiveObject.GetComponent<SpriteRenderer>().sprite = barLive0;
 				barLiveState = 0;
-				if (lives == 2) {LivesObject.GetComponent<SpriteRenderer>().sprite = heart3; lives += 1;}
+				if (lives == 4) {LivesObject.GetComponent<SpriteRenderer>().sprite = heart5; lives += 1;}
+				else if (lives == 3) {LivesObject.GetComponent<SpriteRenderer>().sprite = heart4; lives += 1;}
+				else if (lives == 2) {LivesObject.GetComponent<SpriteRenderer>().sprite = heart3; lives += 1;}
 				else if (lives == 1) {LivesObject.GetComponent<SpriteRenderer>().sprite = heart2; lives += 1;}
 				ApplicationModel.lives = lives;
 			}

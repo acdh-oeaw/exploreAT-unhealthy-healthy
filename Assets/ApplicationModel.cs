@@ -66,7 +66,7 @@ public class ApplicationModel {
 	void Start () {
 		tutorialState = 0;
 		spriteNum = 0;
-		lives = 3;
+		lives = 5;
 		totalScore = 0;
 		totalTime = 0f;
 		totalCalories = 0;
