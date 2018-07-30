@@ -53,6 +53,7 @@
   <ItemGroup>
      <Compile Include="Assets\advanceSplash.cs" />
      <Compile Include="Assets\ApplicationModel.cs" />
+     <Compile Include="Assets\backToStart.cs" />
      <Compile Include="Assets\BarrelRotator.cs" />
      <Compile Include="Assets\characterSelector.cs" />
      <Compile Include="Assets\gameOverController.cs" />
