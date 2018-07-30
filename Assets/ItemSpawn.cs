@@ -23,15 +23,15 @@ public class ItemSpawn : MonoBehaviour {
 		{
 			if (string.Equals(SceneManager.GetActiveScene ().name,"scene")) {
 				startDelay = 0.5f;
-				repeatRate = 3f;
+				repeatRate = 2f;
 			}
 			else if (string.Equals(SceneManager.GetActiveScene ().name,"scene2")) {
 				startDelay = 0.5f;
-				repeatRate = 2.5f;
+				repeatRate = 1.5f;
 			}
 			else if (string.Equals(SceneManager.GetActiveScene ().name,"scene3")) {
 				startDelay = 0.5f;
-				repeatRate = 2f;
+				repeatRate = 1f;
 			}
 
 			yield return new WaitForSeconds(repeatRate);
@@ -49,10 +49,10 @@ public class ItemSpawn : MonoBehaviour {
 		Vector3 pos = new Vector3 (Random.Range (gameObject.transform.position.x, RightSide.transform.position.x), gameObject.transform.position.y, 0); 
 		int elemType = Random.Range (0, 2);
 
-		if (Random.Range (0, 20) > 16 && ApplicationModel.lives < 3) {elemType = 2;} // Live generation
-		if (Random.Range (0, 40) > 32 && !ApplicationModel.isPowered) {elemType = 3;} // Star generation
+		if (Random.Range (0, 20) > 17 && ApplicationModel.lives < 3) {elemType = 2;} // Live generation
+		if (Random.Range (0, 40) > 36 && !ApplicationModel.isPowered) {elemType = 3;} // Star generation
 		//if (Random.Range (0, 40) > 32 && !ApplicationModel.isPowered) {elemType = 4;} // Bomb generation
-		if (Random.Range (0, 20) > 16 && !ApplicationModel.isPowered) {elemType = 6;} // Changer generation
+		if (Random.Range (0, 20) > 17 && !ApplicationModel.isPowered) {elemType = 6;} // Changer generation
 		//if (Random.Range (0, 20) > 16 && transform.localScale.x > 0.6 && ApplicationModel.lives < 3) {elemType = 5;} // Bicycle generation
 
 		GameObject newObject = Instantiate (items [elemType], pos, Quaternion.Euler(new Vector3(0,0,Random.Range (-55, 55))));
