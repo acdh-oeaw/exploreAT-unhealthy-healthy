@@ -52,7 +52,7 @@ public class playerMove : MonoBehaviour {
 		//audioSource.PlayOneShot(soundBad, 1.0f);
 
 		if (!movesBlocked) {
-			transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
+			//transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
 			audioSource.PlayOneShot(soundBad, 1.0f);
 		}
 
