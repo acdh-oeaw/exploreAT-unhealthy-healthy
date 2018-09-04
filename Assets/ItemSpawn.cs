@@ -60,9 +60,9 @@ public class ItemSpawn : MonoBehaviour {
 			int num = 0;
 			// As we advance we see more/different items appear
 			if (string.Equals (SceneManager.GetActiveScene ().name, "scene")) {
-				num = UnityEngine.Random.Range (0, 2);
+				num = UnityEngine.Random.Range (0, fruitSprites.Length);//2);
 			} else if (string.Equals (SceneManager.GetActiveScene ().name, "scene2")) {
-				num = UnityEngine.Random.Range (0, 4);
+				num = UnityEngine.Random.Range (0, fruitSprites.Length);//4);
 			} else if (string.Equals (SceneManager.GetActiveScene ().name, "scene3")) {
 				num = UnityEngine.Random.Range (0, fruitSprites.Length);
 			}
@@ -74,9 +74,9 @@ public class ItemSpawn : MonoBehaviour {
 			num = UnityEngine.Random.Range (0, fastFoodSprites.Length);
 			// As we advance we see more/different items appear
 			if (string.Equals (SceneManager.GetActiveScene ().name, "scene")) {
-				num = UnityEngine.Random.Range (0, 2);
+				num = UnityEngine.Random.Range (0, fastFoodSprites.Length);//, 2);
 			} else if (string.Equals (SceneManager.GetActiveScene ().name, "scene2")) {
-				num = UnityEngine.Random.Range (0, 4);
+				num = UnityEngine.Random.Range (0, fastFoodSprites.Length);//, 4);
 			} else if (string.Equals (SceneManager.GetActiveScene ().name, "scene3")) {
 				num = UnityEngine.Random.Range (0, fastFoodSprites.Length);
 			}

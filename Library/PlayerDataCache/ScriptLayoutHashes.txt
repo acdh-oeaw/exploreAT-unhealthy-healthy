@@ -114,6 +114,8 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 d756bb151232f4b33d3b823d8fbee1e1 Assembly-CSharp.dll:.gameStart
 7570827708e24757369c7e99f6c4749a Assembly-CSharp.dll:.playerMove
 ed816c98f99bdf2e64e8a772bc745200 Assembly-CSharp.dll:.HorizontalSpawn
+05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
+05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 60b2bb652410a5867a5ab9a01cd38461 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -129,7 +131,8 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 209ae39a72eb0b775e8dd1d3735aa187 Assembly-CSharp.dll:.PopUpTextBehaviour
-85fe0e08df22f80d65d483ce7c7f6267 Assembly-CSharp.dll:.ItemChecker
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.backToStart
+afb3cddca667a12502c7c66b9cd2b590 Assembly-CSharp.dll:.ItemChecker
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
 2a56361227def9f56c2cf57a88b32f4d UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
 64eb32cc721b1cc68a91ed57461e188c UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
@@ -146,4 +149,3 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 696faebc5006e2f37f1b9856e4c60a0d Assembly-CSharp.dll:.playerInitializer
 343f9f3f245a6832e14cfe78bde81888 Assembly-CSharp.dll:.timeDestroyer
 f7c79469cc1d00d94df4d7860693b444 Assembly-CSharp.dll:.scoreHandler
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.backToStart
