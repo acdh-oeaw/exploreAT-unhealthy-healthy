@@ -12,7 +12,7 @@ public class playerMove : MonoBehaviour {
 
 	Rigidbody2D rb;
 
-	public AudioClip soundJump, soundGood, soundBad, soundBg, soundStar;
+	public AudioClip soundJump, soundGood, soundBad, soundBg;
 	public AudioSource audioSource;
 	public AudioSource audioSourceBg;
 
@@ -29,7 +29,7 @@ public class playerMove : MonoBehaviour {
 			move = new Vector2 (x * speed, rb.velocity.y); 
 			rb.velocity = move;
 
-			if ((Input.GetMouseButtonDown (0) || Input.GetKeyDown (KeyCode.Space)) &&
+			if ((Input.GetMouseButtonDown (0) || Input.GetKeyDown (KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) &&
 				!ApplicationModel.isJumping) {  //makes player jump
 				audioSource.PlayOneShot(soundJump, 1.0f);
 				GetComponent<Rigidbody2D>().AddForce(new Vector2(0,10), ForceMode2D.Impulse);
@@ -47,40 +47,32 @@ public class playerMove : MonoBehaviour {
 		movesBlocked = true;
 	}
 
-	void HandleBadItemCollision(float lives){
+	void HandleGoodItemCollision(){
+		audioSource.PlayOneShot (soundGood, 1.0f);
+	}
 
-		//audioSource.PlayOneShot(soundBad, 1.0f);
+	//
 
-		if (!movesBlocked) {
-			//transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
+	void HandleBicycleItemCollision(){
+		audioSource.PlayOneShot (soundGood, 1.0f);
+	}
+
+	void HandleWaterItemCollision(){
+		audioSource.PlayOneShot (soundGood, 1.0f);
+	}
+
+	void HandleEnergyDrinkItemCollision(){
+		if (ApplicationModel.gameOver) {
 			audioSource.PlayOneShot(soundBad, 1.0f);
-		}
-
-		if (lives == 0) {
 			movesBlocked = true;
 		}
 	}
 
-	void HandleGoodItemCollision(float score){
-
-		if (score >= 30) { //nextLevelScore == 30 BUT SHOULD BE HANDLED IN ItemChecker.cs !!!
-			movesBlocked = true;
-		}
-		if(score <= 30){
-			audioSource.PlayOneShot (soundGood, 1.0f);
-		}
+	void HandleTimeout(){
+		audioSource.PlayOneShot (soundBad, 1.0f);
 	}
 
-	void HandleStarItemCollision(bool removePower){
-
-		if (!removePower) {
-			audioSource.PlayOneShot (soundStar, 1.0f);
-			audioSourceBg.Stop ();
-		} else {
-			audioSourceBg.Play ();
-		}	
-
-	}
+	//
 
 	void fixedUpdate() {
 	

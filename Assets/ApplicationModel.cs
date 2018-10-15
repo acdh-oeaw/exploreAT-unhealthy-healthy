@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ApplicationModel {
-
+	
+	static public int level;
+	static public bool gameOver;
+	static public int spriteGender;
 	static public int tutorialState;
 	static public int spriteNum;
-	static public int lives;
-	static public int totalScore;
+	static public int timerSlices;
 	static public float totalTime;
 	static public int totalCalories;
+	static public int totalWater;
+	static public int totalSport;
 	static public bool isJumping;
-	static public bool isPowered;
 	static public string language;
 
 
@@ -64,14 +67,17 @@ public class ApplicationModel {
 
 	// Use this for initialization
 	void Start () {
+		gameOver = false;
+		level = 1;
 		tutorialState = 0;
+		spriteGender = 0;
 		spriteNum = 0;
-		lives = 5;
-		totalScore = 0;
+		timerSlices = 7;
 		totalTime = 0f;
 		totalCalories = 0;
+		totalWater = 0;
+		totalSport = 0;
 		isJumping = false;
-		isPowered = false;
 		language = "en";
 	}
 	

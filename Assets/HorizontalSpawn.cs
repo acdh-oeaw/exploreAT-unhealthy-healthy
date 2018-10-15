@@ -36,7 +36,7 @@ public class HorizontalSpawn : MonoBehaviour {
 		while(true)
 		{
 			yield return new WaitForSeconds(repeatRate);
-			Spawn();
+			//Spawn();
 		}
 		//InvokeRepeating ("Spawn", startDelay, repeatRate);
 	}
@@ -47,6 +47,8 @@ public class HorizontalSpawn : MonoBehaviour {
 	}
 
 	void Spawn () {
+
+		return;
 
 		// Random pizza roller spawn from left or right
 		bool goingLeft = true;

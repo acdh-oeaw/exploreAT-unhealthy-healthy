@@ -9,14 +9,24 @@ public class playerInitializer : MonoBehaviour {
 	public GameObject GameOverObject; 
 	Text gameOverText;
 	public GameObject character;
-	public Sprite[] sprites;
+	public Sprite[] spritesBoys;
+	public Sprite[] spritesGirls;
 
 	// Use this for initialization
 	void Start () {
+		Debug.Log ("Initializing Player");
+		Debug.Log (ApplicationModel.level);
+		ApplicationModel.level = 1;
+		ApplicationModel.timerSlices = 7;
 		gameOverText = GameOverObject.GetComponent < Text >();
 		Color zm = gameOverText.color;  //  makes a new color zm
 		zm.a = 0.0f; // makes the color zm transparent
-		character.GetComponent<SpriteRenderer> ().sprite = sprites[ApplicationModel.spriteNum];
+		if(ApplicationModel.spriteGender == 0){
+			character.GetComponent<SpriteRenderer> ().sprite = spritesGirls[ApplicationModel.spriteNum];
+		}
+		else if(ApplicationModel.spriteGender == 1){
+			character.GetComponent<SpriteRenderer> ().sprite = spritesBoys[ApplicationModel.spriteNum];
+		}
 		Vector2 S = character.GetComponent<SpriteRenderer>().sprite.bounds.size;
 		character.GetComponent<BoxCollider2D>().size = S;
 		character.GetComponent<BoxCollider2D>().offset = new Vector2 ((S.x / 2), 0);
@@ -26,14 +36,13 @@ public class playerInitializer : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.R)){
 			Time.timeScale = 1f;
-			ApplicationModel.totalScore = 0;
-			SceneManager.LoadScene("scene"); // Restart back to Level 1
+			ApplicationModel.timerSlices = 7;
+			SceneManager.LoadScene("scene"); // Regenate Scene
 		}
 		if (Input.GetKeyDown (KeyCode.N)){
-			if (string.Equals (SceneManager.GetActiveScene ().name, "scene")) {
-				SceneManager.LoadScene("scene2"); // Move to Level 2
-			} else if (string.Equals (SceneManager.GetActiveScene ().name, "scene2")) {
-				SceneManager.LoadScene("scene3"); // Move to Level 3
+			if (ApplicationModel.level < 2) {
+				ApplicationModel.level++;
+				SceneManager.LoadScene("scene"); // Regenate Scene
 			}
 		}
 		if (Input.GetKeyDown (KeyCode.T)){
@@ -49,19 +58,16 @@ public class playerInitializer : MonoBehaviour {
 	{
 		if (ApplicationModel.language == "en") {
 			string text = ApplicationModel.en_scoreHandler_twitterText1;//this is limited in text length 
-			text += ApplicationModel.totalScore;
 			text += ApplicationModel.en_scoreHandler_twitterText2;
 			Application.OpenURL(TWITTER_ADDRESS + "?text=" + WWW.EscapeURL(text));
 		}
 		else if(ApplicationModel.language == "es") {
 			string text = ApplicationModel.es_scoreHandler_twitterText1;//this is limited in text length 
-			text += ApplicationModel.totalScore;
 			text += ApplicationModel.es_scoreHandler_twitterText2;
 			Application.OpenURL(TWITTER_ADDRESS + "?text=" + WWW.EscapeURL(text));
 		}
 		else if(ApplicationModel.language == "de") {
 			string text = ApplicationModel.de_scoreHandler_twitterText1;//this is limited in text length 
-			text += ApplicationModel.totalScore;
 			text += ApplicationModel.de_scoreHandler_twitterText2;
 			Application.OpenURL(TWITTER_ADDRESS + "?text=" + WWW.EscapeURL(text));
 		}

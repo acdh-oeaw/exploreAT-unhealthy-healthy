@@ -28,7 +28,7 @@ public class gameStart : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.N)){
-			SceneManager.LoadScene("scene"); // Move to Level 1
+			SceneManager.LoadScene("scene"); // Regenerate Scene
 		}
 	}
 }
