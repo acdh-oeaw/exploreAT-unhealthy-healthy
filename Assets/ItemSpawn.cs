@@ -44,7 +44,7 @@ public class ItemSpawn : MonoBehaviour {
 	}
 
 	void Spawn () {
-		Vector3 pos = new Vector3 (Random.Range (gameObject.transform.position.x, RightSide.transform.position.x), gameObject.transform.position.y, 0); 
+		Vector3 pos = new Vector3 (Random.Range (gameObject.transform.position.x, RightSide.transform.position.x), gameObject.transform.position.y, -3); 
 		int elemType = Random.Range (0, 2);
 
 		// Randomly, something not food will spawn

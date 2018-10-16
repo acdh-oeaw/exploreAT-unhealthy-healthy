@@ -9,6 +9,7 @@ public class ApplicationModel {
 	static public int spriteGender;
 	static public int tutorialState;
 	static public int spriteNum;
+	static public int season;
 	static public int timerSlices;
 	static public float totalTime;
 	static public int totalCalories;
@@ -68,6 +69,7 @@ public class ApplicationModel {
 	// Use this for initialization
 	void Start () {
 		gameOver = false;
+		season = 0;
 		level = 1;
 		tutorialState = 0;
 		spriteGender = 0;

@@ -11,12 +11,15 @@ public class playerInitializer : MonoBehaviour {
 	public GameObject character;
 	public Sprite[] spritesBoys;
 	public Sprite[] spritesGirls;
+	public GameObject seasonBackground;
+	public Sprite[] spritesBackground;
+	public GameObject ground;
+	public Sprite[] spritesGround;
 
 	// Use this for initialization
 	void Start () {
 		Debug.Log ("Initializing Player");
 		Debug.Log (ApplicationModel.level);
-		ApplicationModel.level = 1;
 		ApplicationModel.timerSlices = 7;
 		gameOverText = GameOverObject.GetComponent < Text >();
 		Color zm = gameOverText.color;  //  makes a new color zm
@@ -30,6 +33,18 @@ public class playerInitializer : MonoBehaviour {
 		Vector2 S = character.GetComponent<SpriteRenderer>().sprite.bounds.size;
 		character.GetComponent<BoxCollider2D>().size = S;
 		character.GetComponent<BoxCollider2D>().offset = new Vector2 ((S.x / 2), 0);
+
+		// Change sky colour, season background and season ground
+		if (ApplicationModel.season == 0) {
+			Camera.main.GetComponent<Camera>().backgroundColor = new Color(100f/255f,200f/255f,250f/255f,0f);
+			ground.GetComponent<SpriteRenderer> ().sprite = spritesGround[0];
+			seasonBackground.GetComponent<SpriteRenderer> ().sprite = spritesBackground[0];
+		}
+		else if (ApplicationModel.season == 1) {
+			Camera.main.GetComponent<Camera>().backgroundColor = new Color(185f/255f,215f/255f,230f/255f,0f);
+			ground.GetComponent<SpriteRenderer> ().sprite = spritesGround[1];
+			seasonBackground.GetComponent<SpriteRenderer> ().sprite = spritesBackground[1];
+		}
 	}
 	
 	// Update is called once per frame
