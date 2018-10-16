@@ -15,42 +15,38 @@ public class ItemChecker : MonoBehaviour {
 
 	public GameObject GameOverObject;
 	public GameObject LevelObject;
-	public GameObject NextLevelObject;
-	public GameObject TweetObject;
 
 		public Sprite[] barWaterSprites;
 		public Sprite[] barSportSprites;
 		public Sprite[] timerSprites;
 
+	public GameObject TimeUpObject;
+	public GameObject CheckProgressObject;
+
 	public Sprite[] fruitSprites;
 
 	// Use this for initialization
 	void Start () {
-		GameOverObject.SetActive(false);
-		NextLevelObject.SetActive(false);
-		TweetObject.SetActive(false);
-		PopUpObject.SetActive(false);
+		
+		PopUpObject.SetActive (false);
+		GameOverObject.SetActive (false);
+		TimeUpObject.SetActive(false);
+		CheckProgressObject.SetActive (false);
 
 		if (ApplicationModel.language == "en") {
-			GameOverObject.GetComponent < Text >().text = ApplicationModel.en_scene_gameOverText;
-			TweetObject.GetComponent < Text >().text = ApplicationModel.en_scene_TweetObjectText;
-			PopUpObject.GetComponent < Text >().text = ApplicationModel.en_scene_popUpText;
-			LevelObject.GetComponent < Text >().text = ApplicationModel.en_scene_levelText;
-			NextLevelObject.GetComponent < Text >().text = ApplicationModel.en_scene_nextLevelText;
+			GameOverObject.GetComponent < Text > ().text = ApplicationModel.en_scene_gameOverText;
+			TimeUpObject.GetComponent < Text >().text = ApplicationModel.en_scene_timeupText;
+			CheckProgressObject.GetComponent < Text >().text = ApplicationModel.en_scene_checkProgressText;
 		}
 		else if (ApplicationModel.language == "es") {
-			GameOverObject.GetComponent < Text >().text = ApplicationModel.es_scene_gameOverText;
-			TweetObject.GetComponent < Text >().text = ApplicationModel.es_scene_TweetObjectText;
-			PopUpObject.GetComponent < Text >().text = ApplicationModel.es_scene_popUpText;
-			LevelObject.GetComponent < Text >().text = ApplicationModel.es_scene_levelText;
-			NextLevelObject.GetComponent < Text >().text = ApplicationModel.es_scene_nextLevelText;
+			GameOverObject.GetComponent < Text > ().text = ApplicationModel.es_scene_gameOverText;
+			TimeUpObject.GetComponent < Text >().text = ApplicationModel.es_scene_timeupText;
+			CheckProgressObject.GetComponent < Text >().text = ApplicationModel.es_scene_checkProgressText;
 		}
 		else if (ApplicationModel.language == "de") {
-			GameOverObject.GetComponent < Text >().text = ApplicationModel.de_scene_gameOverText;
-			TweetObject.GetComponent < Text >().text = ApplicationModel.de_scene_TweetObjectText;
-			PopUpObject.GetComponent < Text >().text = ApplicationModel.de_scene_popUpText; 
-			LevelObject.GetComponent < Text >().text = ApplicationModel.de_scene_levelText;
-			NextLevelObject.GetComponent < Text >().text = ApplicationModel.de_scene_nextLevelText;
+			GameOverObject.GetComponent < Text > ().text = ApplicationModel.de_scene_gameOverText;
+			TimeUpObject.GetComponent < Text >().text = ApplicationModel.de_scene_timeupText;
+			CheckProgressObject.GetComponent < Text >().text = ApplicationModel.de_scene_checkProgressText;
 		}
 
 		LevelObject.GetComponent < Text > ().text += ApplicationModel.level;
@@ -64,7 +60,11 @@ public class ItemChecker : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D (Collider2D other) { 
-		
+
+		if (TimeUpObject.activeSelf) {
+			return;
+		}
+
 		if (other.gameObject.tag == "Good") {
 
 			Destroy (other.gameObject);
@@ -76,15 +76,15 @@ public class ItemChecker : MonoBehaviour {
 
 			// Update the SPORTS BAR
 
-			ApplicationModel.totalSport += 5;
+			ApplicationModel.totalSport += 1;
 
-			if (ApplicationModel.totalSport == 5) {BarSportObject.GetComponent<SpriteRenderer>().sprite = barSportSprites[1];}
-			else if (ApplicationModel.totalSport == 10) {BarSportObject.GetComponent<SpriteRenderer>().sprite = barSportSprites[2];}
-			else if (ApplicationModel.totalSport == 15) {BarSportObject.GetComponent<SpriteRenderer>().sprite = barSportSprites[3];}
-			else if (ApplicationModel.totalSport == 20) {BarSportObject.GetComponent<SpriteRenderer>().sprite = barSportSprites[4];}
-			else if (ApplicationModel.totalSport == 25) {BarSportObject.GetComponent<SpriteRenderer>().sprite = barSportSprites[5];}
-			else if (ApplicationModel.totalSport == 30) {BarSportObject.GetComponent<SpriteRenderer>().sprite = barSportSprites[6];}
-			else if (ApplicationModel.totalSport == 35) {BarSportObject.GetComponent<SpriteRenderer>().sprite = barSportSprites[7];}
+			if (ApplicationModel.totalSport == 1) {BarSportObject.GetComponent<SpriteRenderer>().sprite = barSportSprites[1];}
+			else if (ApplicationModel.totalSport == 2) {BarSportObject.GetComponent<SpriteRenderer>().sprite = barSportSprites[2];}
+			else if (ApplicationModel.totalSport == 3) {BarSportObject.GetComponent<SpriteRenderer>().sprite = barSportSprites[3];}
+			else if (ApplicationModel.totalSport == 4) {BarSportObject.GetComponent<SpriteRenderer>().sprite = barSportSprites[4];}
+			else if (ApplicationModel.totalSport == 5) {BarSportObject.GetComponent<SpriteRenderer>().sprite = barSportSprites[5];}
+			else if (ApplicationModel.totalSport == 6) {BarSportObject.GetComponent<SpriteRenderer>().sprite = barSportSprites[6];}
+			else if (ApplicationModel.totalSport == 7) {BarSportObject.GetComponent<SpriteRenderer>().sprite = barSportSprites[7];}
 
 			gameObject.SendMessage("HandleBicycleItemCollision");
 		}
@@ -94,14 +94,14 @@ public class ItemChecker : MonoBehaviour {
 
 			// Update the WATER BAR
 
-			ApplicationModel.totalWater += 5;
+			ApplicationModel.totalWater += 1;
 
-			if (ApplicationModel.totalWater == 5) {BarWaterObject.GetComponent<SpriteRenderer>().sprite = barWaterSprites[1];}
-			else if (ApplicationModel.totalWater == 10) {BarWaterObject.GetComponent<SpriteRenderer>().sprite = barWaterSprites[2];}
-			else if (ApplicationModel.totalWater == 15) {BarWaterObject.GetComponent<SpriteRenderer>().sprite = barWaterSprites[3];}
-			else if (ApplicationModel.totalWater == 20) {BarWaterObject.GetComponent<SpriteRenderer>().sprite = barWaterSprites[4];}
-			else if (ApplicationModel.totalWater == 25) {BarWaterObject.GetComponent<SpriteRenderer>().sprite = barWaterSprites[5];}
-			else if (ApplicationModel.totalWater == 30) {BarWaterObject.GetComponent<SpriteRenderer>().sprite = barWaterSprites[6];}
+			if (ApplicationModel.totalWater == 1) {BarWaterObject.GetComponent<SpriteRenderer>().sprite = barWaterSprites[1];}
+			else if (ApplicationModel.totalWater == 2) {BarWaterObject.GetComponent<SpriteRenderer>().sprite = barWaterSprites[2];}
+			else if (ApplicationModel.totalWater == 3) {BarWaterObject.GetComponent<SpriteRenderer>().sprite = barWaterSprites[3];}
+			else if (ApplicationModel.totalWater == 4) {BarWaterObject.GetComponent<SpriteRenderer>().sprite = barWaterSprites[4];}
+			else if (ApplicationModel.totalWater == 5) {BarWaterObject.GetComponent<SpriteRenderer>().sprite = barWaterSprites[5];}
+			else if (ApplicationModel.totalWater == 6) {BarWaterObject.GetComponent<SpriteRenderer>().sprite = barWaterSprites[6];}
 
 
 			gameObject.SendMessage("HandleWaterItemCollision");
@@ -117,7 +117,6 @@ public class ItemChecker : MonoBehaviour {
 
 			// End game, call for Restart
 			GameOverObject.SetActive(true);
-			//TweetObject.SetActive(true);
 
 			gameObject.SendMessage("HandleEnergyDrinkItemCollision");
 		}
@@ -152,9 +151,10 @@ public class ItemChecker : MonoBehaviour {
 
 				// SHOW RESULTS PANEL
 
-				NextLevelObject.SetActive(true);
+				TimeUpObject.SetActive(true);
+				CheckProgressObject.SetActive(true);
 
-				gameObject.SendMessage("HandleTimeout");
+				gameObject.SendMessage("HandleTimeup");
 			}
 		}
 		return null;

@@ -50,7 +50,7 @@ public class ItemSpawn : MonoBehaviour {
 		// Randomly, something not food will spawn
 		if (Random.Range (0, 20) > 12) {elemType = 2;} // Bicycle generation
 		if (Random.Range (0, 20) > 14) {elemType = 3;} // Water generation
-		if (Random.Range (0, 20) > 17) {elemType = 4;} // Energy Drink generation
+		if (Random.Range (0, 20) > 10) {elemType = 4;} // Energy Drink generation
 
 		GameObject newObject = Instantiate (items [elemType], pos, Quaternion.Euler(new Vector3(0,0,Random.Range (-55, 55))));
 		if (elemType == 0) { // If fruit, random sprite

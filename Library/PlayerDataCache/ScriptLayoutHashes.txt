@@ -1,5 +1,5 @@
 WebGL
-2d1a75a80deeb99d7118d2ac50cf5702 Assembly-CSharp.dll:.characterSelector
+93c628b0d3eb5a31265413fd4d055fe9 Assembly-CSharp.dll:.characterSelector
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 970a95104359198fe1a98ef48655de8c UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 8144169769d51429c4aedc8b0f92d47b UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -130,7 +130,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 209ae39a72eb0b775e8dd1d3735aa187 Assembly-CSharp.dll:.PopUpTextBehaviour
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.backToStart
-1dcc5b5cb5b22eb7fbc8cdd3fa3383ee Assembly-CSharp.dll:.ItemChecker
+8bed9d3445dbc31e01b762cd14575555 Assembly-CSharp.dll:.ItemChecker
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
 2a56361227def9f56c2cf57a88b32f4d UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
 64eb32cc721b1cc68a91ed57461e188c UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
@@ -144,6 +144,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 67b7c29b249474369f8016efdef52428 Assembly-CSharp.dll:.gameOverController
-57824d982877c66e2fdcbe44335a0073 Assembly-CSharp.dll:.playerInitializer
+8d790da79758dd7cf69557524a6fa9ba Assembly-CSharp.dll:.playerInitializer
 343f9f3f245a6832e14cfe78bde81888 Assembly-CSharp.dll:.timeDestroyer
 f7c79469cc1d00d94df4d7860693b444 Assembly-CSharp.dll:.scoreHandler
+f98e39aca3c7c071b3e2b4066aab7bfa Assembly-CSharp.dll:.summaryHandler

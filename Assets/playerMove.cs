@@ -68,7 +68,7 @@ public class playerMove : MonoBehaviour {
 		}
 	}
 
-	void HandleTimeout(){
+	void HandleTimeup(){
 		audioSource.PlayOneShot (soundBad, 1.0f);
 	}
 

@@ -17,6 +17,7 @@ public class ApplicationModel {
 	static public int totalSport;
 	static public bool isJumping;
 	static public string language;
+	static public bool levelCleared;
 
 
 	static public string en_tutorial_advanceText = "Press 'N' to Advance";
@@ -46,6 +47,33 @@ public class ApplicationModel {
 	static public string de_scoreHandler_twitterText1 = "Du hast das Spiel geschlagen, indem du ... konsumiert hast ";
 	static public string de_scoreHandler_twitterText2 = " kalorien !!! #VeggieGame #ExploreAT!";
 
+	static public string en_summaryHandler_waterGoodMsgText = "You drank enough water during the week!";
+	static public string es_summaryHandler_waterGoodMsgText = "";
+	static public string de_summaryHandler_waterGoodMsgText = "";
+	static public string en_summaryHandler_waterBadMsgText = "You didn't drank enough water during the week!";
+	static public string es_summaryHandler_waterBadMsgText = "";
+	static public string de_summaryHandler_waterBadMsgText = "";
+	static public string en_summaryHandler_sportGoodMsgText = "You exercised enough during the week!";
+	static public string es_summaryHandler_sportGoodMsgText = "";
+	static public string de_summaryHandler_sportGoodMsgText = "";
+	static public string en_summaryHandler_sportBadMsgText = "You didn't exercise enough during the week!";
+	static public string es_summaryHandler_sportBadMsgText = "";
+	static public string de_summaryHandler_sportBadMsgText = "";
+	static public string en_summaryHandler_successGoodMsgText = "Press -N- to Advance to the Next Week!";
+	static public string es_summaryHandler_successGoodMsgText = "";
+	static public string de_summaryHandler_successGoodMsgText = "";
+	static public string en_summaryHandler_successBadMsgText = "Press -N- to Retry This Week!";
+	static public string es_summaryHandler_successBadMsgText = "";
+	static public string de_summaryHandler_successBadMsgText = "";
+
+	static public string en_scene_timeupText = "TIME IS UP!";
+	static public string en_scene_checkProgressText = "Press -R- to Check Your Progress";
+	static public string es_scene_timeupText = "TIEMPO!";
+	static public string es_scene_checkProgressText = "Pulsa -R- para Comprobar tu Progreso";
+	static public string de_scene_timeupText = "";
+	static public string de_scene_checkProgressText = "";
+
+
 	static public string en_scene_scoreText = " Total Calories";
 	static public string en_scene_gameOverText = "Game Over (R to Restart)";
 	static public string en_scene_levelText = "Level ";
@@ -68,6 +96,7 @@ public class ApplicationModel {
 
 	// Use this for initialization
 	void Start () {
+		levelCleared = false;
 		gameOver = false;
 		season = 0;
 		level = 1;

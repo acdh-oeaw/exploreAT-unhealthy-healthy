@@ -50,15 +50,22 @@ public class playerInitializer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.R)){
-			Time.timeScale = 1f;
-			ApplicationModel.timerSlices = 7;
-			SceneManager.LoadScene("scene"); // Regenate Scene
-		}
-		if (Input.GetKeyDown (KeyCode.N)){
-			if (ApplicationModel.level < 2) {
-				ApplicationModel.level++;
+			if (ApplicationModel.gameOver) {
+				ApplicationModel.timerSlices = 7;
+				ApplicationModel.gameOver = false;
 				SceneManager.LoadScene("scene"); // Regenate Scene
 			}
+			else {
+				SceneManager.LoadScene("summary_scene"); // Regenate Scene
+			}
+		}
+		if (Input.GetKeyDown (KeyCode.N)){
+			if (ApplicationModel.levelCleared) {
+				if (ApplicationModel.level < 2) {
+					ApplicationModel.level++;
+				}
+			}
+			SceneManager.LoadScene("scene"); // Regenate Scene
 		}
 		if (Input.GetKeyDown (KeyCode.T)){
 			ShareToTW ();
