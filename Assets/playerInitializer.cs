@@ -18,9 +18,10 @@ public class playerInitializer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Debug.Log ("Initializing Player");
-		Debug.Log (ApplicationModel.level);
+
+		// Reset timer
 		ApplicationModel.timerSlices = 7;
+
 		gameOverText = GameOverObject.GetComponent < Text >();
 		Color zm = gameOverText.color;  //  makes a new color zm
 		zm.a = 0.0f; // makes the color zm transparent
@@ -45,6 +46,8 @@ public class playerInitializer : MonoBehaviour {
 			ground.GetComponent<SpriteRenderer> ().sprite = spritesGround[1];
 			seasonBackground.GetComponent<SpriteRenderer> ().sprite = spritesBackground[1];
 		}
+
+		seasonBackground.transform.SetAsFirstSibling ();
 	}
 	
 	// Update is called once per frame

@@ -66,16 +66,43 @@ public class ItemChecker : MonoBehaviour {
 		}
 
 		if (other.gameObject.tag == "Good") {
-
 			Destroy (other.gameObject);
 		}
 
-		if (other.gameObject.tag == "Bicycle") {
+		else if (other.gameObject.tag == "FoodBreadPasta") {
+			ApplicationModel.counterBreadPasta++;
+			Destroy (other.gameObject);
+		}
+
+		else if (other.gameObject.tag == "FoodFruitVeggies") {
+			ApplicationModel.counterFruitVeggies++;
+			Destroy (other.gameObject);
+		}
+
+		else if (other.gameObject.tag == "FoodMeatFish") {
+			ApplicationModel.counterMeatFish++;
+			Destroy (other.gameObject);
+		}
+
+		else if (other.gameObject.tag == "FoodMilkCheese") {
+			ApplicationModel.counterMilkCheese++;
+			Destroy (other.gameObject);
+		}
+
+		else if (other.gameObject.tag == "FoodSweetSalty") {
+			ApplicationModel.counterSweetSalty++;
+			Destroy (other.gameObject);
+		}
+
+		else if (other.gameObject.tag == "Bicycle") {
 
 			Destroy (other.gameObject);
 
 			// Update the SPORTS BAR
 
+			if (ApplicationModel.totalSport >= 7)
+				return;
+			
 			ApplicationModel.totalSport += 1;
 
 			if (ApplicationModel.totalSport == 1) {BarSportObject.GetComponent<SpriteRenderer>().sprite = barSportSprites[1];}
@@ -89,10 +116,13 @@ public class ItemChecker : MonoBehaviour {
 			gameObject.SendMessage("HandleBicycleItemCollision");
 		}
 
-		if (other.gameObject.tag == "Water") {
+		else if (other.gameObject.tag == "Water") {
 			Destroy (other.gameObject);
 
 			// Update the WATER BAR
+
+			if (ApplicationModel.totalWater >= 6)
+				return;
 
 			ApplicationModel.totalWater += 1;
 
@@ -107,7 +137,7 @@ public class ItemChecker : MonoBehaviour {
 			gameObject.SendMessage("HandleWaterItemCollision");
 		}
 
-		if (other.gameObject.tag == "EnergyDrink") {
+		else if (other.gameObject.tag == "EnergyDrink") {
 
 			ApplicationModel.gameOver = true;
 
@@ -153,6 +183,7 @@ public class ItemChecker : MonoBehaviour {
 
 				TimeUpObject.SetActive(true);
 				CheckProgressObject.SetActive(true);
+				GameOverObject.SetActive (false);
 
 				gameObject.SendMessage("HandleTimeup");
 			}

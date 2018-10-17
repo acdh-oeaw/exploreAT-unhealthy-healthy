@@ -83,7 +83,15 @@ public class summaryHandler : MonoBehaviour {
 		}
 
 		// Check foods
-		isFoodOk = true;
+		if (ApplicationModel.counterBreadPasta >= 28 && ApplicationModel.counterBreadPasta <= 35 &&
+		    ApplicationModel.counterFruitVeggies >= 35 &&
+			ApplicationModel.counterMeatFish >= 8 && ApplicationModel.counterMeatFish <= 11 &&
+		    ApplicationModel.counterMilkCheese >= 21 &&
+		    ApplicationModel.counterSweetSalty <= 7) {
+			isFoodOk = true;
+		} else {
+			isFoodOk = false;
+		}
 
 		// Update global levelCleared var
 		if (isWaterOk && isSportOk && isFoodOk) {
@@ -122,6 +130,15 @@ public class summaryHandler : MonoBehaviour {
 					ApplicationModel.level++;
 				}
 			}
+
+			// Reset counters
+			ApplicationModel.counterBreadPasta = 0;
+			ApplicationModel.counterFruitVeggies = 0;
+			ApplicationModel.counterMeatFish = 0;
+			ApplicationModel.counterMilkCheese = 0;
+			ApplicationModel.counterSweetSalty = 0;
+
+			// Change scene
 			SceneManager.LoadScene("scene"); // Regenate Scene
 		}
 	}

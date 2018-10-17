@@ -147,4 +147,4 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 8d790da79758dd7cf69557524a6fa9ba Assembly-CSharp.dll:.playerInitializer
 343f9f3f245a6832e14cfe78bde81888 Assembly-CSharp.dll:.timeDestroyer
 f7c79469cc1d00d94df4d7860693b444 Assembly-CSharp.dll:.scoreHandler
-f98e39aca3c7c071b3e2b4066aab7bfa Assembly-CSharp.dll:.summaryHandler
+659831a65c344ac3b1b69fc869c98b1b Assembly-CSharp.dll:.summaryHandler

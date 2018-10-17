@@ -791,7 +791,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 783875628}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.04, y: -2.87, z: -2}
+  m_LocalPosition: {x: 0.04, y: -2.87, z: -5}
   m_LocalScale: {x: 1.5136253, y: 1.5136253, z: 1.5136253}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1227,25 +1227,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RightSide: {fileID: 895672040}
   items:
-  - {fileID: 1542341080850370, guid: dc5653dfd5e6a41b98a0146bd886ea99, type: 2}
-  - {fileID: 1032179400249750, guid: eb367b2a2c26e4814a8180de9a11ca78, type: 2}
+  - {fileID: 1542341080850370, guid: d60abe76db0d644adbd9abb558ab723c, type: 2}
+  - {fileID: 1542341080850370, guid: 68728a6a711894bf1a3004ed03f3dfde, type: 2}
+  - {fileID: 1542341080850370, guid: 78d4e5408bb4b464c868bc734d246466, type: 2}
+  - {fileID: 1542341080850370, guid: 214eb4edff0774eb3b58191d3ae29bed, type: 2}
+  - {fileID: 1542341080850370, guid: 65225b6a527894f1d85dd9132e855885, type: 2}
   - {fileID: 1032179400249750, guid: e73b3329760b7475394dc491fba29f49, type: 2}
   - {fileID: 1032179400249750, guid: 0679e5961b8f141cda7bf7eb7bce0f23, type: 2}
   - {fileID: 1032179400249750, guid: a440c7401e2cb4ed78e671994f5e6679, type: 2}
   startDelay: 0
   repeatRate: 0
-  fruitSprites:
-  - {fileID: 21300000, guid: 55a7cf4b9531b4c7a936219797956d7a, type: 3}
-  - {fileID: 21300002, guid: 55a7cf4b9531b4c7a936219797956d7a, type: 3}
-  fastFoodSprites:
-  - {fileID: 21300000, guid: 5eff34b177cd94fd985ad49035bbd898, type: 3}
-  - {fileID: 21300002, guid: 5eff34b177cd94fd985ad49035bbd898, type: 3}
   bicycleSprites:
   - {fileID: 21300000, guid: eb24ad12f5c33472ca729b287620c944, type: 3}
   waterSprites:
   - {fileID: 21300000, guid: 781add8cf17774f99bff8854063d98d3, type: 3}
   energyDrinkSprites:
   - {fileID: 21300000, guid: 6fbe3c587cac24e65a910c69cac2b7ea, type: 3}
+  foodBreadPastaSprites:
+  - {fileID: 21300000, guid: ba3b2cb1311364276bbf0609b3059ab5, type: 3}
+  - {fileID: 21300002, guid: ba3b2cb1311364276bbf0609b3059ab5, type: 3}
+  - {fileID: 21300004, guid: ba3b2cb1311364276bbf0609b3059ab5, type: 3}
+  foodFruitVeggiesSprites:
+  - {fileID: 21300000, guid: 8516db1a3fc91435e9b244722a2aaf6c, type: 3}
+  - {fileID: 21300002, guid: 8516db1a3fc91435e9b244722a2aaf6c, type: 3}
+  - {fileID: 21300004, guid: 8516db1a3fc91435e9b244722a2aaf6c, type: 3}
+  foodMeatFishSprites:
+  - {fileID: 21300000, guid: 5e801be4f841d4670ab312e410d16e69, type: 3}
+  - {fileID: 21300002, guid: 5e801be4f841d4670ab312e410d16e69, type: 3}
+  - {fileID: 21300004, guid: 5e801be4f841d4670ab312e410d16e69, type: 3}
+  foodMilkCheeseSprites:
+  - {fileID: 21300000, guid: d54fb279b167e418e91dd7bad5964a07, type: 3}
+  - {fileID: 21300002, guid: d54fb279b167e418e91dd7bad5964a07, type: 3}
+  - {fileID: 21300004, guid: d54fb279b167e418e91dd7bad5964a07, type: 3}
+  foodSweetSaltySprites:
+  - {fileID: 21300000, guid: 7b39eb6b63e0d42678dedfb6022a3260, type: 3}
+  - {fileID: 21300002, guid: 7b39eb6b63e0d42678dedfb6022a3260, type: 3}
 --- !u!4 &1279513824
 Transform:
   m_ObjectHideFlags: 0
@@ -1253,7 +1269,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1279513822}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8, y: 7, z: -1}
+  m_LocalPosition: {x: -8, y: 7, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1971,7 +1987,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1975497157}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.22, y: -3.35, z: -3}
+  m_LocalPosition: {x: -0.22, y: -3.35, z: -6}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children: []
   m_Father: {fileID: 0}

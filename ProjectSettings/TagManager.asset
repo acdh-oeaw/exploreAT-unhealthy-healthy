@@ -16,6 +16,11 @@ TagManager:
   - ItemChanger
   - Water
   - EnergyDrink
+  - FoodBreadPasta
+  - FoodFruitVeggies
+  - FoodMeatFish
+  - FoodMilkCheese
+  - FoodSweetSalty
   layers:
   - Default
   - TransparentFX

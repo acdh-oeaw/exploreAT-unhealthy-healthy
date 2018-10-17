@@ -19,6 +19,11 @@ public class ApplicationModel {
 	static public string language;
 	static public bool levelCleared;
 
+	static public int counterBreadPasta;
+	static public int counterFruitVeggies;
+	static public int counterMeatFish;
+	static public int counterMilkCheese;
+	static public int counterSweetSalty;
 
 	static public string en_tutorial_advanceText = "Press 'N' to Advance";
 	static public string es_tutorial_advanceText = "Pulsa 'N' para avanzar";
@@ -75,7 +80,7 @@ public class ApplicationModel {
 
 
 	static public string en_scene_scoreText = " Total Calories";
-	static public string en_scene_gameOverText = "Game Over (R to Restart)";
+	static public string en_scene_gameOverText = "Oh no! You Caught an Energy Drink (R to Restart)";
 	static public string en_scene_levelText = "Level ";
 	static public string en_scene_nextLevelText = "Great! (N to Advance)";
 	static public string en_scene_popUpText = " Calories !!!";
@@ -100,6 +105,11 @@ public class ApplicationModel {
 		gameOver = false;
 		season = 0;
 		level = 1;
+		counterBreadPasta = 0;
+		counterFruitVeggies = 0;
+		counterMeatFish = 0;
+		counterMilkCheese = 0;
+		counterSweetSalty = 0;
 		tutorialState = 0;
 		spriteGender = 0;
 		spriteNum = 0;
