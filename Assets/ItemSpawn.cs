@@ -46,19 +46,7 @@ public class ItemSpawn : MonoBehaviour {
 
 		while(true)
 		{
-			if (ApplicationModel.level == 1) {
-				startDelay = 0.5f;
-				repeatRate = 0.4f;
-			}
-			else if (ApplicationModel.level == 2) {
-				startDelay = 0.5f;
-				repeatRate = 0.3f;
-			}
-			else if (ApplicationModel.level == 3) {
-				startDelay = 0.5f;
-				repeatRate = 0.2f;
-			}
-
+			repeatRate = 0.5f-(float)(ApplicationModel.level/10); // Easier as the user advances
 			yield return new WaitForSeconds(repeatRate);
 			Spawn();
 		}
