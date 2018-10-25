@@ -19,11 +19,18 @@ public class ApplicationModel {
 	static public string language;
 	static public bool levelCleared;
 
-	static public int counterBreadPasta;
-	static public int counterFruitVeggies;
-	static public int counterMeatFish;
-	static public int counterMilkCheese;
-	static public int counterSweetSalty;
+	/*
+	static public int counterBreadPasta, counterBreadPastaMin = 28, counterBreadPastaMax = 35;
+	static public int counterFruitVeggies, counterFruitVeggiesValue = 35;
+	static public int counterMeatFish, counterMeatFishMin = 8, counterMeatFishMax = 11;
+	static public int counterMilkCheese, counterMilkCheeseValue = 21;
+	static public int counterSweetSalty, counterSweetSaltyValue = 7;
+	*/
+	static public int counterBreadPasta, counterBreadPastaMin = 1, counterBreadPastaMax = 10;
+	static public int counterFruitVeggies, counterFruitVeggiesValue = 5;
+	static public int counterMeatFish, counterMeatFishMin = 5, counterMeatFishMax = 10;
+	static public int counterMilkCheese, counterMilkCheeseValue = 5;
+	static public int counterSweetSalty, counterSweetSaltyValue = 3;
 
 	static public string en_tutorial_advanceText = "Press 'N' to Advance";
 	static public string es_tutorial_advanceText = "Pulsa 'N' para avanzar";
@@ -70,6 +77,37 @@ public class ApplicationModel {
 	static public string en_summaryHandler_successBadMsgText = "Press -N- to Retry This Week!";
 	static public string es_summaryHandler_successBadMsgText = "";
 	static public string de_summaryHandler_successBadMsgText = "";
+	static public string en_summaryHandler_breadPastaMsgTextGood = "You Ate Enough Pasta and Bread!";
+	static public string es_summaryHandler_breadPastaMsgTextGood = "";
+	static public string de_summaryHandler_breadPastaMsgTextGood = "";
+	static public string en_summaryHandler_breadPastaMsgTextBad = "You Did Not Eat Enough Pasta and Bread!";
+	static public string es_summaryHandler_breadPastaMsgTextBad = "";
+	static public string de_summaryHandler_breadPastaMsgTextBad = "";
+	static public string en_summaryHandler_fruitVeggiesMsgTextGood = "You Ate Enough Fruit and Veggies!";
+	static public string es_summaryHandler_fruitVeggiesMsgTextGood = "";
+	static public string de_summaryHandler_fruitVeggiesMsgTextGood = "";
+	static public string en_summaryHandler_fruitVeggiesMsgTextBad = "You Did Not Eat Enough Fruit and Veggies!";
+	static public string es_summaryHandler_fruitVeggiesMsgTextBad = "";
+	static public string de_summaryHandler_fruitVeggiesMsgTextBad = "";
+	static public string en_summaryHandler_meatFishMsgTextGood = "You Ate Enough Meat and Fish!";
+	static public string es_summaryHandler_meatFishMsgTextGood = "";
+	static public string de_summaryHandler_meatFishMsgTextGood = "";
+	static public string en_summaryHandler_meatFishMsgTextBad = "You Did Not Eat Enough Meat and Fish!";
+	static public string es_summaryHandler_meatFishMsgTextBad = "";
+	static public string de_summaryHandler_meatFishMsgTextBad = "";
+	static public string en_summaryHandler_milkCheeseMsgTextGood = "You Ate Enough Dairy Products!";
+	static public string es_summaryHandler_milkCheeseMsgTextGood = "";
+	static public string de_summaryHandler_milkCheeseMsgTextGood = "";
+	static public string en_summaryHandler_milkCheeseMsgTextBad = "You Did Not Eat Enough Dairy Products!";
+	static public string es_summaryHandler_milkCheeseMsgTextBad = "";
+	static public string de_summaryHandler_milkCheeseMsgTextBad = "";
+	static public string en_summaryHandler_sweetSaltyMsgTextGood = "You Did Not Eat Too Many Sweets!";
+	static public string es_summaryHandler_sweetSaltyMsgTextGood = "";
+	static public string de_summaryHandler_sweetSaltyMsgTextGood = "";
+	static public string en_summaryHandler_sweetSaltyMsgTextBad = "You Eat Too Many Sweets!";
+	static public string es_summaryHandler_sweetSaltyMsgTextBad = "";
+	static public string de_summaryHandler_sweetSaltyMsgTextBad = "";
+
 
 	static public string en_scene_timeupText = "TIME IS UP!";
 	static public string en_scene_checkProgressText = "Press -R- to Check Your Progress";
@@ -105,17 +143,17 @@ public class ApplicationModel {
 		gameOver = false;
 		season = 0;
 		level = 1;
-		counterBreadPasta = 0;
-		counterFruitVeggies = 0;
-		counterMeatFish = 0;
-		counterMilkCheese = 0;
-		counterSweetSalty = 0;
 		tutorialState = 0;
 		spriteGender = 0;
 		spriteNum = 0;
 		timerSlices = 7;
 		totalTime = 0f;
 		totalCalories = 0;
+		counterBreadPasta = 0;
+		counterFruitVeggies = 0;
+		counterMeatFish = 0;
+		counterMilkCheese = 0;
+		counterSweetSalty = 0;
 		totalWater = 0;
 		totalSport = 0;
 		isJumping = false;

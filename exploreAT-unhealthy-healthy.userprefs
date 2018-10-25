@@ -1,11 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/ItemSpawn.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/summaryHandler.cs">
     <Files>
-      <File FileName="Assets/ApplicationModel.cs" Line="64" Column="48" />
-      <File FileName="Assets/summaryHandler.cs" Line="96" Column="7" />
-      <File FileName="Assets/ItemSpawn.cs" Line="47" Column="145" />
-      <File FileName="Assets/ItemChecker.cs" Line="119" Column="35" />
+      <File FileName="Assets/summaryHandler.cs" Line="276" Column="41" />
+      <File FileName="Assets/ApplicationModel.cs" Line="1" Column="1" />
+      <File FileName="Assets/mouseOverSummary.cs" Line="1" Column="1" />
+      <File FileName="Assets/playerMove.cs" Line="1" Column="1" />
+      <File FileName="Assets/ItemSpawn.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

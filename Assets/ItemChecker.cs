@@ -13,12 +13,24 @@ public class ItemChecker : MonoBehaviour {
 		public GameObject BarSportObject;
 		public GameObject TimerObject;
 
+		public GameObject checkBreadPastaObject;
+		public GameObject checkFruitVeggiesObject;
+		public GameObject checkMeatFishObject;
+		public GameObject checkMilkCheeseObject;
+		public GameObject checkSweetSaltyObject;
+
 	public GameObject GameOverObject;
 	public GameObject LevelObject;
 
 		public Sprite[] barWaterSprites;
 		public Sprite[] barSportSprites;
 		public Sprite[] timerSprites;
+
+		public Sprite[] checkBreadPastaSprites;
+		public Sprite[] checkFruitVeggiesSprites;
+		public Sprite[] checkMeatFishSprites;
+		public Sprite[] checkMilkCheeseSprites;
+		public Sprite[] checkSweetSaltySprites;
 
 	public GameObject TimeUpObject;
 	public GameObject CheckProgressObject;
@@ -61,36 +73,60 @@ public class ItemChecker : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D other) { 
 
-		if (TimeUpObject.activeSelf) {
+		if (TimeUpObject.activeSelf || GameOverObject.activeSelf) {
 			return;
 		}
 
 		if (other.gameObject.tag == "Good") {
 			Destroy (other.gameObject);
 		}
-
 		else if (other.gameObject.tag == "FoodBreadPasta") {
 			ApplicationModel.counterBreadPasta++;
+			if (ApplicationModel.counterBreadPasta >= ApplicationModel.counterBreadPastaMin && ApplicationModel.counterBreadPasta <= ApplicationModel.counterBreadPastaMax) {
+				checkBreadPastaObject.GetComponent<SpriteRenderer> ().sprite = checkBreadPastaSprites [0];
+			} else {
+				checkBreadPastaObject.GetComponent<SpriteRenderer> ().sprite = checkBreadPastaSprites [1];
+			}
 			Destroy (other.gameObject);
 		}
 
 		else if (other.gameObject.tag == "FoodFruitVeggies") {
 			ApplicationModel.counterFruitVeggies++;
+			if (ApplicationModel.counterFruitVeggies >= ApplicationModel.counterFruitVeggiesValue) {
+				checkFruitVeggiesObject.GetComponent<SpriteRenderer> ().sprite = checkFruitVeggiesSprites [0];
+			} else {
+				checkFruitVeggiesObject.GetComponent<SpriteRenderer> ().sprite = checkFruitVeggiesSprites [1];
+			}
 			Destroy (other.gameObject);
 		}
 
 		else if (other.gameObject.tag == "FoodMeatFish") {
 			ApplicationModel.counterMeatFish++;
+			if (ApplicationModel.counterMeatFish >= ApplicationModel.counterMeatFishMin && ApplicationModel.counterMeatFish <= ApplicationModel.counterMeatFishMax) {
+				checkMeatFishObject.GetComponent<SpriteRenderer> ().sprite = checkMeatFishSprites [0];
+			} else {
+				checkMeatFishObject.GetComponent<SpriteRenderer> ().sprite = checkMeatFishSprites [1];
+			}
 			Destroy (other.gameObject);
 		}
 
 		else if (other.gameObject.tag == "FoodMilkCheese") {
 			ApplicationModel.counterMilkCheese++;
+			if (ApplicationModel.counterMilkCheese >= ApplicationModel.counterMilkCheeseValue) {
+				checkMilkCheeseObject.GetComponent<SpriteRenderer> ().sprite = checkMilkCheeseSprites [0];
+			} else {
+				checkMilkCheeseObject.GetComponent<SpriteRenderer> ().sprite = checkMilkCheeseSprites [1];
+			}
 			Destroy (other.gameObject);
 		}
 
 		else if (other.gameObject.tag == "FoodSweetSalty") {
 			ApplicationModel.counterSweetSalty++;
+			if (ApplicationModel.counterSweetSalty <= ApplicationModel.counterSweetSaltyValue) {
+				checkSweetSaltyObject.GetComponent<SpriteRenderer> ().sprite = checkSweetSaltySprites [0];
+			} else {
+				checkSweetSaltyObject.GetComponent<SpriteRenderer> ().sprite = checkSweetSaltySprites [1];
+			}
 			Destroy (other.gameObject);
 		}
 

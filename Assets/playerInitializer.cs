@@ -54,7 +54,14 @@ public class playerInitializer : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.R)){
 			if (ApplicationModel.gameOver) {
-				ApplicationModel.timerSlices = 7;
+				ApplicationModel.counterBreadPasta = 0;
+				ApplicationModel.counterFruitVeggies = 0;
+				ApplicationModel.counterMeatFish = 0;
+				ApplicationModel.counterMilkCheese = 0;
+				ApplicationModel.counterSweetSalty = 0;
+				ApplicationModel.totalWater = 0;
+				ApplicationModel.totalSport = 0;
+				ApplicationModel.isJumping = false;
 				ApplicationModel.gameOver = false;
 				SceneManager.LoadScene("scene"); // Regenate Scene
 			}

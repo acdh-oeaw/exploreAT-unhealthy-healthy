@@ -22,7 +22,7 @@ public class gameOverController : MonoBehaviour {
 		}
 		if(ApplicationModel.timerSlices <= 0) {
 			shown = false;
-			gameOverObject.SetActive (true);
+			gameOverObject.SetActive (false);
 		}
 	}
 }

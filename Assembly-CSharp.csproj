@@ -61,6 +61,7 @@
      <Compile Include="Assets\HorizontalSpawn.cs" />
      <Compile Include="Assets\ItemChecker.cs" />
      <Compile Include="Assets\ItemSpawn.cs" />
+     <Compile Include="Assets\mouseOverSummary.cs" />
      <Compile Include="Assets\playerInitializer.cs" />
      <Compile Include="Assets\playerMove.cs" />
      <Compile Include="Assets\PopUpTextBehaviour.cs" />

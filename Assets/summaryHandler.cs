@@ -17,16 +17,39 @@ public class summaryHandler : MonoBehaviour {
 	public Sprite[] spritesSportBar;
 	public Text sportMsg;
 
+	public GameObject checkBreadPastaObject;
+	public GameObject checkFruitVeggiesObject;
+	public GameObject checkMeatFishObject;
+	public GameObject checkMilkCheeseObject;
+	public GameObject checkSweetSaltyObject;
+	public Sprite[] checkBreadPastaSprites;
+	public Sprite[] checkFruitVeggiesSprites;
+	public Sprite[] checkMeatFishSprites;
+	public Sprite[] checkMilkCheeseSprites;
+	public Sprite[] checkSweetSaltySprites;
+	public Text checkBreadPastaMsg;
+	public Text checkFruitVeggiesMsg;
+	public Text checkMeatFishMsg;
+	public Text checkMilkCheeseMsg;
+	public Text checkSweetSaltyMsg;
+
 	public GameObject successMsg;
 
 	// Use this for initialization
 	void Start () {
 
+		// Reset stuff
 		successMsg.SetActive (false);
 
 		bool isWaterOk = false;
 		bool isSportOk = false;
 		bool isFoodOk = false;
+
+		checkBreadPastaObject.GetComponent<SpriteRenderer> ().sprite = checkBreadPastaSprites [1];
+		checkFruitVeggiesObject.GetComponent<SpriteRenderer> ().sprite = checkFruitVeggiesSprites [1];
+		checkMeatFishObject.GetComponent<SpriteRenderer> ().sprite = checkMeatFishSprites [1];
+		checkMilkCheeseObject.GetComponent<SpriteRenderer> ().sprite = checkMilkCheeseSprites [1];
+		checkSweetSaltyObject.GetComponent<SpriteRenderer> ().sprite = checkSweetSaltySprites [0];
 
 		if (ApplicationModel.language == null)
 			ApplicationModel.language = "en";
@@ -83,14 +106,130 @@ public class summaryHandler : MonoBehaviour {
 		}
 
 		// Check foods
-		if (ApplicationModel.counterBreadPasta >= 28 && ApplicationModel.counterBreadPasta <= 35 &&
-		    ApplicationModel.counterFruitVeggies >= 35 &&
-			ApplicationModel.counterMeatFish >= 8 && ApplicationModel.counterMeatFish <= 11 &&
-		    ApplicationModel.counterMilkCheese >= 21 &&
-		    ApplicationModel.counterSweetSalty <= 7) {
+		if (ApplicationModel.counterBreadPasta >= ApplicationModel.counterBreadPastaMin && ApplicationModel.counterBreadPasta <= ApplicationModel.counterBreadPastaMax &&
+			ApplicationModel.counterFruitVeggies >= ApplicationModel.counterFruitVeggiesValue &&
+			ApplicationModel.counterMeatFish >= ApplicationModel.counterMeatFishMin && ApplicationModel.counterMeatFish <= ApplicationModel.counterMeatFishMax &&
+			ApplicationModel.counterMilkCheese >= ApplicationModel.counterMilkCheeseValue &&
+			ApplicationModel.counterSweetSalty <= ApplicationModel.counterSweetSaltyValue) {
 			isFoodOk = true;
 		} else {
 			isFoodOk = false;
+		}
+
+		// Change food icons
+		if (ApplicationModel.counterBreadPasta >= ApplicationModel.counterBreadPastaMin && ApplicationModel.counterBreadPasta <= ApplicationModel.counterBreadPastaMax) {
+			checkBreadPastaObject.GetComponent<SpriteRenderer> ().sprite = checkBreadPastaSprites [0];
+		}
+		if (ApplicationModel.counterFruitVeggies >= ApplicationModel.counterFruitVeggiesValue){
+			checkFruitVeggiesObject.GetComponent<SpriteRenderer> ().sprite = checkFruitVeggiesSprites [0];
+		}
+		if (ApplicationModel.counterMeatFish >= ApplicationModel.counterMeatFishMin && ApplicationModel.counterMeatFish <= ApplicationModel.counterMeatFishMax){
+			checkMeatFishObject.GetComponent<SpriteRenderer> ().sprite = checkMeatFishSprites [0];
+		}
+		if (ApplicationModel.counterMilkCheese >= ApplicationModel.counterMilkCheeseValue){
+			checkMilkCheeseObject.GetComponent<SpriteRenderer> ().sprite = checkMilkCheeseSprites [0];
+		}
+		if (ApplicationModel.counterSweetSalty <= ApplicationModel.counterSweetSaltyValue){
+			checkSweetSaltyObject.GetComponent<SpriteRenderer> ().sprite = checkSweetSaltySprites [0];
+		}
+
+		// Change food texts
+		if (ApplicationModel.counterBreadPasta >= ApplicationModel.counterBreadPastaMin && ApplicationModel.counterBreadPasta <= ApplicationModel.counterBreadPastaMax) {
+			if (ApplicationModel.language == "en") {
+				checkBreadPastaMsg.GetComponent<Text> ().text = ApplicationModel.en_summaryHandler_breadPastaMsgTextGood;
+				checkBreadPastaMsg.GetComponent<Text> ().text += " (Ate "+ApplicationModel.counterBreadPasta+" units, need between "+ApplicationModel.counterBreadPastaMin+" and "+ApplicationModel.counterBreadPastaMax+")";
+				} else if (ApplicationModel.language == "es") {
+				checkBreadPastaMsg.GetComponent<Text> ().text = ApplicationModel.es_summaryHandler_breadPastaMsgTextGood;
+			} else if (ApplicationModel.language == "de") {
+				checkBreadPastaMsg.GetComponent<Text> ().text = ApplicationModel.de_summaryHandler_breadPastaMsgTextGood;
+			}
+		} else {
+			if (ApplicationModel.language == "en") {
+				checkBreadPastaMsg.GetComponent<Text> ().text = ApplicationModel.en_summaryHandler_breadPastaMsgTextBad;
+				checkBreadPastaMsg.GetComponent<Text> ().text += " (Ate "+ApplicationModel.counterBreadPasta+"units, need between "+ApplicationModel.counterBreadPastaMin+" and "+ApplicationModel.counterBreadPastaMax+")";
+			} else if (ApplicationModel.language == "es") {
+				checkBreadPastaMsg.GetComponent<Text> ().text = ApplicationModel.es_summaryHandler_breadPastaMsgTextBad;
+			} else if (ApplicationModel.language == "de") {
+				checkBreadPastaMsg.GetComponent<Text> ().text = ApplicationModel.de_summaryHandler_breadPastaMsgTextBad;
+			}
+		}
+
+		if (ApplicationModel.counterFruitVeggies >= ApplicationModel.counterFruitVeggiesValue) {
+			if (ApplicationModel.language == "en") {
+				checkFruitVeggiesMsg.GetComponent<Text> ().text = ApplicationModel.en_summaryHandler_fruitVeggiesMsgTextGood;
+				checkFruitVeggiesMsg.GetComponent<Text> ().text += " (Ate "+ApplicationModel.counterFruitVeggies+" units, need at least "+ApplicationModel.counterFruitVeggiesValue+")";
+			} else if (ApplicationModel.language == "es") {
+				checkFruitVeggiesMsg.GetComponent<Text> ().text = ApplicationModel.es_summaryHandler_fruitVeggiesMsgTextGood;
+			} else if (ApplicationModel.language == "de") {
+				checkFruitVeggiesMsg.GetComponent<Text> ().text = ApplicationModel.de_summaryHandler_fruitVeggiesMsgTextGood;
+			}
+		} else {
+			if (ApplicationModel.language == "en") {
+				checkFruitVeggiesMsg.GetComponent<Text> ().text = ApplicationModel.en_summaryHandler_fruitVeggiesMsgTextBad;
+				checkFruitVeggiesMsg.GetComponent<Text> ().text += " (Ate "+ApplicationModel.counterFruitVeggies+" units, need at least "+ApplicationModel.counterFruitVeggiesValue+")";
+			} else if (ApplicationModel.language == "es") {
+				checkFruitVeggiesMsg.GetComponent<Text> ().text = ApplicationModel.es_summaryHandler_fruitVeggiesMsgTextBad;
+			} else if (ApplicationModel.language == "de") {
+				checkFruitVeggiesMsg.GetComponent<Text> ().text = ApplicationModel.de_summaryHandler_fruitVeggiesMsgTextBad;
+			}
+		}
+
+		if (ApplicationModel.counterMeatFish >= ApplicationModel.counterMeatFishMin && ApplicationModel.counterMeatFish <= ApplicationModel.counterMeatFishMax){
+			if (ApplicationModel.language == "en") {
+				checkMeatFishMsg.GetComponent<Text> ().text = ApplicationModel.en_summaryHandler_meatFishMsgTextGood;
+				checkMeatFishMsg.GetComponent<Text> ().text += " (Ate "+ApplicationModel.counterMeatFish+" units, need between "+ApplicationModel.counterMeatFishMin+" and "+ApplicationModel.counterMeatFishMax+")";
+			} else if (ApplicationModel.language == "es") {
+				checkMeatFishMsg.GetComponent<Text> ().text = ApplicationModel.es_summaryHandler_meatFishMsgTextGood;
+			} else if (ApplicationModel.language == "de") {
+				checkMeatFishMsg.GetComponent<Text> ().text = ApplicationModel.de_summaryHandler_meatFishMsgTextGood;
+			}
+		} else {
+			if (ApplicationModel.language == "en") {
+				checkMeatFishMsg.GetComponent<Text> ().text = ApplicationModel.en_summaryHandler_meatFishMsgTextBad;
+				checkMeatFishMsg.GetComponent<Text> ().text += " (Ate "+ApplicationModel.counterMeatFish+" units, need between "+ApplicationModel.counterMeatFishMin+" and "+ApplicationModel.counterMeatFishMax+")";
+			} else if (ApplicationModel.language == "es") {
+				checkMeatFishMsg.GetComponent<Text> ().text = ApplicationModel.es_summaryHandler_meatFishMsgTextBad;
+			} else if (ApplicationModel.language == "de") {
+				checkMeatFishMsg.GetComponent<Text> ().text = ApplicationModel.de_summaryHandler_meatFishMsgTextBad;
+			}
+		}
+		if (ApplicationModel.counterMilkCheese >= ApplicationModel.counterMilkCheeseValue){
+			if (ApplicationModel.language == "en") {
+				checkMilkCheeseMsg.GetComponent<Text> ().text = ApplicationModel.en_summaryHandler_milkCheeseMsgTextGood;
+				checkMilkCheeseMsg.GetComponent<Text> ().text += " (Ate "+ApplicationModel.counterMilkCheese+" units, need at least "+ApplicationModel.counterMilkCheeseValue+")";
+			} else if (ApplicationModel.language == "es") {
+				checkMilkCheeseMsg.GetComponent<Text> ().text = ApplicationModel.es_summaryHandler_milkCheeseMsgTextGood;
+			} else if (ApplicationModel.language == "de") {
+				checkMilkCheeseMsg.GetComponent<Text> ().text = ApplicationModel.de_summaryHandler_milkCheeseMsgTextGood;
+			}
+		} else {
+			if (ApplicationModel.language == "en") {
+				checkMilkCheeseMsg.GetComponent<Text> ().text = ApplicationModel.en_summaryHandler_milkCheeseMsgTextBad;
+				checkMilkCheeseMsg.GetComponent<Text> ().text += " (Ate "+ApplicationModel.counterMilkCheese+" units, need at least "+ApplicationModel.counterMilkCheeseValue+")";
+			} else if (ApplicationModel.language == "es") {
+				checkMilkCheeseMsg.GetComponent<Text> ().text = ApplicationModel.es_summaryHandler_milkCheeseMsgTextBad;
+			} else if (ApplicationModel.language == "de") {
+				checkMilkCheeseMsg.GetComponent<Text> ().text = ApplicationModel.de_summaryHandler_milkCheeseMsgTextBad;
+			}
+		}
+		if (ApplicationModel.counterSweetSalty <= ApplicationModel.counterSweetSaltyValue){
+			if (ApplicationModel.language == "en") {
+				checkSweetSaltyMsg.GetComponent<Text> ().text = ApplicationModel.en_summaryHandler_sweetSaltyMsgTextGood;
+				checkSweetSaltyMsg.GetComponent<Text> ().text += " (Ate "+ApplicationModel.counterSweetSalty+" units, need no more than "+ApplicationModel.counterSweetSaltyValue+")";
+			} else if (ApplicationModel.language == "es") {
+				checkSweetSaltyMsg.GetComponent<Text> ().text = ApplicationModel.es_summaryHandler_sweetSaltyMsgTextGood;
+			} else if (ApplicationModel.language == "de") {
+				checkSweetSaltyMsg.GetComponent<Text> ().text = ApplicationModel.de_summaryHandler_sweetSaltyMsgTextGood;
+			}
+		} else {
+			if (ApplicationModel.language == "en") {
+				checkSweetSaltyMsg.GetComponent<Text> ().text = ApplicationModel.en_summaryHandler_sweetSaltyMsgTextBad;
+				checkSweetSaltyMsg.GetComponent<Text> ().text += " (Ate "+ApplicationModel.counterSweetSalty+" units, need no more than "+ApplicationModel.counterSweetSaltyValue+")";
+			} else if (ApplicationModel.language == "es") {
+				checkSweetSaltyMsg.GetComponent<Text> ().text = ApplicationModel.es_summaryHandler_sweetSaltyMsgTextBad;
+			} else if (ApplicationModel.language == "de") {
+				checkSweetSaltyMsg.GetComponent<Text> ().text = ApplicationModel.de_summaryHandler_sweetSaltyMsgTextBad;
+			}
 		}
 
 		// Update global levelCleared var
