@@ -34,12 +34,25 @@ public class summaryHandler : MonoBehaviour {
 	public Text checkSweetSaltyMsg;
 
 	public GameObject successMsg;
+	public GameObject infoMsg;
 
 	// Use this for initialization
 	void Start () {
 
+		ApplicationModel.maxLevel = 4;
+
+		// Info MSG
+		if (ApplicationModel.language == "en") {
+			infoMsg.GetComponent<Text> ().text = ApplicationModel.en_summaryHandler_infoMsgText;
+		} else if (ApplicationModel.language == "es") {
+			infoMsg.GetComponent<Text> ().text = ApplicationModel.es_summaryHandler_infoMsgText;
+		} else if (ApplicationModel.language == "de") {
+			infoMsg.GetComponent<Text> ().text = ApplicationModel.de_summaryHandler_infoMsgText;
+		}
+
 		// Reset stuff
 		successMsg.SetActive (false);
+		infoMsg.SetActive (true);
 
 		bool isWaterOk = false;
 		bool isSportOk = false;
@@ -259,26 +272,40 @@ public class summaryHandler : MonoBehaviour {
 		}
 
 		successMsg.SetActive (true);
+
+		if (ApplicationModel.levelCleared) {
+				ApplicationModel.level++;
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.N)){
-			if (ApplicationModel.levelCleared) {
-				if (ApplicationModel.level < 2) {
-					ApplicationModel.level++;
-				}
+			Debug.Log ("N pressed");
+			Debug.Log (ApplicationModel.level);
+			Debug.Log (ApplicationModel.maxLevel);
+			Debug.Log (ApplicationModel.levelCleared);
+
+			if(ApplicationModel.level <= ApplicationModel.maxLevel){
+					// Reset stuff
+					ApplicationModel.counterBreadPasta = 0;
+					ApplicationModel.counterFruitVeggies = 0;
+					ApplicationModel.counterMeatFish = 0;
+					ApplicationModel.counterMilkCheese = 0;
+					ApplicationModel.counterSweetSalty = 0;
+					ApplicationModel.totalWater = 0;
+					ApplicationModel.totalSport = 0;
+					ApplicationModel.isJumping = false;
+					ApplicationModel.gameOver = false;
+
+					// Change scene to gameplay
+					SceneManager.LoadScene("scene"); // Regenerate Scene
 			}
-
-			// Reset counters
-			ApplicationModel.counterBreadPasta = 0;
-			ApplicationModel.counterFruitVeggies = 0;
-			ApplicationModel.counterMeatFish = 0;
-			ApplicationModel.counterMilkCheese = 0;
-			ApplicationModel.counterSweetSalty = 0;
-
-			// Change scene
-			SceneManager.LoadScene("scene"); // Regenate Scene
+			// After 4 levels the game is finished
+			else {
+				// Change scene to game's end
+				SceneManager.LoadScene("final_scene");
+			}
 		}
 	}
 }

@@ -8,6 +8,12 @@ public class playerInitializer : MonoBehaviour {
 
 	public GameObject GameOverObject; 
 	Text gameOverText;
+	public GameObject PopUpObject; 
+	Text popUpText;
+	public GameObject TimeUpObject; 
+	Text timeUpText;
+	public GameObject CheckProgressObject; 
+	Text checkProgressText;
 	public GameObject character;
 	public Sprite[] spritesBoys;
 	public Sprite[] spritesGirls;
@@ -48,38 +54,60 @@ public class playerInitializer : MonoBehaviour {
 		}
 
 		seasonBackground.transform.SetAsFirstSibling ();
+
+		// Message language change
+		if (string.Equals(SceneManager.GetActiveScene ().name,"scene")) {
+			if (ApplicationModel.language == "en") {
+				gameOverText.text = ApplicationModel.en_scene_gameOverText;
+				timeUpText.text = ApplicationModel.en_scene_timeupText;
+				checkProgressText.text = ApplicationModel.en_scene_checkProgressText;
+			}
+			else if (ApplicationModel.language == "es") {
+				gameOverText.text = ApplicationModel.es_scene_gameOverText;
+				timeUpText.text = ApplicationModel.es_scene_timeupText;
+				checkProgressText.text = ApplicationModel.es_scene_checkProgressText;
+			}
+			else if (ApplicationModel.language == "de") {
+				gameOverText.text = ApplicationModel.de_scene_gameOverText;
+				timeUpText.text = ApplicationModel.de_scene_timeupText;
+				checkProgressText.text = ApplicationModel.de_scene_checkProgressText;
+			}
+			GameOverObject.GetComponent < Text > ().text = gameOverText.text;
+			PopUpObject.GetComponent < Text > ().text = popUpText.text;
+			CheckProgressObject.GetComponent < Text > ().text = checkProgressText.text;
+			TimeUpObject.GetComponent < Text > ().text = timeUpText.text;
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.R)){
-			if (ApplicationModel.gameOver) {
-				ApplicationModel.counterBreadPasta = 0;
-				ApplicationModel.counterFruitVeggies = 0;
-				ApplicationModel.counterMeatFish = 0;
-				ApplicationModel.counterMilkCheese = 0;
-				ApplicationModel.counterSweetSalty = 0;
-				ApplicationModel.totalWater = 0;
-				ApplicationModel.totalSport = 0;
-				ApplicationModel.isJumping = false;
-				ApplicationModel.gameOver = false;
-				SceneManager.LoadScene("scene"); // Regenate Scene
-			}
-			else {
-				SceneManager.LoadScene("summary_scene"); // Regenate Scene
-			}
-		}
-		if (Input.GetKeyDown (KeyCode.N)){
-			if (ApplicationModel.levelCleared) {
-				if (ApplicationModel.level < 2) {
-					ApplicationModel.level++;
+		if (Input.GetKeyDown (KeyCode.N)) {
+			// Game scene actions
+			if (string.Equals (SceneManager.GetActiveScene ().name, "scene")) {
+				// If we've lost (Energy drink), restart
+				if (ApplicationModel.gameOver) {
+					ApplicationModel.counterBreadPasta = 0;
+					ApplicationModel.counterFruitVeggies = 0;
+					ApplicationModel.counterMeatFish = 0;
+					ApplicationModel.counterMilkCheese = 0;
+					ApplicationModel.counterSweetSalty = 0;
+					ApplicationModel.totalWater = 0;
+					ApplicationModel.totalSport = 0;
+					ApplicationModel.isJumping = false;
+					ApplicationModel.gameOver = false;
+					SceneManager.LoadScene ("scene"); // Regenerate Scene
+				}
+				// If time is up, go to Summary
+				else if (ApplicationModel.timerSlices == 0) {
+					SceneManager.LoadScene ("summary_scene");
 				}
 			}
-			SceneManager.LoadScene("scene"); // Regenate Scene
 		}
+		/*
 		if (Input.GetKeyDown (KeyCode.T)){
 			ShareToTW ();
 		}
+		*/
 	}
 
 	private const string TWITTER_ADDRESS = "http://twitter.com/intent/tweet";

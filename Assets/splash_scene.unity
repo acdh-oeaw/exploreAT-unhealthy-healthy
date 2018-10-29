@@ -507,7 +507,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Select the Language (1-2-3 Keys)
 
-    Press ''B'' at Any Time to Come Back to the Start Screen'
+    Press ''R'' at Any Time to Come Back to This Screen'
 --- !u!222 &1280683974
 CanvasRenderer:
   m_ObjectHideFlags: 0

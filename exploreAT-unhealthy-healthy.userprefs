@@ -1,11 +1,8 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/summaryHandler.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/ItemSpawn.cs">
     <Files>
-      <File FileName="Assets/summaryHandler.cs" Line="276" Column="41" />
-      <File FileName="Assets/ApplicationModel.cs" Line="1" Column="1" />
-      <File FileName="Assets/mouseOverSummary.cs" Line="1" Column="1" />
-      <File FileName="Assets/playerMove.cs" Line="1" Column="1" />
+      <File FileName="Assets/playerInitializer.cs" Line="22" Column="27" />
       <File FileName="Assets/ItemSpawn.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>

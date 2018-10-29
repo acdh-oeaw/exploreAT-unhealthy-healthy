@@ -5,6 +5,7 @@ using UnityEngine;
 public class ApplicationModel {
 	
 	static public int level;
+	static public int maxLevel;
 	static public bool gameOver;
 	static public int spriteGender;
 	static public int tutorialState;
@@ -32,16 +33,16 @@ public class ApplicationModel {
 	static public int counterMilkCheese, counterMilkCheeseValue = 5;
 	static public int counterSweetSalty, counterSweetSaltyValue = 3;
 
-	static public string en_tutorial_advanceText = "Press 'N' to Advance";
-	static public string es_tutorial_advanceText = "Pulsa 'N' para avanzar";
-	static public string de_tutorial_advanceText = "Drücke 'N', um fortzufahren";
+	static public string en_tutorial_advanceText = "Press 'N' to Advance\n\nPress 'S' to Skip";
+	static public string es_tutorial_advanceText = "Pulsa 'N' para avanzar\n\nPulsa 'S' para saltar";
+	static public string de_tutorial_advanceText = "Drücke 'N', um fortzufahren\n\nyada yada";
 
 	static public string en_gameStart_controlsText = "Use the -- Arrow Keys -- to move your character Left and Right\n\nUse the -- Spacebar -- to Jump";
-	static public string en_gameStart_startText = "1) Select a Character Using the -- Arrow Keys -- of the keyboard\n\n2) Press 'N' to Start Playing!";
+	static public string en_gameStart_startText = "1) Select a Character Using the -- Arrow Keys -- of the keyboard\n\n2) Select a Season (Winter/Summer) to Play In\n\n3) Press 'N' to Start Playing!";
 	static public string es_gameStart_controlsText = "Utiliza las -- Flechas -- para moverte a Izquierda y Derecha\n\nUsa la -- Barra Espaciadora -- para Saltar";
-	static public string es_gameStart_startText = "1) Selecciona un personaje con las -- Flechas -- del teclado\n\n2) Pulsa 'N' para comenzar!";
+	static public string es_gameStart_startText = "1) Selecciona un personaje con las -- Flechas -- del teclado\n\n2) Elige una estacion (Invierno/Verano) en la que jugar\n\n3) Pulsa 'N' para comenzar!";
 	static public string de_gameStart_controlsText = "Benutze die - Pfeiltasten - um deinen Avatar nach links und rechts zu bewegen\n\nVerwende die - Leertaste - um zu springen";
-	static public string de_gameStart_startText = "1) Wähle einen Avatar mit den - Pfeiltasten - der Tastatur\n\n2) Drücke 'N', um mit der Wiedergabe zu beginnen!";
+	static public string de_gameStart_startText = "1) Wähle einen Avatar mit den - Pfeiltasten - der Tastatur\n\n2) yada yada\n\n3) Drücke 'N', um mit der Wiedergabe zu beginnen!";
 
 	static public string en_scoreHandler_congratsObjectText = "You Beat the Game Consuming...";
 	static public string en_scoreHandler_congratsCaloriesObjectText = "Calories!";
@@ -107,30 +108,33 @@ public class ApplicationModel {
 	static public string en_summaryHandler_sweetSaltyMsgTextBad = "You Eat Too Many Sweets!";
 	static public string es_summaryHandler_sweetSaltyMsgTextBad = "";
 	static public string de_summaryHandler_sweetSaltyMsgTextBad = "";
+	static public string en_summaryHandler_infoMsgText = "Put the mouse over each food group to get more information about it!";
+	static public string es_summaryHandler_infoMsgText = "";
+	static public string de_summaryHandler_infoMsgText = "";
 
 
 	static public string en_scene_timeupText = "TIME IS UP!";
-	static public string en_scene_checkProgressText = "Press -R- to Check Your Progress";
+	static public string en_scene_checkProgressText = "Press -N- to Check Your Progress";
+	static public string en_scene_gameOverText = "Oh no! You Caught an Energy Drink (-N- to Restart)";
 	static public string es_scene_timeupText = "TIEMPO!";
-	static public string es_scene_checkProgressText = "Pulsa -R- para Comprobar tu Progreso";
-	static public string de_scene_timeupText = "";
-	static public string de_scene_checkProgressText = "";
+	static public string es_scene_checkProgressText = "Pulsa -N- para Comprobar tu Progreso";
+	static public string es_scene_gameOverText = "Oh no! Tomaste una Bebida Energetica (-N- para Reiniciar)";
+	static public string de_scene_timeupText = "yada yada";
+	static public string de_scene_checkProgressText = "yada yada";
+	static public string de_scene_gameOverText = "yada yada";
 
 
 	static public string en_scene_scoreText = " Total Calories";
-	static public string en_scene_gameOverText = "Oh no! You Caught an Energy Drink (R to Restart)";
 	static public string en_scene_levelText = "Level ";
 	static public string en_scene_nextLevelText = "Great! (N to Advance)";
 	static public string en_scene_popUpText = " Calories !!!";
 	static public string en_scene_TweetObjectText = "Press 'T' to Tweet Your Calories!";
 	static public string es_scene_scoreText = " Calorias Totales";
-	static public string es_scene_gameOverText = "Game Over (R para reiniciar)";
 	static public string es_scene_levelText = "Nivel ";
 	static public string es_scene_nextLevelText = "Conseguido (N para avanzar)";
 	static public string es_scene_popUpText = " Calorias !!!";
 	static public string es_scene_TweetObjectText = "Pulsa 'T' para twitter tus calorias!";
 	static public string de_scene_scoreText = " Gesamtkalorien";
-	static public string de_scene_gameOverText = "Game Over (R zum Neustart)\n";
 	static public string de_scene_levelText = "Niveau ";
 	static public string de_scene_nextLevelText = "Groß! ('N', um fortzufahren)";
 	static public string de_scene_popUpText = " Kalorien !!!";
@@ -139,6 +143,7 @@ public class ApplicationModel {
 
 	// Use this for initialization
 	void Start () {
+		maxLevel = 4;
 		levelCleared = false;
 		gameOver = false;
 		season = 0;
