@@ -7,13 +7,9 @@ using UnityEngine.SceneManagement;
 public class playerInitializer : MonoBehaviour {
 
 	public GameObject GameOverObject; 
-	Text gameOverText;
 	public GameObject PopUpObject; 
-	Text popUpText;
 	public GameObject TimeUpObject; 
-	Text timeUpText;
 	public GameObject CheckProgressObject; 
-	Text checkProgressText;
 	public GameObject character;
 	public Sprite[] spritesBoys;
 	public Sprite[] spritesGirls;
@@ -28,8 +24,7 @@ public class playerInitializer : MonoBehaviour {
 		// Reset timer
 		ApplicationModel.timerSlices = 7;
 
-		gameOverText = GameOverObject.GetComponent < Text >();
-		Color zm = gameOverText.color;  //  makes a new color zm
+		Color zm = GameOverObject.GetComponent < Text >().color;  //  makes a new color zm
 		zm.a = 0.0f; // makes the color zm transparent
 		if(ApplicationModel.spriteGender == 0){
 			character.GetComponent<SpriteRenderer> ().sprite = spritesGirls[ApplicationModel.spriteNum];
@@ -58,24 +53,20 @@ public class playerInitializer : MonoBehaviour {
 		// Message language change
 		if (string.Equals(SceneManager.GetActiveScene ().name,"scene")) {
 			if (ApplicationModel.language == "en") {
-				gameOverText.text = ApplicationModel.en_scene_gameOverText;
-				timeUpText.text = ApplicationModel.en_scene_timeupText;
-				checkProgressText.text = ApplicationModel.en_scene_checkProgressText;
+				GameOverObject.GetComponent < Text >().text = ApplicationModel.en_scene_gameOverText;
+				TimeUpObject.GetComponent < Text >().text = ApplicationModel.en_scene_timeupText;
+				CheckProgressObject.GetComponent < Text >().text = ApplicationModel.en_scene_checkProgressText;
 			}
 			else if (ApplicationModel.language == "es") {
-				gameOverText.text = ApplicationModel.es_scene_gameOverText;
-				timeUpText.text = ApplicationModel.es_scene_timeupText;
-				checkProgressText.text = ApplicationModel.es_scene_checkProgressText;
+				GameOverObject.GetComponent < Text >().text = ApplicationModel.es_scene_gameOverText;
+				TimeUpObject.GetComponent < Text >().text = ApplicationModel.es_scene_timeupText;
+				CheckProgressObject.GetComponent < Text >().text = ApplicationModel.es_scene_checkProgressText;
 			}
 			else if (ApplicationModel.language == "de") {
-				gameOverText.text = ApplicationModel.de_scene_gameOverText;
-				timeUpText.text = ApplicationModel.de_scene_timeupText;
-				checkProgressText.text = ApplicationModel.de_scene_checkProgressText;
+				GameOverObject.GetComponent < Text >().text = ApplicationModel.de_scene_gameOverText;
+				TimeUpObject.GetComponent < Text >().text = ApplicationModel.de_scene_timeupText;
+				CheckProgressObject.GetComponent < Text >().text = ApplicationModel.de_scene_checkProgressText;
 			}
-			GameOverObject.GetComponent < Text > ().text = gameOverText.text;
-			PopUpObject.GetComponent < Text > ().text = popUpText.text;
-			CheckProgressObject.GetComponent < Text > ().text = checkProgressText.text;
-			TimeUpObject.GetComponent < Text > ().text = timeUpText.text;
 		}
 	}
 	
