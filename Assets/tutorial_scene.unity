@@ -334,8 +334,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.010015, y: -183.2}
-  m_SizeDelta: {x: 800, y: 33.9}
+  m_AnchoredPosition: {x: -0.0050205, y: -180.1}
+  m_SizeDelta: {x: 800, y: 19.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1280683973
 MonoBehaviour:
@@ -360,7 +360,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 10
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
@@ -407,26 +407,35 @@ MonoBehaviour:
   tuten8: {fileID: 2800000, guid: a17741529161a4990b6cfbb06d2c0db6, type: 3}
   tuten9: {fileID: 2800000, guid: adbddbd4acc0f4cbda920545dc304e09, type: 3}
   tuten10: {fileID: 2800000, guid: 458faec0dc923429c8eedac1b476399a, type: 3}
-  tutes1: {fileID: 0}
-  tutes2: {fileID: 0}
-  tutes3: {fileID: 0}
-  tutes4: {fileID: 0}
-  tutes5: {fileID: 0}
-  tutes6: {fileID: 0}
-  tutes7: {fileID: 0}
-  tutes8: {fileID: 0}
-  tutes9: {fileID: 0}
-  tutes10: {fileID: 0}
-  tutde1: {fileID: 0}
-  tutde2: {fileID: 0}
-  tutde3: {fileID: 0}
-  tutde4: {fileID: 0}
-  tutde5: {fileID: 0}
-  tutde6: {fileID: 0}
-  tutde7: {fileID: 0}
-  tutde8: {fileID: 0}
-  tutde9: {fileID: 0}
-  tutde10: {fileID: 0}
+  tutes1: {fileID: 2800000, guid: 24189717fda5846b0986fd270730782f, type: 3}
+  tutes2: {fileID: 2800000, guid: ff9604bdcc6a74832a411ba61596b8ac, type: 3}
+  tutes3: {fileID: 2800000, guid: 865fb4303252148ae93dacc550210b24, type: 3}
+  tutes4: {fileID: 2800000, guid: 2de35d019680147ca90c6b240a59b687, type: 3}
+  tutes5: {fileID: 2800000, guid: 5299334dfd6234020b390c8104313481, type: 3}
+  tutes6: {fileID: 2800000, guid: 22e7a147815794fd5ba534d84603bdd2, type: 3}
+  tutes7: {fileID: 2800000, guid: 318a23fc068aa49ddb96d9c4cc7f7db5, type: 3}
+  tutes8: {fileID: 2800000, guid: 7bcc1340c4a1f4ded828c33837a34859, type: 3}
+  tutes9: {fileID: 2800000, guid: 2d27e94870d934abfa045beca4c6ce15, type: 3}
+  tutes10: {fileID: 2800000, guid: a95baaf39a01a4cb0b41fe7333844f2b, type: 3}
+  tutde1: {fileID: 2800000, guid: 4d22c058ccfcc44c9a295f83e5c259a8, type: 3}
+  tutde2: {fileID: 2800000, guid: 5e4dfe3f677cd428abaca712dbabeb5c, type: 3}
+  tutde3: {fileID: 2800000, guid: 2f3307a210188463b8f8e814bb95601f, type: 3}
+  tutde4: {fileID: 2800000, guid: a0765d0079c4247e9bdac061a0b60263, type: 3}
+  tutde5: {fileID: 2800000, guid: f3d334bf7bf464726852d5a4d61e7692, type: 3}
+  tutde6: {fileID: 2800000, guid: 8115ad17b3b4541268e109bb531ec067, type: 3}
+  tutde7: {fileID: 2800000, guid: d246e64981ac149d0a596c08c8103852, type: 3}
+  tutde8: {fileID: 2800000, guid: 69673ad99a01041a2b978d77368be14f, type: 3}
+  tutde9: {fileID: 2800000, guid: d0ec8084ddf3141ec967ecf028480449, type: 3}
+  tutde10: {fileID: 2800000, guid: 06145824f2f6a4a60a807c33827d36d4, type: 3}
+  panelFood: {fileID: 0}
+  textFood: {fileID: 0}
+  titleFood: {fileID: 0}
+  iconWater: {fileID: 0}
+  checkBreadPasta: {fileID: 0}
+  checkFruitVeggies: {fileID: 0}
+  checkMeatFish: {fileID: 0}
+  checkMilkCheese: {fileID: 0}
+  checkSweetSalty: {fileID: 0}
 --- !u!114 &1280683976
 MonoBehaviour:
   m_ObjectHideFlags: 0

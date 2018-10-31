@@ -19,6 +19,16 @@ public class advanceSplash : MonoBehaviour {
 	public Texture tutes1,tutes2,tutes3,tutes4,tutes5,tutes6,tutes7,tutes8,tutes9,tutes10;
 	public Texture tutde1,tutde2,tutde3,tutde4,tutde5,tutde6,tutde7,tutde8,tutde9,tutde10;
 
+	public GameObject panelFood;
+	public Text textFood;
+	public Text titleFood;
+
+	public GameObject iconWater;
+	public GameObject checkBreadPasta;
+	public GameObject checkFruitVeggies;
+	public GameObject checkMeatFish;
+	public GameObject checkMilkCheese;
+	public GameObject checkSweetSalty;
 
 	// Use this for initialization
 	void Start () {
@@ -40,6 +50,26 @@ public class advanceSplash : MonoBehaviour {
 				rawimage.texture = tutde1;
 			}
 		}
+
+		if (string.Equals(SceneManager.GetActiveScene ().name,"pyramid_scene")) {
+			panelFood.SetActive (true);
+			if (ApplicationModel.language == "en") {
+				titleFood.GetComponent<Text> ().text = ApplicationModel.en_titlePyramid;
+				textFood.GetComponent<Text> ().text = ApplicationModel.en_infoPyramid;
+			} else if (ApplicationModel.language == "es") {
+				titleFood.GetComponent<Text> ().text = ApplicationModel.es_titlePyramid;
+				textFood.GetComponent<Text> ().text = ApplicationModel.es_infoPyramid;
+			} else if (ApplicationModel.language == "de") {
+				titleFood.GetComponent<Text> ().text = ApplicationModel.de_titlePyramid;
+				textFood.GetComponent<Text> ().text = ApplicationModel.de_infoPyramid;
+			}
+			iconWater.SetActive (true);
+			checkBreadPasta.SetActive (true);
+			checkFruitVeggies.SetActive (true);
+			checkMeatFish.SetActive (true);
+			checkMilkCheese.SetActive (true);
+			checkSweetSalty.SetActive (true);
+		}
 	}
 	
 	// Update is called once per frame
@@ -56,8 +86,13 @@ public class advanceSplash : MonoBehaviour {
 			Input.GetKeyDown (KeyCode.Alpha3) || Input.GetKeyDown (KeyCode.Keypad3) ||
 			Input.GetKeyDown (KeyCode.N)){
 
-			// If in start scree, load tutorial
+			// If in start scree, load pyramid
 			if (string.Equals(SceneManager.GetActiveScene ().name,"splash_scene")) {
+				SceneManager.LoadScene ("pyramid_scene");
+			}
+
+			// If in start scree, load pyramid
+			if (string.Equals(SceneManager.GetActiveScene ().name,"pyramid_scene")) {
 				SceneManager.LoadScene ("tutorial_scene");
 			}
 

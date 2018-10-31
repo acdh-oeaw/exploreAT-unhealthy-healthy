@@ -19,6 +19,12 @@ public class ItemChecker : MonoBehaviour {
 		public GameObject checkMilkCheeseObject;
 		public GameObject checkSweetSaltyObject;
 
+		public GameObject counterBreadPastaObject;
+		public GameObject counterFruitVeggiesObject;
+		public GameObject counterMeatFishObject;
+		public GameObject counterMilkCheeseObject;
+		public GameObject counterSweetSaltyObject;
+
 	public GameObject GameOverObject;
 	public GameObject LevelObject;
 
@@ -45,6 +51,12 @@ public class ItemChecker : MonoBehaviour {
 		TimeUpObject.SetActive(false);
 		CheckProgressObject.SetActive (false);
 
+		counterBreadPastaObject.GetComponent < Text > ().text = "0";
+		counterFruitVeggiesObject.GetComponent < Text > ().text = "0";
+		counterMeatFishObject.GetComponent < Text > ().text = "0";
+		counterMilkCheeseObject.GetComponent < Text > ().text = "0";
+		counterSweetSaltyObject.GetComponent < Text > ().text = "0";
+
 		if (ApplicationModel.language == "en") {
 			GameOverObject.GetComponent < Text > ().text = ApplicationModel.en_scene_gameOverText;
 			TimeUpObject.GetComponent < Text >().text = ApplicationModel.en_scene_timeupText;
@@ -64,6 +76,7 @@ public class ItemChecker : MonoBehaviour {
 		LevelObject.GetComponent < Text > ().text += ApplicationModel.level;
 
 		InvokeRepeating("decreaseTimer", 5, 5);
+		//InvokeRepeating("decreaseTimer", 17, 17);
 	}
 	
 	// Update is called once per frame
@@ -82,6 +95,7 @@ public class ItemChecker : MonoBehaviour {
 		}
 		else if (other.gameObject.tag == "FoodBreadPasta") {
 			ApplicationModel.counterBreadPasta++;
+			counterBreadPastaObject.GetComponent < Text > ().text = ""+ApplicationModel.counterBreadPasta;
 			if (ApplicationModel.counterBreadPasta >= ApplicationModel.counterBreadPastaMin && ApplicationModel.counterBreadPasta <= ApplicationModel.counterBreadPastaMax) {
 				checkBreadPastaObject.GetComponent<SpriteRenderer> ().sprite = checkBreadPastaSprites [0];
 			} else {
@@ -92,6 +106,7 @@ public class ItemChecker : MonoBehaviour {
 
 		else if (other.gameObject.tag == "FoodFruitVeggies") {
 			ApplicationModel.counterFruitVeggies++;
+			counterFruitVeggiesObject.GetComponent < Text > ().text = ""+ApplicationModel.counterFruitVeggies;
 			if (ApplicationModel.counterFruitVeggies >= ApplicationModel.counterFruitVeggiesValue) {
 				checkFruitVeggiesObject.GetComponent<SpriteRenderer> ().sprite = checkFruitVeggiesSprites [0];
 			} else {
@@ -102,6 +117,7 @@ public class ItemChecker : MonoBehaviour {
 
 		else if (other.gameObject.tag == "FoodMeatFish") {
 			ApplicationModel.counterMeatFish++;
+			counterMeatFishObject.GetComponent < Text > ().text = ""+ApplicationModel.counterMeatFish;
 			if (ApplicationModel.counterMeatFish >= ApplicationModel.counterMeatFishMin && ApplicationModel.counterMeatFish <= ApplicationModel.counterMeatFishMax) {
 				checkMeatFishObject.GetComponent<SpriteRenderer> ().sprite = checkMeatFishSprites [0];
 			} else {
@@ -112,6 +128,7 @@ public class ItemChecker : MonoBehaviour {
 
 		else if (other.gameObject.tag == "FoodMilkCheese") {
 			ApplicationModel.counterMilkCheese++;
+			counterMilkCheeseObject.GetComponent < Text > ().text = ""+ApplicationModel.counterMilkCheese;
 			if (ApplicationModel.counterMilkCheese >= ApplicationModel.counterMilkCheeseValue) {
 				checkMilkCheeseObject.GetComponent<SpriteRenderer> ().sprite = checkMilkCheeseSprites [0];
 			} else {
@@ -122,6 +139,7 @@ public class ItemChecker : MonoBehaviour {
 
 		else if (other.gameObject.tag == "FoodSweetSalty") {
 			ApplicationModel.counterSweetSalty++;
+			counterSweetSaltyObject.GetComponent < Text > ().text = ""+ApplicationModel.counterSweetSalty;
 			if (ApplicationModel.counterSweetSalty <= ApplicationModel.counterSweetSaltyValue) {
 				checkSweetSaltyObject.GetComponent<SpriteRenderer> ().sprite = checkSweetSaltySprites [0];
 			} else {

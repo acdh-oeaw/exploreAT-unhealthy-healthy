@@ -47,7 +47,7 @@ public class ItemSpawn : MonoBehaviour {
 		while(true)
 		{
 			// Easier (slower falling objects) as the user advances
-			repeatRate = 0.5f-(float)(ApplicationModel.level/10);
+			repeatRate = 0.7f-(float)(ApplicationModel.level/10);
 			yield return new WaitForSeconds(repeatRate);
 			Spawn();
 		}

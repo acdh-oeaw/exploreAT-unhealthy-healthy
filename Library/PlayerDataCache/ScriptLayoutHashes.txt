@@ -113,7 +113,7 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 aef543c7ffa857d21ac8226dd7d4ce32 Assembly-CSharp.dll:.summaryHandler
-8f2cbc0724ec9a26960fc47d2467671b Assembly-CSharp.dll:.advanceSplash
+b542cfc0a6ea1f426d23e14932862848 Assembly-CSharp.dll:.advanceSplash
 d756bb151232f4b33d3b823d8fbee1e1 Assembly-CSharp.dll:.gameStart
 b322a28ca39210474be1f3b80866ada4 Assembly-CSharp.dll:.playerMove
 ed816c98f99bdf2e64e8a772bc745200 Assembly-CSharp.dll:.HorizontalSpawn
@@ -133,7 +133,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 209ae39a72eb0b775e8dd1d3735aa187 Assembly-CSharp.dll:.PopUpTextBehaviour
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.backToStart
-3ed96bd955903334c26d3ee678a127e4 Assembly-CSharp.dll:.ItemChecker
+4877f879dfdaeac0383a80131df879d2 Assembly-CSharp.dll:.ItemChecker
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
 2a56361227def9f56c2cf57a88b32f4d UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
 64eb32cc721b1cc68a91ed57461e188c UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
