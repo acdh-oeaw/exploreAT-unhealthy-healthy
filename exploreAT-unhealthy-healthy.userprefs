@@ -1,9 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/ItemChecker.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/advanceSplash.cs">
     <Files>
-      <File FileName="Assets/ApplicationModel.cs" Line="23" Column="4" />
-      <File FileName="Assets/ItemChecker.cs" Line="77" Column="3" />
+      <File FileName="Assets/ApplicationModel.cs" Line="58" Column="64" />
+      <File FileName="Assets/advanceSplash.cs" Line="71" Column="40" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

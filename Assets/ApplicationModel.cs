@@ -50,6 +50,13 @@ public class ApplicationModel {
 	static public int counterSweetSalty, counterSweetSaltyValue = 3;
 	*/
 
+	static public string en_pyramid_advanceText = "Press 'N' to Advance";
+	static public string es_pyramid_advanceText = "Pulsa 'N' para avanzar";
+	static public string de_pyramid_advanceText = "Drücke 'N', um fortzufahren";
+	static public string en_pyramid_infoText = "Put the mouse over each food group to get more information about it!";
+	static public string es_pyramid_infoText = "Coloca el cursor sobre cada grupo alimenticio para obtener más información!";
+	static public string de_pyramid_infoText = "Bewege den Mauszeiger über jede Lebensmittelgruppe um mehr Information zu erhalten";
+
 	static public string en_tutorial_advanceText = "Press 'N' to Advance\n\nPress 'S' to Skip";
 	static public string es_tutorial_advanceText = "Pulsa 'N' para avanzar\n\nPulsa 'S' para saltar";
 	static public string de_tutorial_advanceText = "Drücke 'N', um fortzufahren\n\nDrücke ‘S’ um zu springen";

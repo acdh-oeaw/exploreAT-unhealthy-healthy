@@ -14,6 +14,7 @@ public class advanceSplash : MonoBehaviour {
 	public Texture es_secondTexture;
 	public Texture de_secondTexture;
 	public Text advanceText;
+	public Text infoText;
 
 	public Texture tuten1,tuten2,tuten3,tuten4,tuten5,tuten6,tuten7,tuten8,tuten9,tuten10;
 	public Texture tutes1,tutes2,tutes3,tutes4,tutes5,tutes6,tutes7,tutes8,tutes9,tutes10;
@@ -56,12 +57,18 @@ public class advanceSplash : MonoBehaviour {
 			if (ApplicationModel.language == "en") {
 				titleFood.GetComponent<Text> ().text = ApplicationModel.en_titlePyramid;
 				textFood.GetComponent<Text> ().text = ApplicationModel.en_infoPyramid;
+				advanceText.text = ApplicationModel.en_pyramid_advanceText;
+				infoText.text = ApplicationModel.en_pyramid_advanceText;
 			} else if (ApplicationModel.language == "es") {
 				titleFood.GetComponent<Text> ().text = ApplicationModel.es_titlePyramid;
 				textFood.GetComponent<Text> ().text = ApplicationModel.es_infoPyramid;
+				advanceText.text = ApplicationModel.es_pyramid_advanceText;
+				infoText.text = ApplicationModel.es_pyramid_infoText;
 			} else if (ApplicationModel.language == "de") {
 				titleFood.GetComponent<Text> ().text = ApplicationModel.de_titlePyramid;
 				textFood.GetComponent<Text> ().text = ApplicationModel.de_infoPyramid;
+				advanceText.text = ApplicationModel.de_pyramid_advanceText;
+				infoText.text = ApplicationModel.de_pyramid_infoText;
 			}
 			iconWater.SetActive (true);
 			checkBreadPasta.SetActive (true);

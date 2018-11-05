@@ -303,6 +303,18 @@ public class summaryHandler : MonoBehaviour {
 			}
 			// After 4 levels the game is finished
 			else {
+				// Reset stuff
+				ApplicationModel.counterBreadPasta = 0;
+				ApplicationModel.counterFruitVeggies = 0;
+				ApplicationModel.counterMeatFish = 0;
+				ApplicationModel.counterMilkCheese = 0;
+				ApplicationModel.counterSweetSalty = 0;
+				ApplicationModel.totalWater = 0;
+				ApplicationModel.totalSport = 0;
+				ApplicationModel.isJumping = false;
+				ApplicationModel.gameOver = false;
+				ApplicationModel.level = 1;
+
 				// Change scene to game's end
 				SceneManager.LoadScene("splash_scene");
 			}
