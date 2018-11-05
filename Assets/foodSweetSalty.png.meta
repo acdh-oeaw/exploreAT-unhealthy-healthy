@@ -1,11 +1,13 @@
 fileFormatVersion: 2
 guid: 7b39eb6b63e0d42678dedfb6022a3260
-timeCreated: 1539767652
+timeCreated: 1541417348
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: foodSweetSalty_0
     21300002: foodSweetSalty_1
+    21300004: foodSweetSalty_2
+    21300006: foodSweetSalty_3
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -92,7 +94,7 @@ TextureImporter:
       name: foodSweetSalty_0
       rect:
         serializedVersion: 2
-        x: 28
+        x: 16
         y: 3
         width: 47
         height: 105
@@ -106,10 +108,38 @@ TextureImporter:
       name: foodSweetSalty_1
       rect:
         serializedVersion: 2
-        x: 103
+        x: 91
         y: 9
         width: 67
         height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: foodSweetSalty_2
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 8
+        width: 97
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: foodSweetSalty_3
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 6
+        width: 76
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

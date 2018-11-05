@@ -1,12 +1,19 @@
 fileFormatVersion: 2
 guid: 8516db1a3fc91435e9b244722a2aaf6c
-timeCreated: 1539767610
+timeCreated: 1541418448
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: foodFruitVeggies_0
     21300002: foodFruitVeggies_1
     21300004: foodFruitVeggies_2
+    21300006: foodFruitVeggies_3
+    21300008: foodFruitVeggies_4
+    21300010: foodFruitVeggies_5
+    21300012: foodFruitVeggies_6
+    21300014: foodFruitVeggies_7
+    21300016: foodFruitVeggies_8
+    21300018: foodFruitVeggies_9
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -93,8 +100,8 @@ TextureImporter:
       name: foodFruitVeggies_0
       rect:
         serializedVersion: 2
-        x: 20
-        y: 10
+        x: 14
+        y: 8
         width: 54
         height: 91
       alignment: 0
@@ -107,8 +114,8 @@ TextureImporter:
       name: foodFruitVeggies_1
       rect:
         serializedVersion: 2
-        x: 117
-        y: 2
+        x: 111
+        y: 0
         width: 64
         height: 108
       alignment: 0
@@ -121,10 +128,108 @@ TextureImporter:
       name: foodFruitVeggies_2
       rect:
         serializedVersion: 2
-        x: 215
-        y: 13
+        x: 209
+        y: 11
         width: 74
         height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: foodFruitVeggies_3
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 11
+        width: 83
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: foodFruitVeggies_4
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 12
+        width: 87
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: foodFruitVeggies_5
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 15
+        width: 75
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: foodFruitVeggies_6
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 13
+        width: 68
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: foodFruitVeggies_7
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 1
+        width: 54
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: foodFruitVeggies_8
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 10
+        width: 92
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: foodFruitVeggies_9
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 13
+        width: 84
+        height: 78
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -533,6 +533,45 @@ MonoBehaviour:
   es_secondTexture: {fileID: 0}
   de_secondTexture: {fileID: 0}
   advanceText: {fileID: 0}
+  tuten1: {fileID: 0}
+  tuten2: {fileID: 0}
+  tuten3: {fileID: 0}
+  tuten4: {fileID: 0}
+  tuten5: {fileID: 0}
+  tuten6: {fileID: 0}
+  tuten7: {fileID: 0}
+  tuten8: {fileID: 0}
+  tuten9: {fileID: 0}
+  tuten10: {fileID: 0}
+  tutes1: {fileID: 0}
+  tutes2: {fileID: 0}
+  tutes3: {fileID: 0}
+  tutes4: {fileID: 0}
+  tutes5: {fileID: 0}
+  tutes6: {fileID: 0}
+  tutes7: {fileID: 0}
+  tutes8: {fileID: 0}
+  tutes9: {fileID: 0}
+  tutes10: {fileID: 0}
+  tutde1: {fileID: 0}
+  tutde2: {fileID: 0}
+  tutde3: {fileID: 0}
+  tutde4: {fileID: 0}
+  tutde5: {fileID: 0}
+  tutde6: {fileID: 0}
+  tutde7: {fileID: 0}
+  tutde8: {fileID: 0}
+  tutde9: {fileID: 0}
+  tutde10: {fileID: 0}
+  panelFood: {fileID: 0}
+  textFood: {fileID: 0}
+  titleFood: {fileID: 0}
+  iconWater: {fileID: 0}
+  checkBreadPasta: {fileID: 0}
+  checkFruitVeggies: {fileID: 0}
+  checkMeatFish: {fileID: 0}
+  checkMilkCheese: {fileID: 0}
+  checkSweetSalty: {fileID: 0}
 --- !u!1 &2080097358
 GameObject:
   m_ObjectHideFlags: 0

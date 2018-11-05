@@ -75,8 +75,8 @@ public class ItemChecker : MonoBehaviour {
 
 		LevelObject.GetComponent < Text > ().text += ApplicationModel.level;
 
-		InvokeRepeating("decreaseTimer", 5, 5);
-		//InvokeRepeating("decreaseTimer", 17, 17);
+		//InvokeRepeating("decreaseTimer", 5, 5);
+		InvokeRepeating("decreaseTimer", 8, 8); // 1 minute rounds
 	}
 	
 	// Update is called once per frame
@@ -94,7 +94,7 @@ public class ItemChecker : MonoBehaviour {
 			Destroy (other.gameObject);
 		}
 		else if (other.gameObject.tag == "FoodBreadPasta") {
-			ApplicationModel.counterBreadPasta++;
+			ApplicationModel.counterBreadPasta += ApplicationModel.valueBreadPasta;
 			counterBreadPastaObject.GetComponent < Text > ().text = ""+ApplicationModel.counterBreadPasta;
 			if (ApplicationModel.counterBreadPasta >= ApplicationModel.counterBreadPastaMin && ApplicationModel.counterBreadPasta <= ApplicationModel.counterBreadPastaMax) {
 				checkBreadPastaObject.GetComponent<SpriteRenderer> ().sprite = checkBreadPastaSprites [0];
@@ -105,7 +105,7 @@ public class ItemChecker : MonoBehaviour {
 		}
 
 		else if (other.gameObject.tag == "FoodFruitVeggies") {
-			ApplicationModel.counterFruitVeggies++;
+			ApplicationModel.counterFruitVeggies += ApplicationModel.valueFruitVeggies;
 			counterFruitVeggiesObject.GetComponent < Text > ().text = ""+ApplicationModel.counterFruitVeggies;
 			if (ApplicationModel.counterFruitVeggies >= ApplicationModel.counterFruitVeggiesValue) {
 				checkFruitVeggiesObject.GetComponent<SpriteRenderer> ().sprite = checkFruitVeggiesSprites [0];
@@ -116,7 +116,7 @@ public class ItemChecker : MonoBehaviour {
 		}
 
 		else if (other.gameObject.tag == "FoodMeatFish") {
-			ApplicationModel.counterMeatFish++;
+			ApplicationModel.counterMeatFish += ApplicationModel.valueMeatFish;
 			counterMeatFishObject.GetComponent < Text > ().text = ""+ApplicationModel.counterMeatFish;
 			if (ApplicationModel.counterMeatFish >= ApplicationModel.counterMeatFishMin && ApplicationModel.counterMeatFish <= ApplicationModel.counterMeatFishMax) {
 				checkMeatFishObject.GetComponent<SpriteRenderer> ().sprite = checkMeatFishSprites [0];
@@ -127,7 +127,7 @@ public class ItemChecker : MonoBehaviour {
 		}
 
 		else if (other.gameObject.tag == "FoodMilkCheese") {
-			ApplicationModel.counterMilkCheese++;
+			ApplicationModel.counterMilkCheese += ApplicationModel.valueMilkCheese;
 			counterMilkCheeseObject.GetComponent < Text > ().text = ""+ApplicationModel.counterMilkCheese;
 			if (ApplicationModel.counterMilkCheese >= ApplicationModel.counterMilkCheeseValue) {
 				checkMilkCheeseObject.GetComponent<SpriteRenderer> ().sprite = checkMilkCheeseSprites [0];
@@ -138,7 +138,7 @@ public class ItemChecker : MonoBehaviour {
 		}
 
 		else if (other.gameObject.tag == "FoodSweetSalty") {
-			ApplicationModel.counterSweetSalty++;
+			ApplicationModel.counterSweetSalty += ApplicationModel.valueSweetSalty;
 			counterSweetSaltyObject.GetComponent < Text > ().text = ""+ApplicationModel.counterSweetSalty;
 			if (ApplicationModel.counterSweetSalty <= ApplicationModel.counterSweetSaltyValue) {
 				checkSweetSaltyObject.GetComponent<SpriteRenderer> ().sprite = checkSweetSaltySprites [0];
@@ -154,10 +154,10 @@ public class ItemChecker : MonoBehaviour {
 
 			// Update the SPORTS BAR
 
-			if (ApplicationModel.totalSport >= 7)
+			if (ApplicationModel.totalSport >= ApplicationModel.counterSportValue)
 				return;
 			
-			ApplicationModel.totalSport += 1;
+			ApplicationModel.totalSport += ApplicationModel.valueSport;
 
 			if (ApplicationModel.totalSport == 1) {BarSportObject.GetComponent<SpriteRenderer>().sprite = barSportSprites[1];}
 			else if (ApplicationModel.totalSport == 2) {BarSportObject.GetComponent<SpriteRenderer>().sprite = barSportSprites[2];}
@@ -175,10 +175,10 @@ public class ItemChecker : MonoBehaviour {
 
 			// Update the WATER BAR
 
-			if (ApplicationModel.totalWater >= 6)
+			if (ApplicationModel.totalWater >= ApplicationModel.counterWaterValue)
 				return;
 
-			ApplicationModel.totalWater += 1;
+			ApplicationModel.totalWater += ApplicationModel.valueWater;
 
 			if (ApplicationModel.totalWater == 1) {BarWaterObject.GetComponent<SpriteRenderer>().sprite = barWaterSprites[1];}
 			else if (ApplicationModel.totalWater == 2) {BarWaterObject.GetComponent<SpriteRenderer>().sprite = barWaterSprites[2];}

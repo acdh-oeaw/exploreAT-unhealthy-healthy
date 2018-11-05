@@ -1,12 +1,13 @@
 fileFormatVersion: 2
 guid: ba3b2cb1311364276bbf0609b3059ab5
-timeCreated: 1539767590
+timeCreated: 1541417919
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: foodBreadPasta_0
     21300002: foodBreadPasta_1
     21300004: foodBreadPasta_2
+    21300006: foodBreadPasta_3
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -93,7 +94,7 @@ TextureImporter:
       name: foodBreadPasta_0
       rect:
         serializedVersion: 2
-        x: 13
+        x: 70
         y: 14
         width: 81
         height: 83
@@ -107,7 +108,7 @@ TextureImporter:
       name: foodBreadPasta_1
       rect:
         serializedVersion: 2
-        x: 111
+        x: 168
         y: 21
         width: 97
         height: 64
@@ -121,10 +122,24 @@ TextureImporter:
       name: foodBreadPasta_2
       rect:
         serializedVersion: 2
-        x: 226
+        x: 283
         y: 17
         width: 60
         height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: foodBreadPasta_3
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 32
+        width: 87
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

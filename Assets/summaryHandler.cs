@@ -304,7 +304,7 @@ public class summaryHandler : MonoBehaviour {
 			// After 4 levels the game is finished
 			else {
 				// Change scene to game's end
-				SceneManager.LoadScene("final_scene");
+				SceneManager.LoadScene("splash_scene");
 			}
 		}
 	}

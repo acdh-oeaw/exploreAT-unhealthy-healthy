@@ -1693,14 +1693,25 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ba3b2cb1311364276bbf0609b3059ab5, type: 3}
   - {fileID: 21300002, guid: ba3b2cb1311364276bbf0609b3059ab5, type: 3}
   - {fileID: 21300004, guid: ba3b2cb1311364276bbf0609b3059ab5, type: 3}
+  - {fileID: 21300006, guid: ba3b2cb1311364276bbf0609b3059ab5, type: 3}
   foodFruitVeggiesSprites:
   - {fileID: 21300000, guid: 8516db1a3fc91435e9b244722a2aaf6c, type: 3}
   - {fileID: 21300002, guid: 8516db1a3fc91435e9b244722a2aaf6c, type: 3}
   - {fileID: 21300004, guid: 8516db1a3fc91435e9b244722a2aaf6c, type: 3}
+  - {fileID: 21300006, guid: 8516db1a3fc91435e9b244722a2aaf6c, type: 3}
+  - {fileID: 21300008, guid: 8516db1a3fc91435e9b244722a2aaf6c, type: 3}
+  - {fileID: 21300010, guid: 8516db1a3fc91435e9b244722a2aaf6c, type: 3}
+  - {fileID: 21300012, guid: 8516db1a3fc91435e9b244722a2aaf6c, type: 3}
+  - {fileID: 21300014, guid: 8516db1a3fc91435e9b244722a2aaf6c, type: 3}
+  - {fileID: 21300016, guid: 8516db1a3fc91435e9b244722a2aaf6c, type: 3}
+  - {fileID: 21300018, guid: 8516db1a3fc91435e9b244722a2aaf6c, type: 3}
   foodMeatFishSprites:
   - {fileID: 21300000, guid: 5e801be4f841d4670ab312e410d16e69, type: 3}
   - {fileID: 21300002, guid: 5e801be4f841d4670ab312e410d16e69, type: 3}
   - {fileID: 21300004, guid: 5e801be4f841d4670ab312e410d16e69, type: 3}
+  - {fileID: 21300006, guid: 5e801be4f841d4670ab312e410d16e69, type: 3}
+  - {fileID: 21300008, guid: 5e801be4f841d4670ab312e410d16e69, type: 3}
+  - {fileID: 21300010, guid: 5e801be4f841d4670ab312e410d16e69, type: 3}
   foodMilkCheeseSprites:
   - {fileID: 21300000, guid: d54fb279b167e418e91dd7bad5964a07, type: 3}
   - {fileID: 21300002, guid: d54fb279b167e418e91dd7bad5964a07, type: 3}
@@ -1708,6 +1719,8 @@ MonoBehaviour:
   foodSweetSaltySprites:
   - {fileID: 21300000, guid: 7b39eb6b63e0d42678dedfb6022a3260, type: 3}
   - {fileID: 21300002, guid: 7b39eb6b63e0d42678dedfb6022a3260, type: 3}
+  - {fileID: 21300004, guid: 7b39eb6b63e0d42678dedfb6022a3260, type: 3}
+  - {fileID: 21300006, guid: 7b39eb6b63e0d42678dedfb6022a3260, type: 3}
   indexSummer: 
   indexWinter: 
 --- !u!4 &1279513824

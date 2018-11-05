@@ -47,7 +47,7 @@ public class ItemSpawn : MonoBehaviour {
 		while(true)
 		{
 			// Easier (slower falling objects) as the user advances
-			repeatRate = 0.7f-(float)(ApplicationModel.level/10);
+			repeatRate = 0.4f+(float)(ApplicationModel.level/10);
 			yield return new WaitForSeconds(repeatRate);
 			Spawn();
 		}
@@ -68,13 +68,35 @@ public class ItemSpawn : MonoBehaviour {
 		Vector3 pos = new Vector3 (Random.Range (gameObject.transform.position.x, RightSide.transform.position.x), gameObject.transform.position.y, -40); 
 		int elemType = Random.Range (0, elemType_lastFoodTypeValue+1);
 
+		// Distribute the spawining depending on varying percentages
+		elemType = Random.Range (0,100);
+		if ((elemType -= ApplicationModel.pctBreadPasta) < 0) {
+			elemType = elemType_BreadPasta;
+		}
+		else if ((elemType -= ApplicationModel.pctFruitVeggies) < 0) {
+			elemType = elemType_FruitVeggies;
+		}
+		else if ((elemType -= ApplicationModel.pctMeatFish) < 0) {
+			elemType = elemType_MeatFish;
+		}
+		else if ((elemType -= ApplicationModel.pctMilkCheese) < 0) {
+			elemType = elemType_MilkCheese;
+		}
+		else if ((elemType -= ApplicationModel.pctSweetSalty) < 0) {
+			elemType = elemType_SweetSalty;
+		}
+
 		// Randomly, something not food will spawn
-		if (Random.Range (0, 20) > 13) {elemType = elemType_Bycicle;} // Bicycle generation
-		if (Random.Range (0, 20) > 14) {elemType = elemType_Water;} // Water generation
-		if (Random.Range (0, 20) > 17) {elemType = elemType_EnergyDrink;} // Energy Drink generation
+		if (ApplicationModel.totalSport < ApplicationModel.counterSportValue) {
+			if (Random.Range (0, 100) > 80) {elemType = elemType_Bycicle;} // Bicycle generation
+		}
+		if (ApplicationModel.totalWater < ApplicationModel.counterWaterValue) {
+			if (Random.Range (0, 100) > 80) {elemType = elemType_Water;} // Water generation
+		}
+		if (Random.Range (0, 100) > 91+ApplicationModel.level) {elemType = elemType_EnergyDrink;} // Energy Drink generation
 
 		GameObject newObject = Instantiate (items [elemType], pos, Quaternion.Euler(new Vector3(0,0,Random.Range (-55, 55))));
-		float scaleFood = 60.0f;
+		float scaleFood = 55.0f;
 		float scaleWater = 23.0f;
 		float scaleEnergy = 23.0f;
 		float scaleBicycle = 26.0f;
@@ -83,49 +105,55 @@ public class ItemSpawn : MonoBehaviour {
 			newObject.transform.localScale += new Vector3(scaleFood, scaleFood, scaleZ);
 			int num = 0;
 
-			addToArray(indexSummer,new int[] {0,1,2});
-			addToArray(indexWinter,new int[] {0,1,2});
+			addToArray(indexSummer,new int[] {0,1,2,3});
+			addToArray(indexWinter,new int[] {0,1,2,3});
 
 			// Different items depending on the season
 			if (ApplicationModel.season == 0) {
 				num = UnityEngine.Random.Range (0, indexSummer.Count);
+				newObject.AddComponent<SpriteRenderer> ();
+				newObject.GetComponent<SpriteRenderer> ().sprite = foodBreadPastaSprites [indexSummer[num]];
 			} else if (ApplicationModel.season == 1) {
 				num = UnityEngine.Random.Range (0, indexWinter.Count);
+				newObject.AddComponent<SpriteRenderer> ();
+				newObject.GetComponent<SpriteRenderer> ().sprite = foodBreadPastaSprites [indexWinter[num]];
 			}
-			newObject.AddComponent<SpriteRenderer> ();
-			newObject.GetComponent<SpriteRenderer> ().sprite = foodBreadPastaSprites [num];
 		}
 		else if (elemType == elemType_FruitVeggies) {
 			newObject.transform.localScale += new Vector3(scaleFood, scaleFood, scaleZ);
 			int num = 0;
 
-			addToArray(indexSummer,new int[] {0,1});
-			addToArray(indexWinter,new int[] {1,2});
+			addToArray(indexSummer,new int[] {0,1,3,5,6,7,8,9});
+			addToArray(indexWinter,new int[] {1,2,3,4,5,6,9});
 
 			// Different items depending on the season
 			if (ApplicationModel.season == 0) {
 				num = UnityEngine.Random.Range (0, indexSummer.Count);
+				newObject.AddComponent<SpriteRenderer> ();
+				newObject.GetComponent<SpriteRenderer> ().sprite = foodFruitVeggiesSprites [indexSummer[num]];
 			} else if (ApplicationModel.season == 1) {
 				num = UnityEngine.Random.Range (0, indexWinter.Count);
+				newObject.AddComponent<SpriteRenderer> ();
+				newObject.GetComponent<SpriteRenderer> ().sprite = foodFruitVeggiesSprites [indexWinter[num]];
 			}
-			newObject.AddComponent<SpriteRenderer> ();
-			newObject.GetComponent<SpriteRenderer> ().sprite = foodFruitVeggiesSprites [num];
 		}
 		else if (elemType == elemType_MeatFish) {
 			newObject.transform.localScale += new Vector3(scaleFood, scaleFood, scaleZ);
 			int num = 0;
 
-			addToArray(indexSummer,new int[] {0,1,2});
-			addToArray(indexWinter,new int[] {0,1,2});
+			addToArray(indexSummer,new int[] {0,1,2,3,4,5});
+			addToArray(indexWinter,new int[] {0,1,2,3,4,5});
 
 			// Different items depending on the season
 			if (ApplicationModel.season == 0) {
 				num = UnityEngine.Random.Range (0, indexSummer.Count);
+				newObject.AddComponent<SpriteRenderer> ();
+				newObject.GetComponent<SpriteRenderer> ().sprite = foodMeatFishSprites [indexSummer[num]];
 			} else if (ApplicationModel.season == 1) {
 				num = UnityEngine.Random.Range (0, indexWinter.Count);
+				newObject.AddComponent<SpriteRenderer> ();
+				newObject.GetComponent<SpriteRenderer> ().sprite = foodMeatFishSprites [indexWinter[num]];
 			}
-			newObject.AddComponent<SpriteRenderer> ();
-			newObject.GetComponent<SpriteRenderer> ().sprite = foodMeatFishSprites [num];
 		}
 		else if (elemType == elemType_MilkCheese) {
 			newObject.transform.localScale += new Vector3(scaleFood, scaleFood, scaleZ);
@@ -137,27 +165,31 @@ public class ItemSpawn : MonoBehaviour {
 			// Different items depending on the season
 			if (ApplicationModel.season == 0) {
 				num = UnityEngine.Random.Range (0, indexSummer.Count);
+				newObject.AddComponent<SpriteRenderer> ();
+				newObject.GetComponent<SpriteRenderer> ().sprite = foodMilkCheeseSprites [indexSummer[num]];
 			} else if (ApplicationModel.season == 1) {
 				num = UnityEngine.Random.Range (0, indexWinter.Count);
+				newObject.AddComponent<SpriteRenderer> ();
+				newObject.GetComponent<SpriteRenderer> ().sprite = foodMilkCheeseSprites [indexWinter[num]];
 			}
-			newObject.AddComponent<SpriteRenderer> ();
-			newObject.GetComponent<SpriteRenderer> ().sprite = foodMilkCheeseSprites [num];
 		}
 		else if (elemType == elemType_SweetSalty) {
 			newObject.transform.localScale += new Vector3(scaleFood, scaleFood, scaleZ);
 			int num = 0;
 
-			addToArray(indexSummer,new int[] {0});
-			addToArray(indexWinter,new int[] {1});
+			addToArray(indexSummer,new int[] {0,2,3});
+			addToArray(indexWinter,new int[] {1,2,3});
 
 			// Different items depending on the season
 			if (ApplicationModel.season == 0) {
 				num = UnityEngine.Random.Range (0, indexSummer.Count);
+				newObject.AddComponent<SpriteRenderer> ();
+				newObject.GetComponent<SpriteRenderer> ().sprite = foodSweetSaltySprites [indexSummer[num]];
 			} else if (ApplicationModel.season == 1) {
 				num = UnityEngine.Random.Range (0, indexWinter.Count);
+				newObject.AddComponent<SpriteRenderer> ();
+				newObject.GetComponent<SpriteRenderer> ().sprite = foodSweetSaltySprites [indexWinter[num]];
 			}
-			newObject.AddComponent<SpriteRenderer> ();
-			newObject.GetComponent<SpriteRenderer> ().sprite = foodSweetSaltySprites [num];
 		}
 		else if(elemType == elemType_Bycicle){ // bicycle sprite
 			newObject.transform.localScale += new Vector3(scaleBicycle, scaleBicycle, 0);

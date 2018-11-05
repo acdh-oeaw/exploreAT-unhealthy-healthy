@@ -20,18 +20,35 @@ public class ApplicationModel {
 	static public string language;
 	static public bool levelCleared;
 
-	/*
+	static public int pctBreadPasta = 25;
+	static public int pctFruitVeggies = 30;
+	static public int pctMeatFish = 15;
+	static public int pctMilkCheese = 20;
+	static public int pctSweetSalty = 10;
+
+	static public int valueSport = 1;
+	static public int valueWater = 1;
+	static public int valueBreadPasta = 3;
+	static public int valueFruitVeggies = 3;
+	static public int valueMeatFish = 3;
+	static public int valueMilkCheese = 3;
+	static public int valueSweetSalty = 1;
+
 	static public int counterBreadPasta, counterBreadPastaMin = 28, counterBreadPastaMax = 35;
 	static public int counterFruitVeggies, counterFruitVeggiesValue = 35;
 	static public int counterMeatFish, counterMeatFishMin = 8, counterMeatFishMax = 11;
 	static public int counterMilkCheese, counterMilkCheeseValue = 21;
 	static public int counterSweetSalty, counterSweetSaltyValue = 7;
-	*/
+	static public int counterSportValue = 7;
+	static public int counterWaterValue = 6;
+
+	/*
 	static public int counterBreadPasta, counterBreadPastaMin = 1, counterBreadPastaMax = 10;
 	static public int counterFruitVeggies, counterFruitVeggiesValue = 5;
 	static public int counterMeatFish, counterMeatFishMin = 5, counterMeatFishMax = 10;
 	static public int counterMilkCheese, counterMilkCheeseValue = 5;
 	static public int counterSweetSalty, counterSweetSaltyValue = 3;
+	*/
 
 	static public string en_tutorial_advanceText = "Press 'N' to Advance\n\nPress 'S' to Skip";
 	static public string es_tutorial_advanceText = "Pulsa 'N' para avanzar\n\nPulsa 'S' para saltar";
