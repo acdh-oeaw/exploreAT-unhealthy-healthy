@@ -62,7 +62,7 @@ public class summaryHandler : MonoBehaviour {
 		checkFruitVeggiesObject.GetComponent<SpriteRenderer> ().sprite = checkFruitVeggiesSprites [1];
 		checkMeatFishObject.GetComponent<SpriteRenderer> ().sprite = checkMeatFishSprites [1];
 		checkMilkCheeseObject.GetComponent<SpriteRenderer> ().sprite = checkMilkCheeseSprites [1];
-		checkSweetSaltyObject.GetComponent<SpriteRenderer> ().sprite = checkSweetSaltySprites [0];
+		checkSweetSaltyObject.GetComponent<SpriteRenderer> ().sprite = checkSweetSaltySprites [1];
 
 		if (ApplicationModel.language == null)
 			ApplicationModel.language = "en";
@@ -159,7 +159,7 @@ public class summaryHandler : MonoBehaviour {
 		} else {
 			if (ApplicationModel.language == "en") {
 				checkBreadPastaMsg.GetComponent<Text> ().text = ApplicationModel.en_summaryHandler_breadPastaMsgTextBad;
-				checkBreadPastaMsg.GetComponent<Text> ().text += " (Ate "+ApplicationModel.counterBreadPasta+"units, need between "+ApplicationModel.counterBreadPastaMin+" and "+ApplicationModel.counterBreadPastaMax+")";
+				checkBreadPastaMsg.GetComponent<Text> ().text += " (Ate "+ApplicationModel.counterBreadPasta+" units, need between "+ApplicationModel.counterBreadPastaMin+" and "+ApplicationModel.counterBreadPastaMax+")";
 			} else if (ApplicationModel.language == "es") {
 				checkBreadPastaMsg.GetComponent<Text> ().text = ApplicationModel.es_summaryHandler_breadPastaMsgTextBad;
 			} else if (ApplicationModel.language == "de") {
@@ -276,15 +276,21 @@ public class summaryHandler : MonoBehaviour {
 		if (ApplicationModel.levelCleared) {
 				ApplicationModel.level++;
 		}
+
+		if (ApplicationModel.level >= ApplicationModel.maxLevel) {
+			if (ApplicationModel.language == "en") {
+				successMsg.GetComponent<Text> ().text = ApplicationModel.en_summaryHandler_gameEndMsgText;
+			} else if (ApplicationModel.language == "es") {
+				successMsg.GetComponent<Text> ().text = ApplicationModel.es_summaryHandler_gameEndMsgText;
+			} else if (ApplicationModel.language == "de") {
+				successMsg.GetComponent<Text> ().text = ApplicationModel.de_summaryHandler_gameEndMsgText;
+			}
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.N)){
-			Debug.Log ("N pressed");
-			Debug.Log (ApplicationModel.level);
-			Debug.Log (ApplicationModel.maxLevel);
-			Debug.Log (ApplicationModel.levelCleared);
 
 			if(ApplicationModel.level <= ApplicationModel.maxLevel){
 					// Reset stuff
