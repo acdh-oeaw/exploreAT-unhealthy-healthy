@@ -50,12 +50,19 @@ public class ApplicationModel {
 	static public int counterSweetSalty, counterSweetSaltyValue = 3;
 	*/
 
+	static public string en_splash_text = "Select the Language (1-2-3 Keys) - Press 'N' to Advance\nPress 'R' at Any Time to Come Back to This Screen";
+	static public string es_splash_text = "Selecciona un idioma (Teclas 1-2-3) - Pulsa 'N' para Avanzar\nPulsa 'R' para Volver a la Pantalla Inicial";
+	static public string de_splash_text = "Wähle eine Sprache (1-2-3 Tasten) - Drücke 'N', um fortzufahren\nDrücke ‘R’ um jeder Zeit zu diesem Bildschirm zurückzukommen";
+
 	static public string en_pyramid_advanceText = "Press 'N' to Advance";
 	static public string es_pyramid_advanceText = "Pulsa 'N' para avanzar";
 	static public string de_pyramid_advanceText = "Drücke 'N', um fortzufahren";
 	static public string en_pyramid_infoText = "Put the mouse over each food group to get more information about it!";
 	static public string es_pyramid_infoText = "Coloca el cursor sobre cada grupo alimenticio para obtener más información!";
 	static public string de_pyramid_infoText = "Bewege den Mauszeiger über jede Lebensmittelgruppe um mehr Information zu erhalten";
+	static public string en_pyramid_source = "Source: GESUNDHEIT.GV.AT";
+	static public string es_pyramid_source = "Fuente: GESUNDHEIT.GV.AT";
+	static public string de_pyramid_source = "Quelle: GESUNDHEIT.GV.AT";
 
 	static public string en_tutorial_advanceText = "Press 'N' to Advance\n\nPress 'S' to Skip";
 	static public string es_tutorial_advanceText = "Pulsa 'N' para avanzar\n\nPulsa 'S' para saltar";
@@ -178,15 +185,15 @@ public class ApplicationModel {
 	static public string es_infoWater = "Come frutas y verduras, ya que también contienen líquidos. En cualquier caso, toma al menos 1,5 litros de bebidas al día. Las mejores son las bebidas de bajo consumo energético, como agua, agua mineral, tés de hierbas y jugos de frutas y vegetales diluidos. El café y el té negro deben tomarse con moderación (máximo de 3 a 4 tazas). Las bebidas alcohólicas no se calculan para la ingesta de líquidos.";
 	static public string de_titleBreadPasta = "Brot & Pasta & Reis";
 	static public string de_titleFruitVeggies = "Obst & Gemüse";
-	static public string de_titleMeatFish = "Fleisch & Fisch";
-	static public string de_titleMilkCheese = "Milchprodukte";
-	static public string de_titleSweetSalty = "Süß und Salzig";
+	static public string de_titleMeatFish = "Fleisch, Fisch & Eier";
+	static public string de_titleMilkCheese = "Milch & Milchprodukte";
+	static public string de_titleSweetSalty = "Süßes und Salziges";
 	static public string de_titleWater = "Wasser";
 	static public string de_infoBreadPasta = "Täglich solltest du 4 Portionen Getreide, Brot, Nudeln, Reis oder Erdäpfel (5 Portionen für sportlich Aktive und Kinder) zu dir nehmen. Ideal sind Vollkornprodukte wie ungezuckertes Müsli, Vollkornbrot und -nudeln oder Naturreis. Unbedingt beachten: Auf die Zubereitung kommt es an! Nicht Brot, Nudeln, Reis und Erdäpfel sind fett- und kalorienreich, sondern die oft dazu gereichten Saucen, Aufstriche, Wurst- und Käsesorten. Mit Butter und Rahmsauce verfeinerte Nudeln haben selbstverständlich mehr Kalorien als jene mit fettarmer Gemüsesauce. Erdäpfel in frittierter oder gebratener Form weisen ebenfalls einen höheren Fettanteil auf als gekochte.";
-	static public string de_infoFruitVeggies = "Ideal sind 5 Portionen Gemüse, Hülsenfrüchte und Obst am Tag – am besten 3 Portionen Gemüse und/oder Hülsenfrüchte sowie 2 Portionen Obst. Bunte Vielfalt ist erwünscht, sowohl roh als auch gekocht. Vermeide hingegen: fette Saucen (z.B. Saucen mit Schlagobers), fette Dressings am Salat sowie Extraportionen Zucker zum Obst(-salat). Bevorzugt saisonales und regionales Obst und Gemüse.";
-	static public string de_infoMeatFish = "1 bis 2 Portionen Fisch in der Woche – ideal ist fetter Seefisch wie Makrele, Lachs, Thunfisch oder Hering, aber auch heimischer Kaltwasserfisch wie z.B. Saibling. Maximal 3 Portionen fettarmes Fleisch oder fettarme Wurstwaren – z.B. mageres Hühnerfleisch und Schinken. Rotes Fleisch (wie Rind, Schwein oder Lamm) und Wurstwaren sollten eher selten gegessen werden (Salz!). Bis zu 3 Eier in der Woche. Beachte dabei, dass Eier oft auch in verarbeiteter Form in verschiedenen Lebensmitteln enthalten sind (z.B. in Nudeln, Gebäck, Mehlspeisen).\n";
-	static public string de_infoMilkCheese = "Täglich solltest du 3 Portionen Milch und Milchprodukte. Ideal sind 2 Portionen „weiß“ – etwa Milch, Joghurt, Buttermilch, Hüttenkäse – und 1 Portion „gelb“: Käse – am besten in Form von fettarmen Produkten.";
-	static public string de_infoSweetSalty = "Lebensmittel mit hohem Anteil an Fett, Zucker und Salz solltest du selten genießen. Es sollte maximal eine Portion an süßen oder fetten Snacks täglich aufgenommen werden. Die aktuelle Empfehlung für die maximale Salzaufnahme liegt laut WHO bei 5 Gramm pro Tag. Beachten dabei, dass Salz in hohen Mengen z.B. in Brot, Wurst und Käse enthalten ist. Salz daher sparsam verwenden bzw. durch Kräuter und Gewürze ersetzen!";
+	static public string de_infoFruitVeggies = "Ideal sind 5 Portionen Gemüse, Hülsenfrüchte und Obst am Tag – am besten 3 Portionen Gemüse und/oder Hülsenfrüchte sowie 2 Portionen Obst. Bunte Vielfalt ist erwünscht, sowohl roh als auch gekocht. Vermeiden Sie hingegen: fette Saucen (z.B. Saucen mit Schlagobers), fette Dressings am Salat sowie Extraportionen Zucker zum Obst(-salat). Du solltest saisonales und regionales Obst und Gemüse bevorzugen.";
+	static public string de_infoMeatFish = "Iss 1 bis 2 Portionen Fisch in der Woche – ideal ist fetter Seefisch wie Makrele, Lachs, Thunfisch oder Hering, aber auch heimischer Kaltwasserfisch wie z.B. Saibling.\nDu solltest maximal 3 Portionen fettarmes Fleisch oder fettarme Wurstwaren – z.B. mageres Hühnerfleisch und Schinken pro Woche essen. Rotes Fleisch (wie Rind, Schwein oder Lamm) und Wurstwaren sollten eher selten gegessen werden.\nAußerdem kannst du bis zu 3 Eier in der Woche essen. Beachte dabei, dass Eier oft auch in verarbeiteter Form in verschiedenen Lebensmitteln enthalten sind (z.B. in Nudeln, Gebäck, Mehlspeisen).";
+	static public string de_infoMilkCheese = "Milch und Milchprodukte enthalten hochwertiges Eiweiß und gelten als Quelle für Kalzium und einige Vitamine (wie Vitamin A, B2 und Vitamin B12). Täglich solltest du 3 Portionen Milch und Milchprodukte essen. Ideal sind 2 Portionen „weiß“ – etwa Milch, Joghurt, Buttermilch, Hüttenkäse – und 1 Portion „gelb“: Käse – am besten in Form von fettarmen Produkten.";
+	static public string de_infoSweetSalty = "Du solltest Lebensmittel mit hohem Anteil an Fett, Zucker und Salz selten essen. Maximal 1 Portion sollte an süßen oder fetten Snacks täglich gegessen werden. Die aktuelle Empfehlung für die maximale Salzaufnahme liegt laut WHO bei 5 Gramm pro Tag. Beachte dabei, dass Salz in hohen Mengen z.B. in Brot, Wurst und Käse enthalten ist. Salz solltest du daher sparsam verwenden bzw. durch Kräuter und Gewürze ersetzen!";
 	static public string de_infoWater = "Obst und Gemüse essen, denn diese enthalten ebenfalls Flüssigkeit. Dennoch sollten zusätzlich in jedem Fall mindestens 1,5 Liter pro Tag in Form von Getränken konsumiert werden. Am besten sind energiearme Getränke wie Wasser, Mineralwasser, ungezuckerte Früchte- und Kräutertees sowie verdünnte Obst- und Gemüsesäfte. Kaffee und Schwarztee sollten in Maßen getrunken werden (maximal 3 bis 4 Tassen). Alkoholische Getränke werden nicht zur Flüssigkeitsaufnahme gerechnet.";
 
 	static public string en_titlePyramid = "Food Pyramid";

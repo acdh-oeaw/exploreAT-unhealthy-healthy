@@ -334,8 +334,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0050205, y: -180.1}
-  m_SizeDelta: {x: 800, y: 19.7}
+  m_AnchoredPosition: {x: 0.0000068913, y: -178}
+  m_SizeDelta: {x: 800, y: 29.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1280683973
 MonoBehaviour:
@@ -397,6 +397,7 @@ MonoBehaviour:
   es_secondTexture: {fileID: 2800000, guid: 7a8850f3555cf4734bd2369f71a20d29, type: 3}
   de_secondTexture: {fileID: 2800000, guid: b85c41782582d4cb9999982d657c4fe9, type: 3}
   advanceText: {fileID: 1280683973}
+  infoText: {fileID: 0}
   tuten1: {fileID: 2800000, guid: a2d6ce43b7187494cabfddbac6a4ddff, type: 3}
   tuten2: {fileID: 2800000, guid: 368df8fa9b7b54e4884155fbfa28c5ab, type: 3}
   tuten3: {fileID: 2800000, guid: 872b0a71521a74051b4542e79c9e0615, type: 3}

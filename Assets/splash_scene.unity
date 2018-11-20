@@ -505,7 +505,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Select the Language (1-2-3 Keys)
+  m_Text: 'Select the Language (1-2-3 Keys) - Press ''N'' to Advance
 
     Press ''R'' at Any Time to Come Back to This Screen'
 --- !u!222 &1280683974
@@ -532,7 +532,8 @@ MonoBehaviour:
   en_secondTexture: {fileID: 0}
   es_secondTexture: {fileID: 0}
   de_secondTexture: {fileID: 0}
-  advanceText: {fileID: 0}
+  advanceText: {fileID: 1280683973}
+  infoText: {fileID: 0}
   tuten1: {fileID: 0}
   tuten2: {fileID: 0}
   tuten3: {fileID: 0}

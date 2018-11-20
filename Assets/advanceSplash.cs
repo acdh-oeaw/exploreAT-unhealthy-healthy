@@ -33,6 +33,10 @@ public class advanceSplash : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		if(string.Equals(SceneManager.GetActiveScene ().name,"splash_scene")){
+			ApplicationModel.language = "en";
+		}
+
 		if (ApplicationModel.tutorialState == 0) {
 			ApplicationModel.tutorialState = 1;
 		}
@@ -87,13 +91,19 @@ public class advanceSplash : MonoBehaviour {
 		else if (Input.GetKeyDown (KeyCode.Alpha2) || Input.GetKeyDown (KeyCode.Keypad2)) {ApplicationModel.language = "es";}
 		else if (Input.GetKeyDown (KeyCode.Alpha3) || Input.GetKeyDown (KeyCode.Keypad2)) {ApplicationModel.language = "de";}
 
-		// Tutorial advancement step-by-step
-		if (Input.GetKeyDown (KeyCode.Alpha1) || Input.GetKeyDown (KeyCode.Keypad1) ||
-			Input.GetKeyDown (KeyCode.Alpha2) || Input.GetKeyDown (KeyCode.Keypad2) ||
-			Input.GetKeyDown (KeyCode.Alpha3) || Input.GetKeyDown (KeyCode.Keypad3) ||
-			Input.GetKeyDown (KeyCode.N)){
+		// Change the messages of the splash screen depending on the language if it changed
+		if (ApplicationModel.language == "en") {
+			advanceText.text = ApplicationModel.en_splash_text;
+		} else if (ApplicationModel.language == "es") {
+			advanceText.text = ApplicationModel.es_splash_text;
+		} else if (ApplicationModel.language == "de") {
+			advanceText.text = ApplicationModel.de_splash_text;
+		}
 
-			// If in start scree, load pyramid
+		// Advancement step-by-step
+		if (Input.GetKeyDown (KeyCode.N)){
+
+			// If in start screen, load pyramid
 			if (string.Equals(SceneManager.GetActiveScene ().name,"splash_scene")) {
 				SceneManager.LoadScene ("pyramid_scene");
 			}

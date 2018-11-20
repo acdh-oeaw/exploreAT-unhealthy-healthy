@@ -56,6 +56,7 @@
      <Compile Include="Assets\ApplicationModel.cs" />
      <Compile Include="Assets\backToStart.cs" />
      <Compile Include="Assets\BarrelRotator.cs" />
+     <Compile Include="Assets\camAdapter.cs" />
      <Compile Include="Assets\characterSelector.cs" />
      <Compile Include="Assets\gameOverController.cs" />
      <Compile Include="Assets\gameStart.cs" />
@@ -63,6 +64,7 @@
      <Compile Include="Assets\ItemChecker.cs" />
      <Compile Include="Assets\ItemSpawn.cs" />
      <Compile Include="Assets\mouseOverSummary.cs" />
+     <Compile Include="Assets\openURL.cs" />
      <Compile Include="Assets\playerInitializer.cs" />
      <Compile Include="Assets\playerMove.cs" />
      <Compile Include="Assets\PopUpTextBehaviour.cs" />
