@@ -287,34 +287,41 @@ public class summaryHandler : MonoBehaviour {
 			}
 		}
 	}
+
+	void ResetFoodCounters(){
+		// Reset stuff (from 0 to value - model)
+		ApplicationModel.counterBreadPasta = 0;
+		ApplicationModel.counterFruitVeggies = 0;
+		ApplicationModel.counterMeatFish = 0;
+		ApplicationModel.counterMilkCheese = 0;
+		ApplicationModel.counterSweetSalty = 0;
+		// Reset stuff (from value to 0 - model)
+//		ApplicationModel.counterBreadPasta = (ApplicationModel.counterBreadPastaMax-ApplicationModel.counterBreadPastaMin);
+//		ApplicationModel.counterFruitVeggies = ApplicationModel.counterFruitVeggiesValue;
+//		ApplicationModel.counterMeatFish = (ApplicationModel.counterMeatFishMax-ApplicationModel.counterMeatFishMin);
+//		ApplicationModel.counterMilkCheese = ApplicationModel.counterMilkCheeseValue;
+//		ApplicationModel.counterSweetSalty = ApplicationModel.counterSweetSaltyValue;
+	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.N)){
 
 			if(ApplicationModel.level <= ApplicationModel.maxLevel){
-					// Reset stuff
-					ApplicationModel.counterBreadPasta = 0;
-					ApplicationModel.counterFruitVeggies = 0;
-					ApplicationModel.counterMeatFish = 0;
-					ApplicationModel.counterMilkCheese = 0;
-					ApplicationModel.counterSweetSalty = 0;
-					ApplicationModel.totalWater = 0;
-					ApplicationModel.totalSport = 0;
-					ApplicationModel.isJumping = false;
-					ApplicationModel.gameOver = false;
+				ResetFoodCounters ();
+				// Rest of resets
+				ApplicationModel.totalWater = 0;
+				ApplicationModel.totalSport = 0;
+				ApplicationModel.isJumping = false;
+				ApplicationModel.gameOver = false;
 
-					// Change scene to gameplay
-					SceneManager.LoadScene("scene"); // Regenerate Scene
+				// Change scene to gameplay
+				SceneManager.LoadScene("scene"); // Regenerate Scene
 			}
 			// After 4 levels the game is finished
 			else {
-				// Reset stuff
-				ApplicationModel.counterBreadPasta = 0;
-				ApplicationModel.counterFruitVeggies = 0;
-				ApplicationModel.counterMeatFish = 0;
-				ApplicationModel.counterMilkCheese = 0;
-				ApplicationModel.counterSweetSalty = 0;
+				ResetFoodCounters ();
+				// Rest of resets
 				ApplicationModel.totalWater = 0;
 				ApplicationModel.totalSport = 0;
 				ApplicationModel.isJumping = false;

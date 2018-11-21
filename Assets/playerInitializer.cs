@@ -68,8 +68,25 @@ public class playerInitializer : MonoBehaviour {
 				CheckProgressObject.GetComponent < Text >().text = ApplicationModel.de_scene_checkProgressText;
 			}
 		}
+
+		ResetFoodCounters ();
 	}
-	
+
+	void ResetFoodCounters(){
+		// Reset stuff (from 0 to value - model)
+				ApplicationModel.counterBreadPasta = 0;
+				ApplicationModel.counterFruitVeggies = 0;
+				ApplicationModel.counterMeatFish = 0;
+				ApplicationModel.counterMilkCheese = 0;
+				ApplicationModel.counterSweetSalty = 0;
+		// Reset stuff (from value to 0 - model)
+//		ApplicationModel.counterBreadPasta = (ApplicationModel.counterBreadPastaMax-ApplicationModel.counterBreadPastaMin);
+//		ApplicationModel.counterFruitVeggies = ApplicationModel.counterFruitVeggiesValue;
+//		ApplicationModel.counterMeatFish = (ApplicationModel.counterMeatFishMax-ApplicationModel.counterMeatFishMin);
+//		ApplicationModel.counterMilkCheese = ApplicationModel.counterMilkCheeseValue;
+//		ApplicationModel.counterSweetSalty = ApplicationModel.counterSweetSaltyValue;
+	}
+
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.N)) {
@@ -77,11 +94,7 @@ public class playerInitializer : MonoBehaviour {
 			if (string.Equals (SceneManager.GetActiveScene ().name, "scene")) {
 				// If we've lost (Energy drink), restart
 				if (ApplicationModel.gameOver) {
-					ApplicationModel.counterBreadPasta = 0;
-					ApplicationModel.counterFruitVeggies = 0;
-					ApplicationModel.counterMeatFish = 0;
-					ApplicationModel.counterMilkCheese = 0;
-					ApplicationModel.counterSweetSalty = 0;
+					ResetFoodCounters ();
 					ApplicationModel.totalWater = 0;
 					ApplicationModel.totalSport = 0;
 					ApplicationModel.isJumping = false;
