@@ -1,11 +1,12 @@
 fileFormatVersion: 2
 guid: 39c8b9a15c5f141198772626d67e368c
-timeCreated: 1539775052
+timeCreated: 1542798837
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: iconSweetSaltyCheck_0
     21300002: iconSweetSaltyCheck_1
+    21300004: iconSweetSaltyCheck_2
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -92,7 +93,7 @@ TextureImporter:
       name: iconSweetSaltyCheck_0
       rect:
         serializedVersion: 2
-        x: 11
+        x: 10
         y: 0
         width: 139
         height: 116
@@ -106,7 +107,21 @@ TextureImporter:
       name: iconSweetSaltyCheck_1
       rect:
         serializedVersion: 2
-        x: 161
+        x: 160
+        y: 0
+        width: 139
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: iconSweetSaltyCheck_2
+      rect:
+        serializedVersion: 2
+        x: 311
         y: 0
         width: 139
         height: 116

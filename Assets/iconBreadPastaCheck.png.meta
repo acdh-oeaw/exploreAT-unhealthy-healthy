@@ -1,11 +1,12 @@
 fileFormatVersion: 2
 guid: ce6308e10d70445148af22217ecb4912
-timeCreated: 1539774748
+timeCreated: 1542798788
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: iconBreadPastaCheck_0
     21300002: iconBreadPastaCheck_1
+    21300004: iconBreadPastaCheck_2
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -92,7 +93,7 @@ TextureImporter:
       name: iconBreadPastaCheck_0
       rect:
         serializedVersion: 2
-        x: 5
+        x: 0
         y: 0
         width: 145
         height: 132
@@ -106,7 +107,21 @@ TextureImporter:
       name: iconBreadPastaCheck_1
       rect:
         serializedVersion: 2
-        x: 155
+        x: 150
+        y: 0
+        width: 145
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: iconBreadPastaCheck_2
+      rect:
+        serializedVersion: 2
+        x: 305
         y: 0
         width: 145
         height: 132

@@ -1,11 +1,12 @@
 fileFormatVersion: 2
 guid: 4d57f8a16868046a38690b1baddbbb0d
-timeCreated: 1539775006
+timeCreated: 1542798801
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: iconFuitVeggiesCheck_0
     21300002: iconFuitVeggiesCheck_1
+    21300004: iconFuitVeggiesCheck_2
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -92,7 +93,7 @@ TextureImporter:
       name: iconFuitVeggiesCheck_0
       rect:
         serializedVersion: 2
-        x: 5
+        x: 0
         y: 0
         width: 145
         height: 140
@@ -106,7 +107,21 @@ TextureImporter:
       name: iconFuitVeggiesCheck_1
       rect:
         serializedVersion: 2
-        x: 155
+        x: 150
+        y: 0
+        width: 145
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: iconFuitVeggiesCheck_2
+      rect:
+        serializedVersion: 2
+        x: 303
         y: 0
         width: 145
         height: 140

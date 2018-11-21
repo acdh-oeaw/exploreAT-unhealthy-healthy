@@ -59,9 +59,9 @@ public class ItemChecker : MonoBehaviour {
 //		counterSweetSaltyObject.GetComponent < Text > ().text = ""+0;
 
 		// From value to zero - model
-		counterBreadPastaObject.GetComponent < Text > ().text = ""+((ApplicationModel.counterBreadPastaMax-ApplicationModel.counterBreadPastaMin)-ApplicationModel.counterBreadPasta);
+		counterBreadPastaObject.GetComponent < Text > ().text = ""+((ApplicationModel.counterBreadPastaMin)-ApplicationModel.counterBreadPasta);
 		counterFruitVeggiesObject.GetComponent < Text > ().text = ""+(ApplicationModel.counterFruitVeggiesValue-ApplicationModel.counterFruitVeggies);
-		counterMeatFishObject.GetComponent < Text > ().text = ""+((ApplicationModel.counterMeatFishMax-ApplicationModel.counterMeatFishMin)-ApplicationModel.counterMeatFish);
+		counterMeatFishObject.GetComponent < Text > ().text = ""+((ApplicationModel.counterMeatFishMin)-ApplicationModel.counterMeatFish);
 		counterMilkCheeseObject.GetComponent < Text > ().text = ""+(ApplicationModel.counterMilkCheeseValue-ApplicationModel.counterMilkCheese);
 		counterSweetSaltyObject.GetComponent < Text > ().text = ""+(ApplicationModel.counterSweetSaltyValue-ApplicationModel.counterSweetSalty);
 
@@ -216,13 +216,16 @@ public class ItemChecker : MonoBehaviour {
 			gameObject.SendMessage("HandleEnergyDrinkItemCollision");
 		}
 
-		// Update counter values
-		if (((ApplicationModel.counterBreadPastaMax - ApplicationModel.counterBreadPastaMin) - ApplicationModel.counterBreadPasta) > 0) {
-			counterBreadPastaObject.GetComponent < Text > ().text = ""+((ApplicationModel.counterBreadPastaMax-ApplicationModel.counterBreadPastaMin)-ApplicationModel.counterBreadPasta);
+		// Update counter values and green/red/yellow graphics
+		if ((ApplicationModel.counterBreadPasta) < ApplicationModel.counterBreadPastaMin) {
+			counterBreadPastaObject.GetComponent < Text > ().text = ""+((ApplicationModel.counterBreadPastaMin)-ApplicationModel.counterBreadPasta);
+			if ((ApplicationModel.counterBreadPasta) > (ApplicationModel.counterBreadPastaMin-(ApplicationModel.counterBreadPastaMax - ApplicationModel.counterBreadPastaMin))/2) {
+				checkBreadPastaObject.GetComponent<SpriteRenderer> ().sprite = checkBreadPastaSprites [2];
+			}
 		} else {
 			counterBreadPastaObject.GetComponent < Text > ().text = "0";
 			checkBreadPastaObject.GetComponent<SpriteRenderer> ().sprite = checkBreadPastaSprites [0];
-			if(ApplicationModel.counterBreadPasta > ApplicationModel.counterBreadPastaMax){
+			if(ApplicationModel.counterBreadPasta >= ApplicationModel.counterBreadPastaMax){
 				// GAME OVER
 				checkBreadPastaObject.GetComponent<SpriteRenderer> ().sprite = checkBreadPastaSprites [1];
 				ApplicationModel.gameOver = true;
@@ -232,16 +235,22 @@ public class ItemChecker : MonoBehaviour {
 		}
 		if ((ApplicationModel.counterFruitVeggiesValue - ApplicationModel.counterFruitVeggies) > 0) {
 			counterFruitVeggiesObject.GetComponent < Text > ().text = ""+(ApplicationModel.counterFruitVeggiesValue-ApplicationModel.counterFruitVeggies);
+			if ((ApplicationModel.counterFruitVeggies) > ApplicationModel.counterFruitVeggiesValue/2) {
+				checkFruitVeggiesObject.GetComponent<SpriteRenderer> ().sprite = checkFruitVeggiesSprites [2];
+			}
 		} else {
 			counterFruitVeggiesObject.GetComponent < Text > ().text = "0";
 			checkFruitVeggiesObject.GetComponent<SpriteRenderer> ().sprite = checkFruitVeggiesSprites [0];
 		}
-		if (((ApplicationModel.counterMeatFishMax - ApplicationModel.counterMeatFishMin) - ApplicationModel.counterMeatFish) > 0) {
-			counterMeatFishObject.GetComponent < Text > ().text = ""+((ApplicationModel.counterMeatFishMax-ApplicationModel.counterMeatFishMin)-ApplicationModel.counterMeatFish);
+		if ((ApplicationModel.counterMeatFish) < ApplicationModel.counterMeatFishMin) {
+			counterMeatFishObject.GetComponent < Text > ().text = ""+((ApplicationModel.counterMeatFishMin)-ApplicationModel.counterMeatFish);
+			if ((ApplicationModel.counterMeatFish) > (ApplicationModel.counterMeatFishMin-(ApplicationModel.counterMeatFishMax - ApplicationModel.counterMeatFishMin))/2) {
+				checkMeatFishObject.GetComponent<SpriteRenderer> ().sprite = checkMeatFishSprites [2];
+			}
 		} else {
 			counterMeatFishObject.GetComponent < Text > ().text = "0";
 			checkMeatFishObject.GetComponent<SpriteRenderer> ().sprite = checkMeatFishSprites [0];
-			if(ApplicationModel.counterMeatFish > ApplicationModel.counterMeatFishMax){
+			if(ApplicationModel.counterMeatFish >= ApplicationModel.counterMeatFishMax){
 				// GAME OVER
 				checkMeatFishObject.GetComponent<SpriteRenderer> ().sprite = checkMeatFishSprites [1];
 				ApplicationModel.gameOver = true;
@@ -251,12 +260,18 @@ public class ItemChecker : MonoBehaviour {
 		}
 		if ((ApplicationModel.counterMilkCheeseValue-ApplicationModel.counterMilkCheese) > 0) {
 			counterMilkCheeseObject.GetComponent < Text > ().text = ""+(ApplicationModel.counterMilkCheeseValue-ApplicationModel.counterMilkCheese);
+			if ((ApplicationModel.counterMilkCheese) > ApplicationModel.counterMilkCheeseValue/2) {
+				checkMilkCheeseObject.GetComponent<SpriteRenderer> ().sprite = checkMilkCheeseSprites [2];
+			}
 		} else {
 			counterMilkCheeseObject.GetComponent < Text > ().text = "0";
 			checkMilkCheeseObject.GetComponent<SpriteRenderer> ().sprite = checkMilkCheeseSprites [0];
 		}
 		if ((ApplicationModel.counterSweetSaltyValue-ApplicationModel.counterSweetSalty) > 0) {
 			counterSweetSaltyObject.GetComponent < Text > ().text = ""+(ApplicationModel.counterSweetSaltyValue-ApplicationModel.counterSweetSalty);
+			if ((ApplicationModel.counterSweetSalty) > ApplicationModel.counterSweetSaltyValue/2) {
+				checkSweetSaltyObject.GetComponent<SpriteRenderer> ().sprite = checkSweetSaltySprites [2];
+			}
 		} else {
 			counterSweetSaltyObject.GetComponent < Text > ().text = "0";
 			if(ApplicationModel.counterSweetSalty > ApplicationModel.counterSweetSaltyValue){

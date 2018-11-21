@@ -2971,18 +2971,23 @@ MonoBehaviour:
   checkBreadPastaSprites:
   - {fileID: 21300000, guid: ce6308e10d70445148af22217ecb4912, type: 3}
   - {fileID: 21300002, guid: ce6308e10d70445148af22217ecb4912, type: 3}
+  - {fileID: 21300004, guid: ce6308e10d70445148af22217ecb4912, type: 3}
   checkFruitVeggiesSprites:
   - {fileID: 21300000, guid: 4d57f8a16868046a38690b1baddbbb0d, type: 3}
   - {fileID: 21300002, guid: 4d57f8a16868046a38690b1baddbbb0d, type: 3}
+  - {fileID: 21300004, guid: 4d57f8a16868046a38690b1baddbbb0d, type: 3}
   checkMeatFishSprites:
   - {fileID: 21300000, guid: 6af1da10bab344f2ab8cdd7f6e40acd5, type: 3}
   - {fileID: 21300002, guid: 6af1da10bab344f2ab8cdd7f6e40acd5, type: 3}
+  - {fileID: 21300004, guid: 6af1da10bab344f2ab8cdd7f6e40acd5, type: 3}
   checkMilkCheeseSprites:
   - {fileID: 21300000, guid: c166c5d9f763f4413a1822f582553dc6, type: 3}
   - {fileID: 21300002, guid: c166c5d9f763f4413a1822f582553dc6, type: 3}
+  - {fileID: 21300004, guid: c166c5d9f763f4413a1822f582553dc6, type: 3}
   checkSweetSaltySprites:
   - {fileID: 21300000, guid: 39c8b9a15c5f141198772626d67e368c, type: 3}
   - {fileID: 21300002, guid: 39c8b9a15c5f141198772626d67e368c, type: 3}
+  - {fileID: 21300004, guid: 39c8b9a15c5f141198772626d67e368c, type: 3}
   TimeUpObject: {fileID: 957933262}
   CheckProgressObject: {fileID: 1337896694}
   fruitSprites: []
