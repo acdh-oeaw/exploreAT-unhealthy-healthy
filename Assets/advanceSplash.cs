@@ -92,12 +92,14 @@ public class advanceSplash : MonoBehaviour {
 		else if (Input.GetKeyDown (KeyCode.Alpha3) || Input.GetKeyDown (KeyCode.Keypad2)) {ApplicationModel.language = "de";}
 
 		// Change the messages of the splash screen depending on the language if it changed
-		if (ApplicationModel.language == "en") {
-			advanceText.text = ApplicationModel.en_splash_text;
-		} else if (ApplicationModel.language == "es") {
-			advanceText.text = ApplicationModel.es_splash_text;
-		} else if (ApplicationModel.language == "de") {
-			advanceText.text = ApplicationModel.de_splash_text;
+		if (string.Equals (SceneManager.GetActiveScene ().name, "splash_scene")) {
+			if (ApplicationModel.language == "en") {
+				advanceText.text = ApplicationModel.en_splash_text;
+			} else if (ApplicationModel.language == "es") {
+				advanceText.text = ApplicationModel.es_splash_text;
+			} else if (ApplicationModel.language == "de") {
+				advanceText.text = ApplicationModel.de_splash_text;
+			}
 		}
 
 		// Advancement step-by-step

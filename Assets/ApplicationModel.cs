@@ -19,6 +19,7 @@ public class ApplicationModel {
 	static public bool isJumping;
 	static public string language;
 	static public bool levelCleared;
+	static public bool paused;
 
 	static public int pctBreadPasta = 25;
 	static public int pctFruitVeggies = 30;
@@ -238,6 +239,7 @@ public class ApplicationModel {
 		valueWater = 1;
 		isJumping = false;
 		language = "en";
+		paused = false;
 
 		// Initial counters - Zero to Value - model
 		counterBreadPasta = 0;

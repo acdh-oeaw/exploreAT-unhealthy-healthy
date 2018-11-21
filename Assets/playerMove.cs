@@ -16,10 +16,14 @@ public class playerMove : MonoBehaviour {
 	public AudioSource audioSource;
 	public AudioSource audioSourceBg;
 
+	public GameObject pausePanel;
+
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent < Rigidbody2D > (); 
 		movesBlocked = false;
+		ApplicationModel.paused = false;
+		pausePanel.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -41,6 +45,33 @@ public class playerMove : MonoBehaviour {
 			GetComponent<Rigidbody2D>().velocity.y >= -0.1) {
 			ApplicationModel.isJumping = false;
 		}
+		if (Input.GetKeyDown (KeyCode.P)) {
+			Debug.Log ("PREALSDKFJASKD FASKDJF KASDJF KASDJFKADSJFKASDJFKA SDJFKA SDJFKASD FASDF");
+			if (!ApplicationModel.paused) 
+			{
+				Debug.Log ("pause");
+				PauseGame();
+			}
+			else {
+				Debug.Log ("continue");
+				ContinueGame ();   
+			}
+		}
+	}
+
+	private void PauseGame()
+	{
+		Time.timeScale = 0;
+		pausePanel.SetActive(true);
+		ApplicationModel.paused = true;
+		//Disable scripts that still work while timescale is set to 0
+	} 
+	private void ContinueGame()
+	{
+		Time.timeScale = 1;
+		pausePanel.SetActive(false);
+		ApplicationModel.paused = false;
+		//enable the scripts again
 	}
 
 	void handleGameOver(){
