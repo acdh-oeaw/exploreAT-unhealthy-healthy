@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class playerMove : MonoBehaviour {
 
@@ -24,6 +26,16 @@ public class playerMove : MonoBehaviour {
 		movesBlocked = false;
 		ApplicationModel.paused = false;
 		pausePanel.SetActive(false);
+
+		if (ApplicationModel.language == "en") {
+			pausePanel.GetComponent < Text > ().text = ApplicationModel.en_scene_pauseText;
+		}
+		else if (ApplicationModel.language == "es") {
+			pausePanel.GetComponent < Text > ().text = ApplicationModel.es_scene_pauseText;
+		}
+		else if (ApplicationModel.language == "de") {
+			pausePanel.GetComponent < Text > ().text = ApplicationModel.de_scene_pauseText;
+		}
 	}
 	
 	// Update is called once per frame
@@ -45,16 +57,16 @@ public class playerMove : MonoBehaviour {
 			GetComponent<Rigidbody2D>().velocity.y >= -0.1) {
 			ApplicationModel.isJumping = false;
 		}
-		if (Input.GetKeyDown (KeyCode.P)) {
-			Debug.Log ("PREALSDKFJASKD FASKDJF KASDJF KASDJFKADSJFKASDJFKA SDJFKA SDJFKASD FASDF");
-			if (!ApplicationModel.paused) 
-			{
-				Debug.Log ("pause");
-				PauseGame();
-			}
-			else {
-				Debug.Log ("continue");
-				ContinueGame ();   
+
+		if (string.Equals(SceneManager.GetActiveScene ().name,"scene")) {
+			if (Input.GetKeyDown (KeyCode.P)) {
+				if (!ApplicationModel.paused) 
+				{
+					PauseGame();
+				}
+				else {
+					ContinueGame ();   
+				}
 			}
 		}
 	}

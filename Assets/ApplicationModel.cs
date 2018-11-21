@@ -136,12 +136,15 @@ public class ApplicationModel {
 	static public string en_scene_timeupText = "TIME IS UP!";
 	static public string en_scene_checkProgressText = "Press -N- to Check Your Progress";
 	static public string en_scene_gameOverText = "Oh no! You Caught an Energy Drink or the Wrong Amount of Food (-N- to Restart)";
+	static public string en_scene_pauseText = "PAUSE";
 	static public string es_scene_timeupText = "TIEMPO!";
 	static public string es_scene_checkProgressText = "Pulsa -N- para Comprobar tu Progreso";
 	static public string es_scene_gameOverText = "Oh no! Tomaste una Bebida Energética o la Cantidad Incorrecta de Comida(-N- para Reiniciar)";
+	static public string es_scene_pauseText = "PAUSA";
 	static public string de_scene_timeupText = "ZEIT ABGELAUFEN";
 	static public string de_scene_checkProgressText = "Drücke -N- um deinen Fortschritt anzuzeigen ";
 	static public string de_scene_gameOverText = "Oh nein! Du hast einen Energydrink gefangen oder die falsche Menge an bestimmten Lebensmitteln gegessen! (Drücke -N- um neu zu beginnen)";
+	static public string de_scene_pauseText = "PAUSE";
 
 
 	static public string en_scene_scoreText = " Total Calories";

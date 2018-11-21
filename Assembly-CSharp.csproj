@@ -60,7 +60,6 @@
      <Compile Include="Assets\characterSelector.cs" />
      <Compile Include="Assets\gameOverController.cs" />
      <Compile Include="Assets\gameStart.cs" />
-     <Compile Include="Assets\handlePause.cs" />
      <Compile Include="Assets\HorizontalSpawn.cs" />
      <Compile Include="Assets\ItemChecker.cs" />
      <Compile Include="Assets\ItemSpawn.cs" />
