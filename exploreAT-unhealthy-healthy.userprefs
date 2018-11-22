@@ -3,7 +3,8 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/ItemChecker.cs">
     <Files>
       <File FileName="Assets/ApplicationModel.cs" Line="44" Column="42" />
-      <File FileName="Assets/ItemChecker.cs" Line="233" Column="62" />
+      <File FileName="Assets/ItemChecker.cs" Line="276" Column="11" />
+      <File FileName="Assets/ItemSpawn.cs" Line="88" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
