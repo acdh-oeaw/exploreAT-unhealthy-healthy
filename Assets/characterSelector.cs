@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ap = ApplicationModel;
 
 public class characterSelector : MonoBehaviour {
 
@@ -18,11 +19,11 @@ public class characterSelector : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		ApplicationModel.level = 1;
+		ap.level = 1;
 		activeArrows = 0;
-		ApplicationModel.spriteGender = 0;
-		ApplicationModel.spriteNum = 0;
-		ApplicationModel.season = 0;
+		ap.spriteGender = 0;
+		ap.spriteNum = 0;
+		ap.season = 0;
 	}
 	
 	// Update is called once per frame
@@ -58,77 +59,77 @@ public class characterSelector : MonoBehaviour {
 		// LEFT-RIGHT - Change genre or race
 		if (Input.GetKeyDown (KeyCode.LeftArrow)){
 			if (activeArrows == 0) { // Change race
-				if (ApplicationModel.spriteGender == 0) { // if GIRL
-					if (ApplicationModel.spriteNum == 0) {
-						ApplicationModel.spriteNum = spritesGirls.Length - 1;
+				if (ap.spriteGender == 0) { // if GIRL
+					if (ap.spriteNum == 0) {
+						ap.spriteNum = spritesGirls.Length - 1;
 					} else {
-						ApplicationModel.spriteNum = ApplicationModel.spriteNum - 1;
+						ap.spriteNum = ap.spriteNum - 1;
 					}
-				} else if (ApplicationModel.spriteGender == 1) { // if BOY
-					if (ApplicationModel.spriteNum == 0) {
-						ApplicationModel.spriteNum = spritesBoys.Length - 1;
+				} else if (ap.spriteGender == 1) { // if BOY
+					if (ap.spriteNum == 0) {
+						ap.spriteNum = spritesBoys.Length - 1;
 					} else {
-						ApplicationModel.spriteNum = ApplicationModel.spriteNum - 1;
+						ap.spriteNum = ap.spriteNum - 1;
 					}
 				}
 
 			} else if (activeArrows == 1) { // Change genre
-				if (ApplicationModel.spriteGender == 0) {
-					ApplicationModel.spriteGender = 1;
-				} else if (ApplicationModel.spriteGender == 1) {
-					ApplicationModel.spriteGender = 0;
+				if (ap.spriteGender == 0) {
+					ap.spriteGender = 1;
+				} else if (ap.spriteGender == 1) {
+					ap.spriteGender = 0;
 				}
 			} else if (activeArrows == 2) { // Change season
-				if(ApplicationModel.season == 0){
-					ApplicationModel.season = 1;
+				if(ap.season == 0){
+					ap.season = 1;
 				}
-				else if(ApplicationModel.season == 1){
-					ApplicationModel.season = 0;
+				else if(ap.season == 1){
+					ap.season = 0;
 				}
 			}
 		}
 		else if (Input.GetKeyDown (KeyCode.RightArrow)){
 			if (activeArrows == 0) { // Change race
-				if (ApplicationModel.spriteGender == 0) { // if GIRL
-					if (ApplicationModel.spriteNum == spritesGirls.Length - 1) {
-						ApplicationModel.spriteNum = 0;
+				if (ap.spriteGender == 0) { // if GIRL
+					if (ap.spriteNum == spritesGirls.Length - 1) {
+						ap.spriteNum = 0;
 					} else {
-						ApplicationModel.spriteNum = ApplicationModel.spriteNum + 1;
+						ap.spriteNum = ap.spriteNum + 1;
 					}
-				} else if (ApplicationModel.spriteGender == 1) { // if BOY
-					if (ApplicationModel.spriteNum == spritesBoys.Length - 1) {
-						ApplicationModel.spriteNum = 0;
+				} else if (ap.spriteGender == 1) { // if BOY
+					if (ap.spriteNum == spritesBoys.Length - 1) {
+						ap.spriteNum = 0;
 					} else {
-						ApplicationModel.spriteNum = ApplicationModel.spriteNum + 1;
+						ap.spriteNum = ap.spriteNum + 1;
 					}
 				}
 
 			} else if (activeArrows == 1) { // Change genre
-				if (ApplicationModel.spriteGender == 0) {
-					ApplicationModel.spriteGender = 1;
-				} else if (ApplicationModel.spriteGender == 1) {
-					ApplicationModel.spriteGender = 0;
+				if (ap.spriteGender == 0) {
+					ap.spriteGender = 1;
+				} else if (ap.spriteGender == 1) {
+					ap.spriteGender = 0;
 				}
 			} else if (activeArrows == 2) { // Change season
-				if (ApplicationModel.season == 0) {
-					ApplicationModel.season = 1;
-				} else if (ApplicationModel.season == 1) {
-					ApplicationModel.season = 0;
+				if (ap.season == 0) {
+					ap.season = 1;
+				} else if (ap.season == 1) {
+					ap.season = 0;
 				}
 			}
 		}
 
-		if (ApplicationModel.spriteGender == 0) {
-			character.GetComponent<SpriteRenderer> ().sprite = spritesGirls[ApplicationModel.spriteNum];
+		if (ap.spriteGender == 0) {
+			character.GetComponent<SpriteRenderer> ().sprite = spritesGirls[ap.spriteNum];
 		}
-		else if(ApplicationModel.spriteGender == 1) {
-			character.GetComponent<SpriteRenderer> ().sprite = spritesBoys[ApplicationModel.spriteNum];
+		else if(ap.spriteGender == 1) {
+			character.GetComponent<SpriteRenderer> ().sprite = spritesBoys[ap.spriteNum];
 		}
 			
-		if (ApplicationModel.season == 0) {
+		if (ap.season == 0) {
 			seasonObject.GetComponent<SpriteRenderer> ().sprite = spritesSeason[0];
 		}
-		else if(ApplicationModel.season == 1) {
+		else if(ap.season == 1) {
 			seasonObject.GetComponent<SpriteRenderer> ().sprite = spritesSeason[1];
 		}
 	}

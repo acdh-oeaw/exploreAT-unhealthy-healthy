@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using ap = ApplicationModel;
 
 public class playerInitializer : MonoBehaviour {
 
@@ -22,27 +23,27 @@ public class playerInitializer : MonoBehaviour {
 	void Start () {
 
 		// Reset timer
-		ApplicationModel.timerSlices = 7;
+		ap.timerSlices = 7;
 
 		Color zm = GameOverObject.GetComponent < Text >().color;  //  makes a new color zm
 		zm.a = 0.0f; // makes the color zm transparent
-		if(ApplicationModel.spriteGender == 0){
-			character.GetComponent<SpriteRenderer> ().sprite = spritesGirls[ApplicationModel.spriteNum];
+		if(ap.spriteGender == 0){
+			character.GetComponent<SpriteRenderer> ().sprite = spritesGirls[ap.spriteNum];
 		}
-		else if(ApplicationModel.spriteGender == 1){
-			character.GetComponent<SpriteRenderer> ().sprite = spritesBoys[ApplicationModel.spriteNum];
+		else if(ap.spriteGender == 1){
+			character.GetComponent<SpriteRenderer> ().sprite = spritesBoys[ap.spriteNum];
 		}
 		Vector2 S = character.GetComponent<SpriteRenderer>().sprite.bounds.size;
 		character.GetComponent<BoxCollider2D>().size = S;
 		character.GetComponent<BoxCollider2D>().offset = new Vector2 ((S.x / 2), 0);
 
 		// Change sky colour, season background and season ground
-		if (ApplicationModel.season == 0) {
+		if (ap.season == 0) {
 			Camera.main.GetComponent<Camera>().backgroundColor = new Color(100f/255f,200f/255f,250f/255f,0f);
 			ground.GetComponent<SpriteRenderer> ().sprite = spritesGround[0];
 			seasonBackground.GetComponent<SpriteRenderer> ().sprite = spritesBackground[0];
 		}
-		else if (ApplicationModel.season == 1) {
+		else if (ap.season == 1) {
 			Camera.main.GetComponent<Camera>().backgroundColor = new Color(185f/255f,215f/255f,230f/255f,0f);
 			ground.GetComponent<SpriteRenderer> ().sprite = spritesGround[1];
 			seasonBackground.GetComponent<SpriteRenderer> ().sprite = spritesBackground[1];
@@ -52,20 +53,20 @@ public class playerInitializer : MonoBehaviour {
 
 		// Message language change
 		if (string.Equals(SceneManager.GetActiveScene ().name,"scene")) {
-			if (ApplicationModel.language == "en") {
-				GameOverObject.GetComponent < Text >().text = ApplicationModel.en_scene_gameOverText;
-				TimeUpObject.GetComponent < Text >().text = ApplicationModel.en_scene_timeupText;
-				CheckProgressObject.GetComponent < Text >().text = ApplicationModel.en_scene_checkProgressText;
+			if (ap.language == "en") {
+				GameOverObject.GetComponent < Text >().text = ap.en_scene_gameOverText;
+				TimeUpObject.GetComponent < Text >().text = ap.en_scene_timeupText;
+				CheckProgressObject.GetComponent < Text >().text = ap.en_scene_checkProgressText;
 			}
-			else if (ApplicationModel.language == "es") {
-				GameOverObject.GetComponent < Text >().text = ApplicationModel.es_scene_gameOverText;
-				TimeUpObject.GetComponent < Text >().text = ApplicationModel.es_scene_timeupText;
-				CheckProgressObject.GetComponent < Text >().text = ApplicationModel.es_scene_checkProgressText;
+			else if (ap.language == "es") {
+				GameOverObject.GetComponent < Text >().text = ap.es_scene_gameOverText;
+				TimeUpObject.GetComponent < Text >().text = ap.es_scene_timeupText;
+				CheckProgressObject.GetComponent < Text >().text = ap.es_scene_checkProgressText;
 			}
-			else if (ApplicationModel.language == "de") {
-				GameOverObject.GetComponent < Text >().text = ApplicationModel.de_scene_gameOverText;
-				TimeUpObject.GetComponent < Text >().text = ApplicationModel.de_scene_timeupText;
-				CheckProgressObject.GetComponent < Text >().text = ApplicationModel.de_scene_checkProgressText;
+			else if (ap.language == "de") {
+				GameOverObject.GetComponent < Text >().text = ap.de_scene_gameOverText;
+				TimeUpObject.GetComponent < Text >().text = ap.de_scene_timeupText;
+				CheckProgressObject.GetComponent < Text >().text = ap.de_scene_checkProgressText;
 			}
 		}
 
@@ -74,17 +75,17 @@ public class playerInitializer : MonoBehaviour {
 
 	void ResetFoodCounters(){
 		// Reset stuff (from 0 to value - model)
-				ApplicationModel.counterBreadPasta = 0;
-				ApplicationModel.counterFruitVeggies = 0;
-				ApplicationModel.counterMeatFish = 0;
-				ApplicationModel.counterMilkCheese = 0;
-				ApplicationModel.counterSweetSalty = 0;
+				ap.counterBreadPasta = 0;
+				ap.counterFruitVeggies = 0;
+				ap.counterMeatFish = 0;
+				ap.counterMilkCheese = 0;
+				ap.counterSweetSalty = 0;
 		// Reset stuff (from value to 0 - model)
-//		ApplicationModel.counterBreadPasta = (ApplicationModel.counterBreadPastaMax-ApplicationModel.counterBreadPastaMin);
-//		ApplicationModel.counterFruitVeggies = ApplicationModel.counterFruitVeggiesValue;
-//		ApplicationModel.counterMeatFish = (ApplicationModel.counterMeatFishMax-ApplicationModel.counterMeatFishMin);
-//		ApplicationModel.counterMilkCheese = ApplicationModel.counterMilkCheeseValue;
-//		ApplicationModel.counterSweetSalty = ApplicationModel.counterSweetSaltyValue;
+//		ap.counterBreadPasta = (ap.counterBreadPastaMax-ap.counterBreadPastaMin);
+//		ap.counterFruitVeggies = ap.counterFruitVeggiesValue;
+//		ap.counterMeatFish = (ap.counterMeatFishMax-ap.counterMeatFishMin);
+//		ap.counterMilkCheese = ap.counterMilkCheeseValue;
+//		ap.counterSweetSalty = ap.counterSweetSaltyValue;
 	}
 
 	// Update is called once per frame
@@ -93,16 +94,16 @@ public class playerInitializer : MonoBehaviour {
 			// Game scene actions
 			if (string.Equals (SceneManager.GetActiveScene ().name, "scene")) {
 				// If we've lost (Energy drink), restart
-				if (ApplicationModel.gameOver) {
+				if (ap.gameOver) {
 					ResetFoodCounters ();
-					ApplicationModel.totalWater = 0;
-					ApplicationModel.totalSport = 0;
-					ApplicationModel.isJumping = false;
-					ApplicationModel.gameOver = false;
+					ap.totalWater = 0;
+					ap.totalSport = 0;
+					ap.isJumping = false;
+					ap.gameOver = false;
 					SceneManager.LoadScene ("scene"); // Regenerate Scene
 				}
 				// If time is up, go to Summary
-				else if (ApplicationModel.timerSlices == 0) {
+				else if (ap.timerSlices == 0) {
 					SceneManager.LoadScene ("summary_scene");
 				}
 			}
@@ -120,19 +121,19 @@ public class playerInitializer : MonoBehaviour {
 
 	public void ShareToTW()
 	{
-		if (ApplicationModel.language == "en") {
-			string text = ApplicationModel.en_scoreHandler_twitterText1;//this is limited in text length 
-			text += ApplicationModel.en_scoreHandler_twitterText2;
+		if (ap.language == "en") {
+			string text = ap.en_scoreHandler_twitterText1;//this is limited in text length 
+			text += ap.en_scoreHandler_twitterText2;
 			Application.OpenURL(TWITTER_ADDRESS + "?text=" + WWW.EscapeURL(text));
 		}
-		else if(ApplicationModel.language == "es") {
-			string text = ApplicationModel.es_scoreHandler_twitterText1;//this is limited in text length 
-			text += ApplicationModel.es_scoreHandler_twitterText2;
+		else if(ap.language == "es") {
+			string text = ap.es_scoreHandler_twitterText1;//this is limited in text length 
+			text += ap.es_scoreHandler_twitterText2;
 			Application.OpenURL(TWITTER_ADDRESS + "?text=" + WWW.EscapeURL(text));
 		}
-		else if(ApplicationModel.language == "de") {
-			string text = ApplicationModel.de_scoreHandler_twitterText1;//this is limited in text length 
-			text += ApplicationModel.de_scoreHandler_twitterText2;
+		else if(ap.language == "de") {
+			string text = ap.de_scoreHandler_twitterText1;//this is limited in text length 
+			text += ap.de_scoreHandler_twitterText2;
 			Application.OpenURL(TWITTER_ADDRESS + "?text=" + WWW.EscapeURL(text));
 		}
 	}

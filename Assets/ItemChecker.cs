@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using ap = ApplicationModel;
 
 public class ItemChecker : MonoBehaviour {
 
@@ -59,29 +60,29 @@ public class ItemChecker : MonoBehaviour {
 //		counterSweetSaltyObject.GetComponent < Text > ().text = ""+0;
 
 		// From value to zero - model
-		counterBreadPastaObject.GetComponent < Text > ().text = ""+((ApplicationModel.counterBreadPastaMin)-ApplicationModel.counterBreadPasta);
-		counterFruitVeggiesObject.GetComponent < Text > ().text = ""+(ApplicationModel.counterFruitVeggiesValue-ApplicationModel.counterFruitVeggies);
-		counterMeatFishObject.GetComponent < Text > ().text = ""+((ApplicationModel.counterMeatFishMin)-ApplicationModel.counterMeatFish);
-		counterMilkCheeseObject.GetComponent < Text > ().text = ""+(ApplicationModel.counterMilkCheeseValue-ApplicationModel.counterMilkCheese);
-		counterSweetSaltyObject.GetComponent < Text > ().text = ""+(ApplicationModel.counterSweetSaltyValue-ApplicationModel.counterSweetSalty);
+		counterBreadPastaObject.GetComponent < Text > ().text = ""+((ap.counterBreadPastaMin)-ap.counterBreadPasta);
+		counterFruitVeggiesObject.GetComponent < Text > ().text = ""+(ap.counterFruitVeggiesValue-ap.counterFruitVeggies);
+		counterMeatFishObject.GetComponent < Text > ().text = ""+((ap.counterMeatFishMin)-ap.counterMeatFish);
+		counterMilkCheeseObject.GetComponent < Text > ().text = ""+(ap.counterMilkCheeseValue-ap.counterMilkCheese);
+		counterSweetSaltyObject.GetComponent < Text > ().text = ""+(ap.counterSweetSaltyValue-ap.counterSweetSalty);
 
-		if (ApplicationModel.language == "en") {
-			GameOverObject.GetComponent < Text > ().text = ApplicationModel.en_scene_gameOverText;
-			TimeUpObject.GetComponent < Text >().text = ApplicationModel.en_scene_timeupText;
-			CheckProgressObject.GetComponent < Text >().text = ApplicationModel.en_scene_checkProgressText;
+		if (ap.language == "en") {
+			GameOverObject.GetComponent < Text > ().text = ap.en_scene_gameOverText;
+			TimeUpObject.GetComponent < Text >().text = ap.en_scene_timeupText;
+			CheckProgressObject.GetComponent < Text >().text = ap.en_scene_checkProgressText;
 		}
-		else if (ApplicationModel.language == "es") {
-			GameOverObject.GetComponent < Text > ().text = ApplicationModel.es_scene_gameOverText;
-			TimeUpObject.GetComponent < Text >().text = ApplicationModel.es_scene_timeupText;
-			CheckProgressObject.GetComponent < Text >().text = ApplicationModel.es_scene_checkProgressText;
+		else if (ap.language == "es") {
+			GameOverObject.GetComponent < Text > ().text = ap.es_scene_gameOverText;
+			TimeUpObject.GetComponent < Text >().text = ap.es_scene_timeupText;
+			CheckProgressObject.GetComponent < Text >().text = ap.es_scene_checkProgressText;
 		}
-		else if (ApplicationModel.language == "de") {
-			GameOverObject.GetComponent < Text > ().text = ApplicationModel.de_scene_gameOverText;
-			TimeUpObject.GetComponent < Text >().text = ApplicationModel.de_scene_timeupText;
-			CheckProgressObject.GetComponent < Text >().text = ApplicationModel.de_scene_checkProgressText;
+		else if (ap.language == "de") {
+			GameOverObject.GetComponent < Text > ().text = ap.de_scene_gameOverText;
+			TimeUpObject.GetComponent < Text >().text = ap.de_scene_timeupText;
+			CheckProgressObject.GetComponent < Text >().text = ap.de_scene_checkProgressText;
 		}
 
-		LevelObject.GetComponent < Text > ().text += ApplicationModel.level;
+		LevelObject.GetComponent < Text > ().text += ap.level;
 
 		//InvokeRepeating("decreaseTimer", 5, 5);
 		InvokeRepeating("decreaseTimer", 8, 8); // 1 minute rounds
@@ -89,7 +90,7 @@ public class ItemChecker : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		ApplicationModel.totalTime += Time.deltaTime;
+		ap.totalTime += Time.deltaTime;
 	}
 
 	void OnTriggerEnter2D (Collider2D other) { 
@@ -102,9 +103,9 @@ public class ItemChecker : MonoBehaviour {
 			Destroy (other.gameObject);
 		}
 		else if (other.gameObject.tag == "FoodBreadPasta") {
-			updateCounter ("breadPasta", ApplicationModel.valueBreadPasta);
-//			counterBreadPastaObject.GetComponent < Text > ().text = ""+ApplicationModel.counterBreadPasta;
-			if (ApplicationModel.counterBreadPasta >= ApplicationModel.counterBreadPastaMin && ApplicationModel.counterBreadPasta <= ApplicationModel.counterBreadPastaMax) {
+			updateCounter ("breadPasta", ap.valueBreadPasta);
+//			counterBreadPastaObject.GetComponent < Text > ().text = ""+ap.counterBreadPasta;
+			if (ap.counterBreadPasta >= ap.counterBreadPastaMin && ap.counterBreadPasta <= ap.counterBreadPastaMax) {
 				checkBreadPastaObject.GetComponent<SpriteRenderer> ().sprite = checkBreadPastaSprites [0];
 			} else {
 				checkBreadPastaObject.GetComponent<SpriteRenderer> ().sprite = checkBreadPastaSprites [1];
@@ -113,9 +114,9 @@ public class ItemChecker : MonoBehaviour {
 		}
 
 		else if (other.gameObject.tag == "FoodFruitVeggies") {
-			updateCounter ("fruitVeggies", ApplicationModel.valueFruitVeggies);		
-//			counterFruitVeggiesObject.GetComponent < Text > ().text = ""+ApplicationModel.counterFruitVeggies;
-			if (ApplicationModel.counterFruitVeggies >= ApplicationModel.counterFruitVeggiesValue) {
+			updateCounter ("fruitVeggies", ap.valueFruitVeggies);		
+//			counterFruitVeggiesObject.GetComponent < Text > ().text = ""+ap.counterFruitVeggies;
+			if (ap.counterFruitVeggies >= ap.counterFruitVeggiesValue) {
 				checkFruitVeggiesObject.GetComponent<SpriteRenderer> ().sprite = checkFruitVeggiesSprites [0];
 			} else {
 				checkFruitVeggiesObject.GetComponent<SpriteRenderer> ().sprite = checkFruitVeggiesSprites [1];
@@ -124,9 +125,9 @@ public class ItemChecker : MonoBehaviour {
 		}
 
 		else if (other.gameObject.tag == "FoodMeatFish") {
-			updateCounter ("meatFish", ApplicationModel.valueMeatFish);
-//			counterMeatFishObject.GetComponent < Text > ().text = ""+ApplicationModel.counterMeatFish;
-			if (ApplicationModel.counterMeatFish >= ApplicationModel.counterMeatFishMin && ApplicationModel.counterMeatFish <= ApplicationModel.counterMeatFishMax) {
+			updateCounter ("meatFish", ap.valueMeatFish);
+//			counterMeatFishObject.GetComponent < Text > ().text = ""+ap.counterMeatFish;
+			if (ap.counterMeatFish >= ap.counterMeatFishMin && ap.counterMeatFish <= ap.counterMeatFishMax) {
 				checkMeatFishObject.GetComponent<SpriteRenderer> ().sprite = checkMeatFishSprites [0];
 			} else {
 				checkMeatFishObject.GetComponent<SpriteRenderer> ().sprite = checkMeatFishSprites [1];
@@ -135,9 +136,9 @@ public class ItemChecker : MonoBehaviour {
 		}
 
 		else if (other.gameObject.tag == "FoodMilkCheese") {
-			updateCounter ("milkCheese", ApplicationModel.valueMilkCheese);
-//			counterMilkCheeseObject.GetComponent < Text > ().text = ""+ApplicationModel.counterMilkCheese;
-			if (ApplicationModel.counterMilkCheese >= ApplicationModel.counterMilkCheeseValue) {
+			updateCounter ("milkCheese", ap.valueMilkCheese);
+//			counterMilkCheeseObject.GetComponent < Text > ().text = ""+ap.counterMilkCheese;
+			if (ap.counterMilkCheese >= ap.counterMilkCheeseValue) {
 				checkMilkCheeseObject.GetComponent<SpriteRenderer> ().sprite = checkMilkCheeseSprites [0];
 			} else {
 				checkMilkCheeseObject.GetComponent<SpriteRenderer> ().sprite = checkMilkCheeseSprites [1];
@@ -146,9 +147,9 @@ public class ItemChecker : MonoBehaviour {
 		}
 
 		else if (other.gameObject.tag == "FoodSweetSalty") {
-			updateCounter ("sweetSalty", ApplicationModel.valueSweetSalty);
-//			counterSweetSaltyObject.GetComponent < Text > ().text = ""+ApplicationModel.counterSweetSalty;
-			if (ApplicationModel.counterSweetSalty <= ApplicationModel.counterSweetSaltyValue) {
+			updateCounter ("sweetSalty", ap.valueSweetSalty);
+//			counterSweetSaltyObject.GetComponent < Text > ().text = ""+ap.counterSweetSalty;
+			if (ap.counterSweetSalty <= ap.counterSweetSaltyValue) {
 				checkSweetSaltyObject.GetComponent<SpriteRenderer> ().sprite = checkSweetSaltySprites [0];
 			} else {
 				checkSweetSaltyObject.GetComponent<SpriteRenderer> ().sprite = checkSweetSaltySprites [1];
@@ -156,9 +157,9 @@ public class ItemChecker : MonoBehaviour {
 			Destroy (other.gameObject);
 
 			// Check for game over
-			if (ApplicationModel.counterSweetSalty > ApplicationModel.counterSweetSaltyValue) {
+			if (ap.counterSweetSalty > ap.counterSweetSaltyValue) {
 				// GAME OVER
-				ApplicationModel.gameOver = true;
+				ap.gameOver = true;
 				Destroy (other.gameObject);
 				GameOverObject.SetActive(true);
 				gameObject.SendMessage("HandleEnergyDrinkItemCollision");
@@ -171,18 +172,18 @@ public class ItemChecker : MonoBehaviour {
 
 			// Update the SPORTS BAR
 
-			if (ApplicationModel.totalSport >= ApplicationModel.counterSportValue)
+			if (ap.totalSport >= ap.counterSportValue)
 				return;
 			
-			ApplicationModel.totalSport += ApplicationModel.valueSport;
+			ap.totalSport += ap.valueSport;
 
-			if (ApplicationModel.totalSport == 1) {BarSportObject.GetComponent<SpriteRenderer>().sprite = barSportSprites[1];}
-			else if (ApplicationModel.totalSport == 2) {BarSportObject.GetComponent<SpriteRenderer>().sprite = barSportSprites[2];}
-			else if (ApplicationModel.totalSport == 3) {BarSportObject.GetComponent<SpriteRenderer>().sprite = barSportSprites[3];}
-			else if (ApplicationModel.totalSport == 4) {BarSportObject.GetComponent<SpriteRenderer>().sprite = barSportSprites[4];}
-			else if (ApplicationModel.totalSport == 5) {BarSportObject.GetComponent<SpriteRenderer>().sprite = barSportSprites[5];}
-			else if (ApplicationModel.totalSport == 6) {BarSportObject.GetComponent<SpriteRenderer>().sprite = barSportSprites[6];}
-			else if (ApplicationModel.totalSport == 7) {BarSportObject.GetComponent<SpriteRenderer>().sprite = barSportSprites[7];}
+			if (ap.totalSport == 1) {BarSportObject.GetComponent<SpriteRenderer>().sprite = barSportSprites[1];}
+			else if (ap.totalSport == 2) {BarSportObject.GetComponent<SpriteRenderer>().sprite = barSportSprites[2];}
+			else if (ap.totalSport == 3) {BarSportObject.GetComponent<SpriteRenderer>().sprite = barSportSprites[3];}
+			else if (ap.totalSport == 4) {BarSportObject.GetComponent<SpriteRenderer>().sprite = barSportSprites[4];}
+			else if (ap.totalSport == 5) {BarSportObject.GetComponent<SpriteRenderer>().sprite = barSportSprites[5];}
+			else if (ap.totalSport == 6) {BarSportObject.GetComponent<SpriteRenderer>().sprite = barSportSprites[6];}
+			else if (ap.totalSport == 7) {BarSportObject.GetComponent<SpriteRenderer>().sprite = barSportSprites[7];}
 
 			gameObject.SendMessage("HandleBicycleItemCollision");
 		}
@@ -192,17 +193,17 @@ public class ItemChecker : MonoBehaviour {
 
 			// Update the WATER BAR
 
-			if (ApplicationModel.totalWater >= ApplicationModel.counterWaterValue)
+			if (ap.totalWater >= ap.counterWaterValue)
 				return;
 
-			ApplicationModel.totalWater += ApplicationModel.valueWater;
+			ap.totalWater += ap.valueWater;
 
-			if (ApplicationModel.totalWater == 1) {BarWaterObject.GetComponent<SpriteRenderer>().sprite = barWaterSprites[1];}
-			else if (ApplicationModel.totalWater == 2) {BarWaterObject.GetComponent<SpriteRenderer>().sprite = barWaterSprites[2];}
-			else if (ApplicationModel.totalWater == 3) {BarWaterObject.GetComponent<SpriteRenderer>().sprite = barWaterSprites[3];}
-			else if (ApplicationModel.totalWater == 4) {BarWaterObject.GetComponent<SpriteRenderer>().sprite = barWaterSprites[4];}
-			else if (ApplicationModel.totalWater == 5) {BarWaterObject.GetComponent<SpriteRenderer>().sprite = barWaterSprites[5];}
-			else if (ApplicationModel.totalWater == 6) {BarWaterObject.GetComponent<SpriteRenderer>().sprite = barWaterSprites[6];}
+			if (ap.totalWater == 1) {BarWaterObject.GetComponent<SpriteRenderer>().sprite = barWaterSprites[1];}
+			else if (ap.totalWater == 2) {BarWaterObject.GetComponent<SpriteRenderer>().sprite = barWaterSprites[2];}
+			else if (ap.totalWater == 3) {BarWaterObject.GetComponent<SpriteRenderer>().sprite = barWaterSprites[3];}
+			else if (ap.totalWater == 4) {BarWaterObject.GetComponent<SpriteRenderer>().sprite = barWaterSprites[4];}
+			else if (ap.totalWater == 5) {BarWaterObject.GetComponent<SpriteRenderer>().sprite = barWaterSprites[5];}
+			else if (ap.totalWater == 6) {BarWaterObject.GetComponent<SpriteRenderer>().sprite = barWaterSprites[6];}
 
 
 			gameObject.SendMessage("HandleWaterItemCollision");
@@ -210,74 +211,74 @@ public class ItemChecker : MonoBehaviour {
 
 		else if (other.gameObject.tag == "EnergyDrink") {
 			// GAME OVER
-			ApplicationModel.gameOver = true;
+			ap.gameOver = true;
 			Destroy (other.gameObject);
 			GameOverObject.SetActive(true);
 			gameObject.SendMessage("HandleEnergyDrinkItemCollision");
 		}
 
 		// Update counter values and green/red/yellow graphics
-		if ((ApplicationModel.counterBreadPasta) < ApplicationModel.counterBreadPastaMin) {
-			counterBreadPastaObject.GetComponent < Text > ().text = ""+((ApplicationModel.counterBreadPastaMin)-ApplicationModel.counterBreadPasta);
-			if ((ApplicationModel.counterBreadPasta) > (ApplicationModel.counterBreadPastaMin-(ApplicationModel.counterBreadPastaMax - ApplicationModel.counterBreadPastaMin))/2) {
+		if ((ap.counterBreadPasta) < ap.counterBreadPastaMin) {
+			counterBreadPastaObject.GetComponent < Text > ().text = ""+((ap.counterBreadPastaMin)-ap.counterBreadPasta);
+			if ((ap.counterBreadPasta) > (ap.counterBreadPastaMin-(ap.counterBreadPastaMax - ap.counterBreadPastaMin))/2) {
 				checkBreadPastaObject.GetComponent<SpriteRenderer> ().sprite = checkBreadPastaSprites [2];
 			}
 		} else {
 			counterBreadPastaObject.GetComponent < Text > ().text = "0";
 			checkBreadPastaObject.GetComponent<SpriteRenderer> ().sprite = checkBreadPastaSprites [0];
-			if(ApplicationModel.counterBreadPasta >= ApplicationModel.counterBreadPastaMax){
+			if(ap.counterBreadPasta >= ap.counterBreadPastaMax){
 				// GAME OVER
 				checkBreadPastaObject.GetComponent<SpriteRenderer> ().sprite = checkBreadPastaSprites [1];
-				ApplicationModel.gameOver = true;
+				ap.gameOver = true;
 				GameOverObject.SetActive(true);
 				gameObject.SendMessage("HandleEnergyDrinkItemCollision");
 			}
 		}
-		if ((ApplicationModel.counterFruitVeggiesValue - ApplicationModel.counterFruitVeggies) > 0) {
-			counterFruitVeggiesObject.GetComponent < Text > ().text = ""+(ApplicationModel.counterFruitVeggiesValue-ApplicationModel.counterFruitVeggies);
-			if ((ApplicationModel.counterFruitVeggies) > ApplicationModel.counterFruitVeggiesValue/2) {
+		if ((ap.counterFruitVeggiesValue - ap.counterFruitVeggies) > 0) {
+			counterFruitVeggiesObject.GetComponent < Text > ().text = ""+(ap.counterFruitVeggiesValue-ap.counterFruitVeggies);
+			if ((ap.counterFruitVeggies) > ap.counterFruitVeggiesValue/2) {
 				checkFruitVeggiesObject.GetComponent<SpriteRenderer> ().sprite = checkFruitVeggiesSprites [2];
 			}
 		} else {
 			counterFruitVeggiesObject.GetComponent < Text > ().text = "0";
 			checkFruitVeggiesObject.GetComponent<SpriteRenderer> ().sprite = checkFruitVeggiesSprites [0];
 		}
-		if ((ApplicationModel.counterMeatFish) < ApplicationModel.counterMeatFishMin) {
-			counterMeatFishObject.GetComponent < Text > ().text = ""+((ApplicationModel.counterMeatFishMin)-ApplicationModel.counterMeatFish);
-			if ((ApplicationModel.counterMeatFish) > (ApplicationModel.counterMeatFishMin-(ApplicationModel.counterMeatFishMax - ApplicationModel.counterMeatFishMin))/2) {
+		if ((ap.counterMeatFish) < ap.counterMeatFishMin) {
+			counterMeatFishObject.GetComponent < Text > ().text = ""+((ap.counterMeatFishMin)-ap.counterMeatFish);
+			if ((ap.counterMeatFish) > (ap.counterMeatFishMin-(ap.counterMeatFishMax - ap.counterMeatFishMin))/2) {
 				checkMeatFishObject.GetComponent<SpriteRenderer> ().sprite = checkMeatFishSprites [2];
 			}
 		} else {
 			counterMeatFishObject.GetComponent < Text > ().text = "0";
 			checkMeatFishObject.GetComponent<SpriteRenderer> ().sprite = checkMeatFishSprites [0];
-			if(ApplicationModel.counterMeatFish >= ApplicationModel.counterMeatFishMax){
+			if(ap.counterMeatFish >= ap.counterMeatFishMax){
 				// GAME OVER
 				checkMeatFishObject.GetComponent<SpriteRenderer> ().sprite = checkMeatFishSprites [1];
-				ApplicationModel.gameOver = true;
+				ap.gameOver = true;
 				GameOverObject.SetActive(true);
 				gameObject.SendMessage("HandleEnergyDrinkItemCollision");
 			}
 		}
-		if ((ApplicationModel.counterMilkCheeseValue-ApplicationModel.counterMilkCheese) > 0) {
-			counterMilkCheeseObject.GetComponent < Text > ().text = ""+(ApplicationModel.counterMilkCheeseValue-ApplicationModel.counterMilkCheese);
-			if ((ApplicationModel.counterMilkCheese) > ApplicationModel.counterMilkCheeseValue/2) {
+		if ((ap.counterMilkCheeseValue-ap.counterMilkCheese) > 0) {
+			counterMilkCheeseObject.GetComponent < Text > ().text = ""+(ap.counterMilkCheeseValue-ap.counterMilkCheese);
+			if ((ap.counterMilkCheese) > ap.counterMilkCheeseValue/2) {
 				checkMilkCheeseObject.GetComponent<SpriteRenderer> ().sprite = checkMilkCheeseSprites [2];
 			}
 		} else {
 			counterMilkCheeseObject.GetComponent < Text > ().text = "0";
 			checkMilkCheeseObject.GetComponent<SpriteRenderer> ().sprite = checkMilkCheeseSprites [0];
 		}
-		if ((ApplicationModel.counterSweetSaltyValue-ApplicationModel.counterSweetSalty) > 0) {
-			counterSweetSaltyObject.GetComponent < Text > ().text = ""+(ApplicationModel.counterSweetSaltyValue-ApplicationModel.counterSweetSalty);
-			if ((ApplicationModel.counterSweetSalty) > ApplicationModel.counterSweetSaltyValue/2) {
+		if ((ap.counterSweetSaltyValue-ap.counterSweetSalty) > 0) {
+			counterSweetSaltyObject.GetComponent < Text > ().text = ""+(ap.counterSweetSaltyValue-ap.counterSweetSalty);
+			if ((ap.counterSweetSalty) > ap.counterSweetSaltyValue/2) {
 				checkSweetSaltyObject.GetComponent<SpriteRenderer> ().sprite = checkSweetSaltySprites [2];
 			}
 		} else {
 			counterSweetSaltyObject.GetComponent < Text > ().text = "0";
-			if(ApplicationModel.counterSweetSalty > ApplicationModel.counterSweetSaltyValue){
+			if(ap.counterSweetSalty > ap.counterSweetSaltyValue){
 				checkSweetSaltyObject.GetComponent<SpriteRenderer> ().sprite = checkSweetSaltySprites [1];
 				// GAME OVER
-				ApplicationModel.gameOver = true;
+				ap.gameOver = true;
 				GameOverObject.SetActive(true);
 				gameObject.SendMessage("HandleEnergyDrinkItemCollision");
 			}
@@ -286,19 +287,19 @@ public class ItemChecker : MonoBehaviour {
 
 	void updateCounter(string type, int value){
 		if (type == "breadPasta") {
-			ApplicationModel.counterBreadPasta += value;
+			ap.counterBreadPasta += value;
 		}
 		else if(type == "fruitVeggies"){
-			ApplicationModel.counterFruitVeggies += value;
+			ap.counterFruitVeggies += value;
 		}
 		else if(type == "meatFish"){
-			ApplicationModel.counterMeatFish += value;
+			ap.counterMeatFish += value;
 		}
 		else if(type == "milkCheese"){
-			ApplicationModel.counterMilkCheese += value;
+			ap.counterMilkCheese += value;
 		}
 		else if(type == "sweetSalty"){
-			ApplicationModel.counterSweetSalty += value;
+			ap.counterSweetSalty += value;
 		}
 	}
 
@@ -309,24 +310,24 @@ public class ItemChecker : MonoBehaviour {
 
 	IEnumerator decreaseTimer(){
 
-		if (ApplicationModel.timerSlices > 0) {
+		if (ap.timerSlices > 0) {
 
-			ApplicationModel.timerSlices -= 1;
+			ap.timerSlices -= 1;
 
-			if (ApplicationModel.timerSlices == 6) {
+			if (ap.timerSlices == 6) {
 				TimerObject.GetComponent<SpriteRenderer> ().sprite = timerSprites [6];
-			} else if (ApplicationModel.timerSlices == 5) {
+			} else if (ap.timerSlices == 5) {
 				TimerObject.GetComponent<SpriteRenderer> ().sprite = timerSprites [5];
-			} else if (ApplicationModel.timerSlices == 4) {
+			} else if (ap.timerSlices == 4) {
 				TimerObject.GetComponent<SpriteRenderer> ().sprite = timerSprites [4];
-			} else if (ApplicationModel.timerSlices == 3) {
+			} else if (ap.timerSlices == 3) {
 				TimerObject.GetComponent<SpriteRenderer> ().sprite = timerSprites [3];
-			} else if (ApplicationModel.timerSlices == 2) {
+			} else if (ap.timerSlices == 2) {
 				TimerObject.GetComponent<SpriteRenderer> ().sprite = timerSprites [2];
-			} else if (ApplicationModel.timerSlices == 1) {
+			} else if (ap.timerSlices == 1) {
 				TimerObject.GetComponent<SpriteRenderer> ().sprite = timerSprites [1];
 			}
-			else if (ApplicationModel.timerSlices == 0) {
+			else if (ap.timerSlices == 0) {
 				TimerObject.GetComponent<SpriteRenderer> ().sprite = timerSprites[0];
 
 				// SHOW RESULTS PANEL

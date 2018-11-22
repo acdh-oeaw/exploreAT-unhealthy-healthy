@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using ap = ApplicationModel;
 
 public class playerMove : MonoBehaviour {
 
@@ -24,17 +25,17 @@ public class playerMove : MonoBehaviour {
 	void Start () {
 		rb = GetComponent < Rigidbody2D > (); 
 		movesBlocked = false;
-		ApplicationModel.paused = false;
+		ap.paused = false;
 		pausePanel.SetActive(false);
 
-		if (ApplicationModel.language == "en") {
-			pausePanel.GetComponent < Text > ().text = ApplicationModel.en_scene_pauseText;
+		if (ap.language == "en") {
+			pausePanel.GetComponent < Text > ().text = ap.en_scene_pauseText;
 		}
-		else if (ApplicationModel.language == "es") {
-			pausePanel.GetComponent < Text > ().text = ApplicationModel.es_scene_pauseText;
+		else if (ap.language == "es") {
+			pausePanel.GetComponent < Text > ().text = ap.es_scene_pauseText;
 		}
-		else if (ApplicationModel.language == "de") {
-			pausePanel.GetComponent < Text > ().text = ApplicationModel.de_scene_pauseText;
+		else if (ap.language == "de") {
+			pausePanel.GetComponent < Text > ().text = ap.de_scene_pauseText;
 		}
 	}
 	
@@ -46,21 +47,21 @@ public class playerMove : MonoBehaviour {
 			rb.velocity = move;
 
 			if ((Input.GetMouseButtonDown (0) || Input.GetKeyDown (KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) &&
-				!ApplicationModel.isJumping) {  //makes player jump
+				!ap.isJumping) {  //makes player jump
 				audioSource.PlayOneShot(soundJump, 1.0f);
 				GetComponent<Rigidbody2D>().AddForce(new Vector2(0,60), ForceMode2D.Impulse);
-				ApplicationModel.isJumping = true;
+				ap.isJumping = true;
 			}
 		}
 
 		if (GetComponent<Rigidbody2D>().velocity.y <= 0.1 &&
 			GetComponent<Rigidbody2D>().velocity.y >= -0.1) {
-			ApplicationModel.isJumping = false;
+			ap.isJumping = false;
 		}
 
 		if (string.Equals(SceneManager.GetActiveScene ().name,"scene")) {
 			if (Input.GetKeyDown (KeyCode.P)) {
-				if (!ApplicationModel.paused) 
+				if (!ap.paused) 
 				{
 					PauseGame();
 				}
@@ -75,14 +76,14 @@ public class playerMove : MonoBehaviour {
 	{
 		Time.timeScale = 0;
 		pausePanel.SetActive(true);
-		ApplicationModel.paused = true;
+		ap.paused = true;
 		//Disable scripts that still work while timescale is set to 0
 	} 
 	private void ContinueGame()
 	{
 		Time.timeScale = 1;
 		pausePanel.SetActive(false);
-		ApplicationModel.paused = false;
+		ap.paused = false;
 		//enable the scripts again
 	}
 
@@ -105,7 +106,7 @@ public class playerMove : MonoBehaviour {
 	}
 
 	void HandleEnergyDrinkItemCollision(){
-		if (ApplicationModel.gameOver) {
+		if (ap.gameOver) {
 			audioSource.PlayOneShot(soundBad, 1.0f);
 			movesBlocked = true;
 		}

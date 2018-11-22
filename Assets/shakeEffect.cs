@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-
+using ap = ApplicationModel;
 
 public class ShakeEffect : MonoBehaviour {
 

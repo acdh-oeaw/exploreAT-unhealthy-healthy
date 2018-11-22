@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using ap = ApplicationModel;
 
 public class gameOverController : MonoBehaviour {
 
@@ -20,7 +21,7 @@ public class gameOverController : MonoBehaviour {
 			// Game over
 			Time.timeScale = 0f;
 		}
-		if(ApplicationModel.timerSlices <= 0) {
+		if(ap.timerSlices <= 0) {
 			shown = false;
 			gameOverObject.SetActive (false);
 		}

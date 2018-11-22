@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using ap = ApplicationModel;
 
 public class gameStart : MonoBehaviour {
 
@@ -11,17 +12,17 @@ public class gameStart : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if (ApplicationModel.language == "en") {
-			controlsText.text = ApplicationModel.en_gameStart_controlsText;
-			startText.text = ApplicationModel.en_gameStart_startText;
+		if (ap.language == "en") {
+			controlsText.text = ap.en_gameStart_controlsText;
+			startText.text = ap.en_gameStart_startText;
 		}
-		else if(ApplicationModel.language == "es") {
-			controlsText.text = ApplicationModel.es_gameStart_controlsText;
-			startText.text = ApplicationModel.es_gameStart_startText;
+		else if(ap.language == "es") {
+			controlsText.text = ap.es_gameStart_controlsText;
+			startText.text = ap.es_gameStart_startText;
 		}
-		else if(ApplicationModel.language == "de") {
-			controlsText.text = ApplicationModel.de_gameStart_controlsText;
-			startText.text = ApplicationModel.de_gameStart_startText;
+		else if(ap.language == "de") {
+			controlsText.text = ap.de_gameStart_controlsText;
+			startText.text = ap.de_gameStart_startText;
 		}
 	}
 	

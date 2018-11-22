@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using ap = ApplicationModel;
 
 public class openURL : MonoBehaviour, IPointerClickHandler {
 
@@ -11,14 +12,14 @@ public class openURL : MonoBehaviour, IPointerClickHandler {
 
 	// Use this for initialization
 	void Start () {
-		if (ApplicationModel.language == "en") {
-			sourceText.text = ApplicationModel.en_pyramid_source;
+		if (ap.language == "en") {
+			sourceText.text = ap.en_pyramid_source;
 		}
-		else if (ApplicationModel.language == "es") {
-			sourceText.text = ApplicationModel.es_pyramid_source;
+		else if (ap.language == "es") {
+			sourceText.text = ap.es_pyramid_source;
 		}
-		else if (ApplicationModel.language == "de") {
-			sourceText.text = ApplicationModel.de_pyramid_source;
+		else if (ap.language == "de") {
+			sourceText.text = ap.de_pyramid_source;
 		}
 	}
 	

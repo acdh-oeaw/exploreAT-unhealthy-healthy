@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using ap = ApplicationModel;
 
 public class advanceResults : MonoBehaviour {
 
@@ -19,21 +20,21 @@ public class advanceResults : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if (ApplicationModel.tutorialState == 0) {
-			ApplicationModel.tutorialState = 1;
+		if (ap.tutorialState == 0) {
+			ap.tutorialState = 1;
 		}
 
 		if (string.Equals(SceneManager.GetActiveScene ().name,"tutorial_scene")) {
-			if (ApplicationModel.language == "en") {
-				advanceText.text = ApplicationModel.en_tutorial_advanceText;
+			if (ap.language == "en") {
+				advanceText.text = ap.en_tutorial_advanceText;
 				rawimage.texture = en_firstTexture;
 			}
-			else if (ApplicationModel.language == "es") {
-				advanceText.text = ApplicationModel.es_tutorial_advanceText;
+			else if (ap.language == "es") {
+				advanceText.text = ap.es_tutorial_advanceText;
 				rawimage.texture = es_firstTexture;
 			}
-			else if (ApplicationModel.language == "de") {
-				advanceText.text = ApplicationModel.de_tutorial_advanceText;
+			else if (ap.language == "de") {
+				advanceText.text = ap.de_tutorial_advanceText;
 				rawimage.texture = de_firstTexture;
 			}
 		}
@@ -41,9 +42,9 @@ public class advanceResults : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.Alpha1) || Input.GetKeyDown (KeyCode.Keypad1)) {ApplicationModel.language = "en";}
-		else if (Input.GetKeyDown (KeyCode.Alpha2) || Input.GetKeyDown (KeyCode.Keypad2)) {ApplicationModel.language = "es";}
-		else if (Input.GetKeyDown (KeyCode.Alpha3) || Input.GetKeyDown (KeyCode.Keypad2)) {ApplicationModel.language = "de";}
+		if (Input.GetKeyDown (KeyCode.Alpha1) || Input.GetKeyDown (KeyCode.Keypad1)) {ap.language = "en";}
+		else if (Input.GetKeyDown (KeyCode.Alpha2) || Input.GetKeyDown (KeyCode.Keypad2)) {ap.language = "es";}
+		else if (Input.GetKeyDown (KeyCode.Alpha3) || Input.GetKeyDown (KeyCode.Keypad2)) {ap.language = "de";}
 
 		if (Input.GetKeyDown (KeyCode.Alpha1) || Input.GetKeyDown (KeyCode.Keypad1) ||
 			Input.GetKeyDown (KeyCode.Alpha2) || Input.GetKeyDown (KeyCode.Keypad2) ||
@@ -53,10 +54,10 @@ public class advanceResults : MonoBehaviour {
 				SceneManager.LoadScene ("tutorial_scene");
 			}
 			else if (string.Equals(SceneManager.GetActiveScene ().name,"tutorial_scene")) {
-				if (ApplicationModel.tutorialState == 1) {
-					ApplicationModel.tutorialState = 2;
+				if (ap.tutorialState == 1) {
+					ap.tutorialState = 2;
 					changeTutorialImage ();
-				} else if (ApplicationModel.tutorialState == 2) {
+				} else if (ap.tutorialState == 2) {
 					SceneManager.LoadScene ("intro_scene");
 				}
 			}
@@ -64,13 +65,13 @@ public class advanceResults : MonoBehaviour {
 	}
 
 	void changeTutorialImage(){
-		if (ApplicationModel.language == "en") {
+		if (ap.language == "en") {
 			rawimage.texture = en_secondTexture;
 		}
-		else if (ApplicationModel.language == "es") {
+		else if (ap.language == "es") {
 			rawimage.texture = es_secondTexture;
 		}
-		else if (ApplicationModel.language == "de") {
+		else if (ap.language == "de") {
 			rawimage.texture = de_secondTexture;
 		}
 	}
