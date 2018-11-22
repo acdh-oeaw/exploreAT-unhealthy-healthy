@@ -115,7 +115,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 aef543c7ffa857d21ac8226dd7d4ce32 Assembly-CSharp.dll:.summaryHandler
 c28e346fb08e868a6bbe3891b988e5d8 Assembly-CSharp.dll:.advanceSplash
 d756bb151232f4b33d3b823d8fbee1e1 Assembly-CSharp.dll:.gameStart
-b322a28ca39210474be1f3b80866ada4 Assembly-CSharp.dll:.playerMove
+64d375b4a3080307dae74eeff39e2870 Assembly-CSharp.dll:.playerMove
 ed816c98f99bdf2e64e8a772bc745200 Assembly-CSharp.dll:.HorizontalSpawn
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
@@ -134,6 +134,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 209ae39a72eb0b775e8dd1d3735aa187 Assembly-CSharp.dll:.PopUpTextBehaviour
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.backToStart
 4877f879dfdaeac0383a80131df879d2 Assembly-CSharp.dll:.ItemChecker
+9cece5ec721fead0d05c9e6fea70dd40 Assembly-CSharp.dll:.openURL
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
 2a56361227def9f56c2cf57a88b32f4d UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
 64eb32cc721b1cc68a91ed57461e188c UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
@@ -150,4 +151,3 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 23c6f06d9ea20584a4b46811388bbe93 Assembly-CSharp.dll:.playerInitializer
 343f9f3f245a6832e14cfe78bde81888 Assembly-CSharp.dll:.timeDestroyer
 f7c79469cc1d00d94df4d7860693b444 Assembly-CSharp.dll:.scoreHandler
-9cece5ec721fead0d05c9e6fea70dd40 Assembly-CSharp.dll:.openURL
