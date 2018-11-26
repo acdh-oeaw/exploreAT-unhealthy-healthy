@@ -21,6 +21,15 @@ public class ApplicationModel {
 	static public bool levelCleared;
 	static public bool paused;
 
+	// Boss Level
+	static public int bossPoints;
+	static public string bossFoodGroup1type;
+	static public string bossFoodGroup2type;
+	static public string bossFoodGroup3type;
+	static public string bossCurrentFoodGroupType;
+	static public bool bossFinished;
+	//
+
 	static public int pctBreadPasta = 25;
 	static public int pctFruitVeggies = 30;
 	static public int pctMeatFish = 15;
@@ -223,6 +232,22 @@ public class ApplicationModel {
 	static public string de_scoreHandler_twitterText1 = "Du hast das Spiel geschlagen, indem du ... konsumiert hast ";
 	static public string de_scoreHandler_twitterText2 = " kalorien !!! #VeggieGame #ExploreAT!";
 
+
+	static public string en_sceneBoss_bossFinishedText = "YOU BEAT THE BOSS!";
+	static public string en_sceneBoss_checkProgressText = "Press -N- to Restart the Game";
+	static public string en_sceneBoss_gameOverText = "Oh no! You Were Hit Too Many Times (-N- to Restart)";
+	static public string en_sceneBoss_pauseText = "PAUSE";
+	static public string es_sceneBoss_bossFinishedText = "VICTORIA!";
+	static public string es_sceneBoss_checkProgressText = "Pulsa -N- para Regresar al Inicio";
+	static public string es_sceneBoss_gameOverText = "Oh no! Fuiste Golpeado Demasiadas Veces (-N- para Reintentar)!";
+	static public string es_sceneBoss_pauseText = "PAUSA";
+	static public string de_sceneBoss_bossFinishedText = "yada yada";
+	static public string de_sceneBoss_checkProgressText = "yada yada";
+	static public string de_sceneBoss_gameOverText = "yada yada";
+	static public string de_sceneBoss_pauseText = "PAUSE";
+
+
+
 	// Use this for initialization
 	void Start () {
 		maxLevel = 4;
@@ -243,6 +268,15 @@ public class ApplicationModel {
 		isJumping = false;
 		language = "en";
 		paused = false;
+
+		// Boss level
+		bossPoints = 0;
+		bossFoodGroup1type = "";
+		bossFoodGroup2type = "";
+		bossFoodGroup3type = "";
+		bossCurrentFoodGroupType = "";
+		bossFinished = false;
+		//
 
 		// Initial counters - Zero to Value - model
 		counterBreadPasta = 0;

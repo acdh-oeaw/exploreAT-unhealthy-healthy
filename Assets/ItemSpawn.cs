@@ -35,8 +35,31 @@ public class ItemSpawn : MonoBehaviour {
 	public List<int> indexWinter;
 
 
+	// Boss level
+	public GameObject FoodGroup1IconObject;
+	public GameObject FoodGroup1BarObject;
+	public GameObject FoodGroup2IconObject;
+	public GameObject FoodGroup2BarObject;
+	public GameObject FoodGroup3IconObject;
+	public GameObject FoodGroup3BarObject;
+	public Sprite[] foodGroupSprites;
+	public Sprite[] foodBarSprites;
+
+
 	// Use this for initialization
 	IEnumerator Start () {
+
+		// Boss Level modifications
+		if (string.Equals (SceneManager.GetActiveScene ().name, "sceneBoss")) {
+			FoodGroup2IconObject.SetActive (false);
+			FoodGroup2BarObject.SetActive (false);
+			FoodGroup3IconObject.SetActive (false);
+			FoodGroup3BarObject.SetActive (false);
+
+			FoodGroup1BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [0];
+			FoodGroup2BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [0];
+			FoodGroup3BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [0];
+		}
 
 		elemType_lastFoodTypeValue = elemType_SweetSalty;
 

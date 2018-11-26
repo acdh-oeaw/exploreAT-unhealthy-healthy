@@ -44,8 +44,29 @@ public class ItemChecker : MonoBehaviour {
 
 	public Sprite[] fruitSprites;
 
+	// Boss level
+	public GameObject FoodGroup1IconObject;
+	public GameObject FoodGroup1BarObject;
+	public GameObject FoodGroup2IconObject;
+	public GameObject FoodGroup2BarObject;
+	public GameObject FoodGroup3IconObject;
+	public GameObject FoodGroup3BarObject;
+	public Sprite[] foodGroupSprites;
+	public Sprite[] foodBarSprites;
+	public GameObject BossFinishedObject;
+
 	// Use this for initialization
 	void Start () {
+
+		if (string.Equals (SceneManager.GetActiveScene ().name, "scene")) {
+			StartScene ();
+		}
+		else if (string.Equals (SceneManager.GetActiveScene ().name, "sceneBoss")) {
+			StartSceneBoss ();
+		}
+	}
+
+	void StartScene(){
 		
 		PopUpObject.SetActive (false);
 		GameOverObject.SetActive (false);
@@ -53,11 +74,11 @@ public class ItemChecker : MonoBehaviour {
 		CheckProgressObject.SetActive (false);
 
 		// From zero to value - model
-//		counterBreadPastaObject.GetComponent < Text > ().text = ""+0;
-//		counterFruitVeggiesObject.GetComponent < Text > ().text = ""+0;
-//		counterMeatFishObject.GetComponent < Text > ().text = ""+0;
-//		counterMilkCheeseObject.GetComponent < Text > ().text = ""+0;
-//		counterSweetSaltyObject.GetComponent < Text > ().text = ""+0;
+		//		counterBreadPastaObject.GetComponent < Text > ().text = ""+0;
+		//		counterFruitVeggiesObject.GetComponent < Text > ().text = ""+0;
+		//		counterMeatFishObject.GetComponent < Text > ().text = ""+0;
+		//		counterMilkCheeseObject.GetComponent < Text > ().text = ""+0;
+		//		counterSweetSaltyObject.GetComponent < Text > ().text = ""+0;
 
 		// From value to zero - model
 		counterBreadPastaObject.GetComponent < Text > ().text = ""+((ap.counterBreadPastaMin)-ap.counterBreadPasta);
@@ -87,13 +108,25 @@ public class ItemChecker : MonoBehaviour {
 		//InvokeRepeating("decreaseTimer", 5, 5);
 		InvokeRepeating("decreaseTimer", 8, 8); // 1 minute rounds
 	}
+		
 	
 	// Update is called once per frame
 	void Update () {
 		ap.totalTime += Time.deltaTime;
 	}
-
+		
 	void OnTriggerEnter2D (Collider2D other) { 
+
+		if (string.Equals (SceneManager.GetActiveScene ().name, "scene")) {
+			OnTriggerEnter2DScene (other);
+		}
+		else if (string.Equals (SceneManager.GetActiveScene ().name, "sceneBoss")) {
+			OnTriggerEnter2DSceneBoss (other);
+		}
+	}
+
+
+	void OnTriggerEnter2DScene (Collider2D other) { 
 
 		if (TimeUpObject.activeSelf || GameOverObject.activeSelf) {
 			return;
@@ -104,7 +137,7 @@ public class ItemChecker : MonoBehaviour {
 		}
 		else if (other.gameObject.tag == "FoodBreadPasta") {
 			updateCounter ("breadPasta", ap.valueBreadPasta);
-//			counterBreadPastaObject.GetComponent < Text > ().text = ""+ap.counterBreadPasta;
+			//			counterBreadPastaObject.GetComponent < Text > ().text = ""+ap.counterBreadPasta;
 			if (ap.counterBreadPasta >= ap.counterBreadPastaMin && ap.counterBreadPasta <= ap.counterBreadPastaMax) {
 				checkBreadPastaObject.GetComponent<SpriteRenderer> ().sprite = checkBreadPastaSprites [0];
 			} else {
@@ -115,7 +148,7 @@ public class ItemChecker : MonoBehaviour {
 
 		else if (other.gameObject.tag == "FoodFruitVeggies") {
 			updateCounter ("fruitVeggies", ap.valueFruitVeggies);		
-//			counterFruitVeggiesObject.GetComponent < Text > ().text = ""+ap.counterFruitVeggies;
+			//			counterFruitVeggiesObject.GetComponent < Text > ().text = ""+ap.counterFruitVeggies;
 			if (ap.counterFruitVeggies >= ap.counterFruitVeggiesValue) {
 				checkFruitVeggiesObject.GetComponent<SpriteRenderer> ().sprite = checkFruitVeggiesSprites [0];
 			} else {
@@ -126,7 +159,7 @@ public class ItemChecker : MonoBehaviour {
 
 		else if (other.gameObject.tag == "FoodMeatFish") {
 			updateCounter ("meatFish", ap.valueMeatFish);
-//			counterMeatFishObject.GetComponent < Text > ().text = ""+ap.counterMeatFish;
+			//			counterMeatFishObject.GetComponent < Text > ().text = ""+ap.counterMeatFish;
 			if (ap.counterMeatFish >= ap.counterMeatFishMin && ap.counterMeatFish <= ap.counterMeatFishMax) {
 				checkMeatFishObject.GetComponent<SpriteRenderer> ().sprite = checkMeatFishSprites [0];
 			} else {
@@ -137,7 +170,7 @@ public class ItemChecker : MonoBehaviour {
 
 		else if (other.gameObject.tag == "FoodMilkCheese") {
 			updateCounter ("milkCheese", ap.valueMilkCheese);
-//			counterMilkCheeseObject.GetComponent < Text > ().text = ""+ap.counterMilkCheese;
+			//			counterMilkCheeseObject.GetComponent < Text > ().text = ""+ap.counterMilkCheese;
 			if (ap.counterMilkCheese >= ap.counterMilkCheeseValue) {
 				checkMilkCheeseObject.GetComponent<SpriteRenderer> ().sprite = checkMilkCheeseSprites [0];
 			} else {
@@ -148,7 +181,7 @@ public class ItemChecker : MonoBehaviour {
 
 		else if (other.gameObject.tag == "FoodSweetSalty") {
 			updateCounter ("sweetSalty", ap.valueSweetSalty);
-//			counterSweetSaltyObject.GetComponent < Text > ().text = ""+ap.counterSweetSalty;
+			//			counterSweetSaltyObject.GetComponent < Text > ().text = ""+ap.counterSweetSalty;
 			if (ap.counterSweetSalty <= ap.counterSweetSaltyValue) {
 				checkSweetSaltyObject.GetComponent<SpriteRenderer> ().sprite = checkSweetSaltySprites [0];
 			} else {
@@ -174,7 +207,7 @@ public class ItemChecker : MonoBehaviour {
 
 			if (ap.totalSport >= ap.counterSportValue)
 				return;
-			
+
 			ap.totalSport += ap.valueSport;
 
 			if (ap.totalSport == 1) {BarSportObject.GetComponent<SpriteRenderer>().sprite = barSportSprites[1];}
@@ -341,4 +374,194 @@ public class ItemChecker : MonoBehaviour {
 		}
 		return null;
 	}
+
+
+
+
+
+
+
+	void StartSceneBoss(){
+		GameOverObject.SetActive (false);
+		BossFinishedObject.SetActive(false);
+		CheckProgressObject.SetActive (false);
+
+		FoodGroup2IconObject.SetActive (false);
+		FoodGroup2BarObject.SetActive (false);
+		FoodGroup3IconObject.SetActive (false);
+		FoodGroup3BarObject.SetActive (false);
+
+		if (ap.language == "en") {
+			GameOverObject.GetComponent < Text > ().text = ap.en_sceneBoss_gameOverText;
+			BossFinishedObject.GetComponent < Text >().text = ap.en_sceneBoss_bossFinishedText;
+			CheckProgressObject.GetComponent < Text >().text = ap.en_sceneBoss_checkProgressText;
+		}
+		else if (ap.language == "es") {
+			GameOverObject.GetComponent < Text > ().text = ap.es_sceneBoss_gameOverText;
+			BossFinishedObject.GetComponent < Text >().text = ap.es_sceneBoss_bossFinishedText;
+			CheckProgressObject.GetComponent < Text >().text = ap.es_sceneBoss_checkProgressText;
+		}
+		else if (ap.language == "de") {
+			GameOverObject.GetComponent < Text > ().text = ap.de_sceneBoss_gameOverText;
+			BossFinishedObject.GetComponent < Text >().text = ap.de_sceneBoss_bossFinishedText;
+			CheckProgressObject.GetComponent < Text >().text = ap.de_sceneBoss_checkProgressText;
+		}
+
+		//InvokeRepeating("decreaseTimer", 5, 5);
+		InvokeRepeating("decreaseTimer", 8, 8); // 1 minute rounds
+	}
+
+	void OnTriggerEnter2DSceneBoss (Collider2D other) { 
+
+		if (GameOverObject.activeSelf || BossFinishedObject.activeSelf) {
+			return;
+		}
+
+		Destroy (other.gameObject);
+
+		// If the caught food doesn't belong to the current group,
+		// or the caught object is not the boss, do nothing
+		if (ap.bossCurrentFoodGroupType != other.gameObject.tag &&
+		    other.gameObject.tag != "Boss") {
+			return;
+		}
+
+		// If it is a food (not the boss) and it belongs, handle it by adding a point to the bars
+		else if (other.gameObject.tag != "Boss") {
+			
+			ap.bossPoints += 1;
+
+			if (ap.bossPoints == 1) { // 1 bar, 1 color
+				FoodGroup1BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [1];
+			} else if (ap.bossPoints == 2) {
+				FoodGroup1BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [2];
+			} else if (ap.bossPoints == 3) {
+				FoodGroup1BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [3];
+				FoodGroup2BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [0];
+
+				ap.bossCurrentFoodGroupType = ap.bossFoodGroup2type;
+				FoodGroup2IconObject.SetActive (true);
+				FoodGroup2BarObject.SetActive (true);
+			} else if (ap.bossPoints == 4) {
+				FoodGroup2BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [1];
+			} else if (ap.bossPoints == 5) {
+				FoodGroup2BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [2];
+			} else if (ap.bossPoints == 6) {
+				FoodGroup2BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [3];
+				FoodGroup3BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [0];
+
+				ap.bossCurrentFoodGroupType = ap.bossFoodGroup3type;
+				FoodGroup3IconObject.SetActive (true);
+				FoodGroup3BarObject.SetActive (true);
+			} else if (ap.bossPoints == 7) {
+				FoodGroup3BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [1];
+			} else if (ap.bossPoints == 8) {
+				FoodGroup3BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [2];
+			} else if (ap.bossPoints == 9) {
+				FoodGroup3BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [3];
+				// WIN!
+				ap.bossFinished = true;
+
+				BossFinishedObject.SetActive(true);
+				CheckProgressObject.SetActive(true);
+			}
+		}
+
+		// If it is the boss, handle the hit
+		else if (other.gameObject.tag == "Boss") {
+
+			// Check the points we have at the time of the hit, do actions, then substract points
+			// Also change food groups if needed
+
+			// If we've run out of points, GAME OVER -> Restart
+			if (ap.bossPoints == 0) {
+				ap.bossPoints = -1;
+
+				FoodGroup1IconObject.SetActive (false);
+				FoodGroup1BarObject.SetActive (false);
+				FoodGroup2IconObject.SetActive (false);
+				FoodGroup2BarObject.SetActive (false);
+				FoodGroup3IconObject.SetActive (false);
+				FoodGroup3BarObject.SetActive (false);
+
+				FoodGroup1BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [0];
+				FoodGroup2BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [0];
+				FoodGroup3BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [0];
+
+				ap.gameOver = true;
+				GameOverObject.SetActive(true);
+				gameObject.SendMessage("HandleEnergyDrinkItemCollision");
+			}
+			else if (ap.bossPoints == 1) {
+				ap.bossPoints = 0;
+
+				FoodGroup1BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [0];
+				FoodGroup2BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [0];
+				FoodGroup3BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [0];
+			}
+			else if (ap.bossPoints == 2) {
+				ap.bossPoints = 0;
+
+				FoodGroup1BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [0];
+				FoodGroup2BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [0];
+				FoodGroup3BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [0];
+			}
+
+			else if (ap.bossPoints == 3) { // Hide Bar2 & Bar3
+				ap.bossPoints = 0;
+				ap.bossCurrentFoodGroupType = ap.bossFoodGroup1type;
+
+				FoodGroup2IconObject.SetActive (false);
+				FoodGroup2BarObject.SetActive (false);
+				FoodGroup3IconObject.SetActive (false);
+				FoodGroup3BarObject.SetActive (false);
+
+				FoodGroup1BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [0];
+				FoodGroup2BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [0];
+				FoodGroup3BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [0];
+			}
+			else if (ap.bossPoints == 4) {
+				ap.bossPoints = 3;
+
+				FoodGroup1BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [3];
+				FoodGroup2BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [0];
+				FoodGroup3BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [0];
+
+			}
+			else if (ap.bossPoints == 5) {
+				ap.bossPoints = 3;
+
+				FoodGroup1BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [3];
+				FoodGroup2BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [0];
+				FoodGroup3BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [0];
+			}
+
+			else if (ap.bossPoints == 6) { // Hide Bar3
+				ap.bossPoints = 3;
+				ap.bossCurrentFoodGroupType = ap.bossFoodGroup2type;
+
+				FoodGroup3IconObject.SetActive (false);
+				FoodGroup3BarObject.SetActive (false);
+				FoodGroup1BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [3];
+				FoodGroup2BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [0];
+				FoodGroup3BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [0];
+			}
+			else if (ap.bossPoints == 7) {
+				ap.bossPoints = 6;
+
+				FoodGroup1BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [3];
+				FoodGroup2BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [3];
+				FoodGroup3BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [0];
+			}
+			else if (ap.bossPoints == 8) {
+				ap.bossPoints = 6;
+
+				FoodGroup1BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [3];
+				FoodGroup2BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [3];
+				FoodGroup3BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [0];
+			}
+		}
+
+	}
+		
 }
