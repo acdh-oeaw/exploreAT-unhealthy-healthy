@@ -318,8 +318,8 @@ public class summaryHandler : MonoBehaviour {
 				// Change scene to gameplay
 				SceneManager.LoadScene("scene"); // Regenerate Scene
 			}
-			// After 4 levels the game is finished
-			else {
+			// After "maxLevel" levels we go to the boss
+			else if(ap.level == ap.maxLevel+1){
 				ResetFoodCounters ();
 				// Rest of resets
 				ap.totalWater = 0;
@@ -328,8 +328,7 @@ public class summaryHandler : MonoBehaviour {
 				ap.gameOver = false;
 				ap.level = 1;
 
-				// Change scene to game's end
-				SceneManager.LoadScene("splash_scene");
+				SceneManager.LoadScene("sceneBoss"); // Go to Boss Scene
 			}
 		}
 	}

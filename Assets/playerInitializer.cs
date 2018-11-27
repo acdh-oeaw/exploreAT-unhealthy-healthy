@@ -34,8 +34,9 @@ public class playerInitializer : MonoBehaviour {
 			character.GetComponent<SpriteRenderer> ().sprite = spritesBoys[ap.spriteNum];
 		}
 		Vector2 S = character.GetComponent<SpriteRenderer>().sprite.bounds.size;
-		character.GetComponent<BoxCollider2D>().size = S;
-		character.GetComponent<BoxCollider2D>().offset = new Vector2 ((S.x / 2), 0);
+		//character.GetComponent<BoxCollider2D>().size = S;
+		character.GetComponent<BoxCollider2D>().size = new Vector3(S.x/2,S.y);
+		//character.GetComponent<BoxCollider2D>().offset = new Vector2 ((S.x / 2), 0);
 
 		// Change sky colour, season background and season ground
 		if (ap.season == 0) {
@@ -105,6 +106,21 @@ public class playerInitializer : MonoBehaviour {
 				// If time is up, go to Summary
 				else if (ap.timerSlices == 0) {
 					SceneManager.LoadScene ("summary_scene");
+				}
+			}
+			// Boss Level actions
+			else if (string.Equals (SceneManager.GetActiveScene ().name, "sceneBoss")) {
+				// If we've beat the boss restart the game
+				if (ap.bossFinished) {
+					ResetFoodCounters ();
+					// Rest of resets
+					ap.totalWater = 0;
+					ap.totalSport = 0;
+					ap.isJumping = false;
+					ap.gameOver = false;
+					ap.level = 1;
+
+					SceneManager.LoadScene("splash_scene");
 				}
 			}
 		}

@@ -59,7 +59,8 @@ public class playerMove : MonoBehaviour {
 			ap.isJumping = false;
 		}
 
-		if (string.Equals(SceneManager.GetActiveScene ().name,"scene")) {
+		if (string.Equals(SceneManager.GetActiveScene ().name,"scene") ||
+			string.Equals(SceneManager.GetActiveScene ().name,"sceneBoss")) {
 			if (Input.GetKeyDown (KeyCode.P)) {
 				if (!ap.paused) 
 				{
@@ -110,6 +111,10 @@ public class playerMove : MonoBehaviour {
 			audioSource.PlayOneShot(soundBad, 1.0f);
 			movesBlocked = true;
 		}
+	}
+
+	void HandleBossCollision(){
+		audioSource.PlayOneShot(soundBad, 1.0f);
 	}
 
 	void HandleTimeup(){

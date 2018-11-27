@@ -28,6 +28,7 @@ public class ApplicationModel {
 	static public string bossFoodGroup3type;
 	static public string bossCurrentFoodGroupType;
 	static public bool bossFinished;
+	static public int[] selectedFoodGroups;
 	//
 
 	static public int pctBreadPasta = 25;
@@ -104,9 +105,9 @@ public class ApplicationModel {
 	static public string en_summaryHandler_successBadMsgText = "Press -N- to Retry This Week!";
 	static public string es_summaryHandler_successBadMsgText = "Pulsa -N- para reintentar esta semana!";
 	static public string de_summaryHandler_successBadMsgText = "Drücke -N- um die Woche zu wiederholen";
-	static public string en_summaryHandler_gameEndMsgText = "You Beat the Game! Press -N- to Start Again!";
-	static public string es_summaryHandler_gameEndMsgText = "Superaste el juego! Pulsa -N- para recomenzar";
-	static public string de_summaryHandler_gameEndMsgText = "Du hast das Spiel geschlagen! Drücke -N- um erneut zu beginnen!";
+	static public string en_summaryHandler_gameEndMsgText = "You Beat the Game! Press -N- to Go to the Final Level!";
+	static public string es_summaryHandler_gameEndMsgText = "Superaste el juego! Pulsa -N- para ir al nivel final";
+	static public string de_summaryHandler_gameEndMsgText = "yada yada";
 	static public string en_summaryHandler_breadPastaMsgTextGood = "You Ate the Right Amount of Pasta and Bread!";
 	static public string es_summaryHandler_breadPastaMsgTextGood = "Comiste el Pan y Pasta necesarios!";
 	static public string de_summaryHandler_breadPastaMsgTextGood = "Du hast genug Brot und Teigwaren gegessen";

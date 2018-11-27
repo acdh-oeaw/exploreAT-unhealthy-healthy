@@ -10,6 +10,12 @@ public class ItemChecker : MonoBehaviour {
 	public GameObject PopUpObject;
 	Text scoreText; 
 
+	public static int elemType_BreadPasta = 0;
+	public static int elemType_FruitVeggies = 1;
+	public static int elemType_MeatFish = 2;
+	public static int elemType_MilkCheese = 3;
+	public static int elemType_SweetSalty = 4;
+
 		public GameObject BarWaterObject;
 		public GameObject BarSportObject;
 		public GameObject TimerObject;
@@ -45,6 +51,7 @@ public class ItemChecker : MonoBehaviour {
 	public Sprite[] fruitSprites;
 
 	// Boss level
+	public GameObject BossObject;
 	public GameObject FoodGroup1IconObject;
 	public GameObject FoodGroup1BarObject;
 	public GameObject FoodGroup2IconObject;
@@ -53,7 +60,7 @@ public class ItemChecker : MonoBehaviour {
 	public GameObject FoodGroup3BarObject;
 	public Sprite[] foodGroupSprites;
 	public Sprite[] foodBarSprites;
-	public GameObject BossFinishedObject;
+	public GameObject BossFinishedObject; // Text message object
 
 	// Use this for initialization
 	void Start () {
@@ -386,11 +393,6 @@ public class ItemChecker : MonoBehaviour {
 		BossFinishedObject.SetActive(false);
 		CheckProgressObject.SetActive (false);
 
-		FoodGroup2IconObject.SetActive (false);
-		FoodGroup2BarObject.SetActive (false);
-		FoodGroup3IconObject.SetActive (false);
-		FoodGroup3BarObject.SetActive (false);
-
 		if (ap.language == "en") {
 			GameOverObject.GetComponent < Text > ().text = ap.en_sceneBoss_gameOverText;
 			BossFinishedObject.GetComponent < Text >().text = ap.en_sceneBoss_bossFinishedText;
@@ -406,9 +408,6 @@ public class ItemChecker : MonoBehaviour {
 			BossFinishedObject.GetComponent < Text >().text = ap.de_sceneBoss_bossFinishedText;
 			CheckProgressObject.GetComponent < Text >().text = ap.de_sceneBoss_checkProgressText;
 		}
-
-		//InvokeRepeating("decreaseTimer", 5, 5);
-		InvokeRepeating("decreaseTimer", 8, 8); // 1 minute rounds
 	}
 
 	void OnTriggerEnter2DSceneBoss (Collider2D other) { 
@@ -417,7 +416,9 @@ public class ItemChecker : MonoBehaviour {
 			return;
 		}
 
-		Destroy (other.gameObject);
+		if (other.gameObject.tag != "Boss") {
+			Destroy (other.gameObject);
+		}
 
 		// If the caught food doesn't belong to the current group,
 		// or the caught object is not the boss, do nothing
@@ -461,6 +462,7 @@ public class ItemChecker : MonoBehaviour {
 				FoodGroup3BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [3];
 				// WIN!
 				ap.bossFinished = true;
+				Destroy (BossObject.gameObject);
 
 				BossFinishedObject.SetActive(true);
 				CheckProgressObject.SetActive(true);
@@ -469,6 +471,8 @@ public class ItemChecker : MonoBehaviour {
 
 		// If it is the boss, handle the hit
 		else if (other.gameObject.tag == "Boss") {
+
+			gameObject.SendMessage("HandleBossCollision");
 
 			// Check the points we have at the time of the hit, do actions, then substract points
 			// Also change food groups if needed

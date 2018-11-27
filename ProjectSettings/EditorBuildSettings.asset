@@ -32,3 +32,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/summary_scene.unity
     guid: 8363de4f8071f421dab372920d7a1db0
+  - enabled: 1
+    path: Assets/sceneBoss.unity
+    guid: 17e8a8024776f4be59d999562b802b3b

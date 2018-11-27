@@ -21,6 +21,7 @@ TagManager:
   - FoodMeatFish
   - FoodMilkCheese
   - FoodSweetSalty
+  - Boss
   layers:
   - Default
   - TransparentFX
