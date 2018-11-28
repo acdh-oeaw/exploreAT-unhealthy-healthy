@@ -472,14 +472,12 @@ public class ItemChecker : MonoBehaviour {
 		// If it is the boss, handle the hit
 		else if (other.gameObject.tag == "Boss") {
 
-			gameObject.SendMessage("HandleBossCollision");
-
 			// Check the points we have at the time of the hit, do actions, then substract points
 			// Also change food groups if needed
 
 			// If we've run out of points, GAME OVER -> Restart
-			if (ap.bossPoints == 0) {
-				ap.bossPoints = -1;
+			if (ap.bossPoints < 1) {
+				ap.bossPoints = 0;
 
 				FoodGroup1IconObject.SetActive (false);
 				FoodGroup1BarObject.SetActive (false);
@@ -564,6 +562,8 @@ public class ItemChecker : MonoBehaviour {
 				FoodGroup2BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [3];
 				FoodGroup3BarObject.GetComponent<SpriteRenderer> ().sprite = foodBarSprites [0];
 			}
+
+			gameObject.SendMessage("HandleBossCollision");
 		}
 
 	}

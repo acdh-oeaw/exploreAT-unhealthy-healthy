@@ -9,6 +9,7 @@ using ap = ApplicationModel;
 public class BossMovementHandler : MonoBehaviour {
 
 	int speed;
+	public Sprite[] spritesBoss;
 
 	// Use this for initialization
 	void Start () {
@@ -27,8 +28,10 @@ public class BossMovementHandler : MonoBehaviour {
 
 		if (gameObject.transform.position.x < 70) {
 			gameObject.GetComponent<Rigidbody2D> ().velocity = new Vector3 (speed, 0, 0);
+			gameObject.GetComponent<SpriteRenderer> ().sprite = spritesBoss[1];
 		} else if(gameObject.transform.position.x > 700){
 			gameObject.GetComponent<Rigidbody2D> ().velocity = new Vector3 (-speed, 0, 0);
+			gameObject.GetComponent<SpriteRenderer> ().sprite = spritesBoss[0];
 		}
 	}
 }

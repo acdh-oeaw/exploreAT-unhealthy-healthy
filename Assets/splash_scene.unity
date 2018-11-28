@@ -525,7 +525,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8edc06d31ee454e9344412ad9e09d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rawimage: {fileID: 0}
+  rawimage: {fileID: 2080097360}
+  spritesSplash:
+  - {fileID: 2800000, guid: f92a723524f5c4a7fb796746974012cd, type: 3}
+  - {fileID: 2800000, guid: 3e4c93abc1eac49cba2706476d5ecf72, type: 3}
+  - {fileID: 2800000, guid: 2b9b494488dee4e81b7dc46aa4cd833e, type: 3}
   en_firstTexture: {fileID: 0}
   es_firstTexture: {fileID: 0}
   de_firstTexture: {fileID: 0}
@@ -544,6 +548,8 @@ MonoBehaviour:
   tuten8: {fileID: 0}
   tuten9: {fileID: 0}
   tuten10: {fileID: 0}
+  tuten11: {fileID: 0}
+  tuten12: {fileID: 0}
   tutes1: {fileID: 0}
   tutes2: {fileID: 0}
   tutes3: {fileID: 0}
@@ -554,6 +560,8 @@ MonoBehaviour:
   tutes8: {fileID: 0}
   tutes9: {fileID: 0}
   tutes10: {fileID: 0}
+  tutes11: {fileID: 0}
+  tutes12: {fileID: 0}
   tutde1: {fileID: 0}
   tutde2: {fileID: 0}
   tutde3: {fileID: 0}
@@ -564,6 +572,8 @@ MonoBehaviour:
   tutde8: {fileID: 0}
   tutde9: {fileID: 0}
   tutde10: {fileID: 0}
+  tutde11: {fileID: 0}
+  tutde12: {fileID: 0}
   panelFood: {fileID: 0}
   textFood: {fileID: 0}
   titleFood: {fileID: 0}
@@ -627,7 +637,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: 210e2581eba0845b5be7b98b3cb25ba4, type: 3}
+  m_Texture: {fileID: 2800000, guid: 2b9b494488dee4e81b7dc46aa4cd833e, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0

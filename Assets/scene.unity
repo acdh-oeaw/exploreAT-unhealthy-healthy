@@ -1608,7 +1608,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'LEVEL  '
+  m_Text: W
 --- !u!222 &1214443210
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1798,6 +1798,14 @@ MonoBehaviour:
   - {fileID: 21300006, guid: 7b39eb6b63e0d42678dedfb6022a3260, type: 3}
   indexSummer: 
   indexWinter: 
+  FoodGroup1IconObject: {fileID: 0}
+  FoodGroup1BarObject: {fileID: 0}
+  FoodGroup2IconObject: {fileID: 0}
+  FoodGroup2BarObject: {fileID: 0}
+  FoodGroup3IconObject: {fileID: 0}
+  FoodGroup3BarObject: {fileID: 0}
+  foodGroupSprites: []
+  foodBarSprites: []
 --- !u!4 &1279513824
 Transform:
   m_ObjectHideFlags: 0
@@ -2813,7 +2821,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1975497159
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2991,6 +2999,16 @@ MonoBehaviour:
   TimeUpObject: {fileID: 957933262}
   CheckProgressObject: {fileID: 1337896694}
   fruitSprites: []
+  BossObject: {fileID: 0}
+  FoodGroup1IconObject: {fileID: 0}
+  FoodGroup1BarObject: {fileID: 0}
+  FoodGroup2IconObject: {fileID: 0}
+  FoodGroup2BarObject: {fileID: 0}
+  FoodGroup3IconObject: {fileID: 0}
+  FoodGroup3BarObject: {fileID: 0}
+  foodGroupSprites: []
+  foodBarSprites: []
+  BossFinishedObject: {fileID: 0}
 --- !u!114 &1975497164
 MonoBehaviour:
   m_ObjectHideFlags: 0

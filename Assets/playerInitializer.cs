@@ -119,8 +119,18 @@ public class playerInitializer : MonoBehaviour {
 					ap.isJumping = false;
 					ap.gameOver = false;
 					ap.level = 1;
+					ap.bossFinished = false;
 
 					SceneManager.LoadScene("splash_scene");
+				}
+				else if (ap.gameOver) {
+					ResetFoodCounters ();
+					// Rest of resets
+					ap.totalWater = 0;
+					ap.totalSport = 0;
+					ap.isJumping = false;
+					ap.gameOver = false;
+					SceneManager.LoadScene ("sceneBoss"); // Regenerate Scene
 				}
 			}
 		}

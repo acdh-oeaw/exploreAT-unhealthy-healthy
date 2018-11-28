@@ -230,7 +230,6 @@ public class ItemSpawn : MonoBehaviour {
 		// Change collision bounds
 		Vector2 S = newObject.GetComponent<SpriteRenderer>().sprite.bounds.size;
 		newObject.GetComponent<BoxCollider2D>().size = S;
-		newObject.GetComponent<BoxCollider2D>().offset = new Vector2 ((S.x / 2), 0);
 
 		// Each time a spawn occur, the objects fall faster
 		newObject.GetComponent<Rigidbody2D>().gravityScale = 15;
@@ -328,7 +327,7 @@ public class ItemSpawn : MonoBehaviour {
 		while(true)
 		{
 			// Easier (slower falling objects) as the user advances
-			repeatRate = 0.4f+(float)(ap.level/10);
+			repeatRate = 0.4f+(float)(ap.level/20);
 			yield return new WaitForSeconds(repeatRate);
 			SpawnSceneBoss();
 		}

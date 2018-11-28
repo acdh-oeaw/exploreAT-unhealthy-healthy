@@ -12,6 +12,9 @@ public class gameStart : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		ap.bossPoints = 0;
+
 		if (ap.language == "en") {
 			controlsText.text = ap.en_gameStart_controlsText;
 			startText.text = ap.en_gameStart_startText;
@@ -29,7 +32,7 @@ public class gameStart : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.N) && SceneManager.GetActiveScene().name == "intro_scene"){
-			SceneManager.LoadScene("scene"); // Regenerate Scene
+			SceneManager.LoadScene("scene");
 		}
 	}
 }

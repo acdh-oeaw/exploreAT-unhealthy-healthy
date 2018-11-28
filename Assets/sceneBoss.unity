@@ -419,7 +419,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Game Over (R to Restart)
+  m_Text: Game Over (-N- to Restart)
 --- !u!222 &180783635
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -879,6 +879,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49e92b22fee2641ddaaf76c134c70c24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spritesBoss:
+  - {fileID: 21300000, guid: 71cf330aa968b44a588808364aa22283, type: 3}
+  - {fileID: 21300002, guid: 71cf330aa968b44a588808364aa22283, type: 3}
 --- !u!1 &639057031
 GameObject:
   m_ObjectHideFlags: 0
@@ -2206,7 +2209,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1975497159
 BoxCollider2D:
   m_ObjectHideFlags: 0

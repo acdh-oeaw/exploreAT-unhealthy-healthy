@@ -277,7 +277,7 @@ public class summaryHandler : MonoBehaviour {
 				ap.level++;
 		}
 
-		if (ap.level >= ap.maxLevel) {
+		if (ap.level > ap.maxLevel) {
 			if (ap.language == "en") {
 				successMsg.GetComponent<Text> ().text = ap.en_summaryHandler_gameEndMsgText;
 			} else if (ap.language == "es") {

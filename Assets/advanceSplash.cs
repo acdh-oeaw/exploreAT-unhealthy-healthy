@@ -8,6 +8,7 @@ using ap = ApplicationModel;
 public class advanceSplash : MonoBehaviour {
 
 	public RawImage rawimage;
+	public Texture[] spritesSplash;
 	public Texture en_firstTexture;
 	public Texture es_firstTexture;
 	public Texture de_firstTexture;
@@ -17,9 +18,9 @@ public class advanceSplash : MonoBehaviour {
 	public Text advanceText;
 	public Text infoText;
 
-	public Texture tuten1,tuten2,tuten3,tuten4,tuten5,tuten6,tuten7,tuten8,tuten9,tuten10;
-	public Texture tutes1,tutes2,tutes3,tutes4,tutes5,tutes6,tutes7,tutes8,tutes9,tutes10;
-	public Texture tutde1,tutde2,tutde3,tutde4,tutde5,tutde6,tutde7,tutde8,tutde9,tutde10;
+	public Texture tuten1,tuten2,tuten3,tuten4,tuten5,tuten6,tuten7,tuten8,tuten9,tuten10,tuten11,tuten12;
+	public Texture tutes1,tutes2,tutes3,tutes4,tutes5,tutes6,tutes7,tutes8,tutes9,tutes10,tutes11,tutes12;
+	public Texture tutde1,tutde2,tutde3,tutde4,tutde5,tutde6,tutde7,tutde8,tutde9,tutde10,tutde11,tutde12;
 
 	public GameObject panelFood;
 	public Text textFood;
@@ -96,10 +97,13 @@ public class advanceSplash : MonoBehaviour {
 		if (string.Equals (SceneManager.GetActiveScene ().name, "splash_scene")) {
 			if (ap.language == "en") {
 				advanceText.text = ap.en_splash_text;
+				rawimage.texture = spritesSplash[0];
 			} else if (ap.language == "es") {
 				advanceText.text = ap.es_splash_text;
+				rawimage.texture = spritesSplash[1];
 			} else if (ap.language == "de") {
 				advanceText.text = ap.de_splash_text;
+				rawimage.texture = spritesSplash[2];
 			}
 		}
 
@@ -118,10 +122,10 @@ public class advanceSplash : MonoBehaviour {
 
 			// If in tutorial, go step-by-step
 			else if (string.Equals(SceneManager.GetActiveScene ().name,"tutorial_scene")) {
-				if (ap.tutorialState < 10) {
+				if (ap.tutorialState < 12) {
 					ap.tutorialState += 1;
 					changeTutorialImage ();
-				} else if (ap.tutorialState == 10) {
+				} else if (ap.tutorialState == 12) {
 					ap.tutorialState = 0;
 					SceneManager.LoadScene ("intro_scene");
 				}
@@ -138,36 +142,42 @@ public class advanceSplash : MonoBehaviour {
 	void changeTutorialImage(){
 		if (ap.language == "en") {
 			if(ap.tutorialState == 2){rawimage.texture = tuten2;}
-			if(ap.tutorialState == 3){rawimage.texture = tuten3;}
-			if(ap.tutorialState == 4){rawimage.texture = tuten4;}
-			if(ap.tutorialState == 5){rawimage.texture = tuten5;}
-			if(ap.tutorialState == 6){rawimage.texture = tuten6;}
-			if(ap.tutorialState == 7){rawimage.texture = tuten7;}
-			if(ap.tutorialState == 8){rawimage.texture = tuten8;}
-			if(ap.tutorialState == 9){rawimage.texture = tuten9;}
-			if(ap.tutorialState == 10){rawimage.texture = tuten10;}
+			else if(ap.tutorialState == 3){rawimage.texture = tuten3;}
+			else if(ap.tutorialState == 4){rawimage.texture = tuten4;}
+			else if(ap.tutorialState == 5){rawimage.texture = tuten5;}
+			else if(ap.tutorialState == 6){rawimage.texture = tuten6;}
+			else if(ap.tutorialState == 7){rawimage.texture = tuten7;}
+			else if(ap.tutorialState == 8){rawimage.texture = tuten8;}
+			else if(ap.tutorialState == 9){rawimage.texture = tuten9;}
+			else if(ap.tutorialState == 10){rawimage.texture = tuten10;}
+			else if(ap.tutorialState == 11){rawimage.texture = tuten11;}
+			else if(ap.tutorialState == 12){rawimage.texture = tuten12;}
 		}
 		else if (ap.language == "es") {
 			if(ap.tutorialState == 2){rawimage.texture = tutes2;}
-			if(ap.tutorialState == 3){rawimage.texture = tutes3;}
-			if(ap.tutorialState == 4){rawimage.texture = tutes4;}
-			if(ap.tutorialState == 5){rawimage.texture = tutes5;}
-			if(ap.tutorialState == 6){rawimage.texture = tutes6;}
-			if(ap.tutorialState == 7){rawimage.texture = tutes7;}
-			if(ap.tutorialState == 8){rawimage.texture = tutes8;}
-			if(ap.tutorialState == 9){rawimage.texture = tutes9;}
-			if(ap.tutorialState == 10){rawimage.texture = tutes10;}
+			else if(ap.tutorialState == 3){rawimage.texture = tutes3;}
+			else if(ap.tutorialState == 4){rawimage.texture = tutes4;}
+			else if(ap.tutorialState == 5){rawimage.texture = tutes5;}
+			else if(ap.tutorialState == 6){rawimage.texture = tutes6;}
+			else if(ap.tutorialState == 7){rawimage.texture = tutes7;}
+			else if(ap.tutorialState == 8){rawimage.texture = tutes8;}
+			else if(ap.tutorialState == 9){rawimage.texture = tutes9;}
+			else if(ap.tutorialState == 10){rawimage.texture = tutes10;}
+			else if(ap.tutorialState == 11){rawimage.texture = tutes11;}
+			else if(ap.tutorialState == 12){rawimage.texture = tutes12;}
 		}
 		else if (ap.language == "de") {
 			if(ap.tutorialState == 2){rawimage.texture = tutde2;}
-			if(ap.tutorialState == 3){rawimage.texture = tutde3;}
-			if(ap.tutorialState == 4){rawimage.texture = tutde4;}
-			if(ap.tutorialState == 5){rawimage.texture = tutde5;}
-			if(ap.tutorialState == 6){rawimage.texture = tutde6;}
-			if(ap.tutorialState == 7){rawimage.texture = tutde7;}
-			if(ap.tutorialState == 8){rawimage.texture = tutde8;}
-			if(ap.tutorialState == 9){rawimage.texture = tutde9;}
-			if(ap.tutorialState == 10){rawimage.texture = tutde10;}
+			else if(ap.tutorialState == 3){rawimage.texture = tutde3;}
+			else if(ap.tutorialState == 4){rawimage.texture = tutde4;}
+			else if(ap.tutorialState == 5){rawimage.texture = tutde5;}
+			else if(ap.tutorialState == 6){rawimage.texture = tutde6;}
+			else if(ap.tutorialState == 7){rawimage.texture = tutde7;}
+			else if(ap.tutorialState == 8){rawimage.texture = tutde8;}
+			else if(ap.tutorialState == 9){rawimage.texture = tutde9;}
+			else if(ap.tutorialState == 10){rawimage.texture = tutde10;}
+			else if(ap.tutorialState == 11){rawimage.texture = tutde11;}
+			else if(ap.tutorialState == 12){rawimage.texture = tutde12;}
 		}
 	}
 }
