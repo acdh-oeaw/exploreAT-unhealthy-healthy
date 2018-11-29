@@ -167,7 +167,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 193.93604
+  orthographic size: 199.50305
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1029,7 +1029,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 74809754}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1151,6 +1151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawimage: {fileID: 0}
+  spritesSplash: []
   en_firstTexture: {fileID: 2800000, guid: b18c0ed93271c40c69e8136537002938, type: 3}
   es_firstTexture: {fileID: 2800000, guid: df9236780e3d7459c88d9f3872c9b686, type: 3}
   de_firstTexture: {fileID: 2800000, guid: 3dcbc2ac31fc046a3b7fe356315b4b36, type: 3}
@@ -1169,6 +1170,8 @@ MonoBehaviour:
   tuten8: {fileID: 2800000, guid: a17741529161a4990b6cfbb06d2c0db6, type: 3}
   tuten9: {fileID: 2800000, guid: adbddbd4acc0f4cbda920545dc304e09, type: 3}
   tuten10: {fileID: 2800000, guid: 458faec0dc923429c8eedac1b476399a, type: 3}
+  tuten11: {fileID: 0}
+  tuten12: {fileID: 0}
   tutes1: {fileID: 0}
   tutes2: {fileID: 0}
   tutes3: {fileID: 0}
@@ -1179,6 +1182,8 @@ MonoBehaviour:
   tutes8: {fileID: 0}
   tutes9: {fileID: 0}
   tutes10: {fileID: 0}
+  tutes11: {fileID: 0}
+  tutes12: {fileID: 0}
   tutde1: {fileID: 0}
   tutde2: {fileID: 0}
   tutde3: {fileID: 0}
@@ -1189,6 +1194,8 @@ MonoBehaviour:
   tutde8: {fileID: 0}
   tutde9: {fileID: 0}
   tutde10: {fileID: 0}
+  tutde11: {fileID: 0}
+  tutde12: {fileID: 0}
   panelFood: {fileID: 619462321}
   textFood: {fileID: 1572201602}
   titleFood: {fileID: 1131376188}

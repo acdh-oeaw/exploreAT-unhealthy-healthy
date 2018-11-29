@@ -106,8 +106,8 @@ public class ApplicationModel {
 	static public string es_summaryHandler_successBadMsgText = "Pulsa -N- para reintentar esta semana!";
 	static public string de_summaryHandler_successBadMsgText = "Drücke -N- um die Woche zu wiederholen";
 	static public string en_summaryHandler_gameEndMsgText = "You Beat the Game! Press -N- to Go to the Final Level!";
-	static public string es_summaryHandler_gameEndMsgText = "Superaste el juego! Pulsa -N- para ir al nivel final";
-	static public string de_summaryHandler_gameEndMsgText = "yada yada";
+	static public string es_summaryHandler_gameEndMsgText = "Superaste el juego! Pulsa -N- para ir al nivel final!";
+	static public string de_summaryHandler_gameEndMsgText = "Du hast das Spiel besiegt\"! Drücke -N- um zum finalen Level zu gelangen!";
 	static public string en_summaryHandler_breadPastaMsgTextGood = "You Ate the Right Amount of Pasta and Bread!";
 	static public string es_summaryHandler_breadPastaMsgTextGood = "Comiste el Pan y Pasta necesarios!";
 	static public string de_summaryHandler_breadPastaMsgTextGood = "Du hast genug Brot und Teigwaren gegessen";

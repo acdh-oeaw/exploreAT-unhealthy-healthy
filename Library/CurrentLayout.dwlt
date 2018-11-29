@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -314,7 +314,7 @@ MonoBehaviour:
     width: 1001
     height: 250
   m_SearchFilter:
-    m_NameFilter: tutor
+    m_NameFilter: scene
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -392,7 +392,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000ae28000014270000182700003e2800006a2800008a270000282700005c270000722b0000b82a00000228000018280000d8280000862a0000883200009e270000c661000000000000e62700003c2700008a290000fe280000c2270000bc270000c6270000
+    m_ExpandedInstanceIDs: c6230000ae28000014270000182700003e2800006a2800008a270000282700005c270000722b0000b82a00000228000018280000d8280000862a0000883200009e270000c6610000e62700003c2700008a290000fe280000c2270000bc270000c627000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -482,7 +482,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: cc12faff8213faffaa14faffb014faffb614faffcc14faffd414faffd814faffe014faffe614faffa833faffe83bfaff9a3cfaffc23dfaffc83dfaffce3dfaffe43dfaffec3dfafff03dfafff83dfafffc3dfaff8afefaff9e60fbff5483fcffa294fcffd0a3fcff98d0fcffa8c0fdff9c72ffff1ef8ffffa8fbffff00000000042d00005c930000b8a4000078a5000036b50000
+    m_ExpandedIDs: a468f5ff6069f5ff886af5ff8e6af5ff946af5ffaa6af5ffb26af5ffb66af5ffbe6af5ffc26af5ff6a72f5ffb676f5ff7277f5ff9a78f5ffa078f5ffa678f5ffbc78f5ffc478f5ffc878f5ffcc78f5ffd278f5ff1898f5ffd498f5fffc99f5ff029af5ff089af5ff1e9af5ff269af5ff2a9af5ff2e9af5ff349af5ff6ab1f5ffdcc3f5ff58c5f5ffa4d2f5ff12d8f5ff68dbf5ffd215f6ffd819f6ff582af6ffec5bf6ff4c8df6fffe9cf6ff54a3f6ff0aa4f6ff30a5f6ff36a5f6ff3ca5f6ff42a5f6ff4aa5f6ff4ea5f6ff56a5f6ff60a5f6ff3286faff3aaafaff605bfbfffea5fbff10b0fbffb6efffffa8fbffff000000004a2d00003a600000567d0000947f0000fc800000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -501,7 +501,7 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 4}
     m_SearchString: 
   m_ExpandedScenes:
-  - tutorial_scene
+  - splash_scene
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
@@ -532,14 +532,14 @@ MonoBehaviour:
     width: 743
     height: 410
   m_SceneLighting: 1
-  lastFramingTime: 9876.195992946625
+  lastFramingTime: 3423.604707956314
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 318.11743, y: 180.32114, z: -4.974665}
+    m_Target: {x: 426.6229, y: 193.0793, z: -5.375}
     speed: 2
-    m_Value: {x: 318.11743, y: 180.32114, z: -4.974665}
+    m_Value: {x: 426.6229, y: 193.0793, z: -5.375}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -566,9 +566,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 524.35425
+    m_Target: 659.8999
     speed: 2
-    m_Value: 524.35425
+    m_Value: 659.8999
   m_Ortho:
     m_Target: 1
     speed: 2

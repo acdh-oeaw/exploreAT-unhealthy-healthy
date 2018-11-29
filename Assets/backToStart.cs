@@ -16,5 +16,8 @@ public class backToStart : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.R)) {
 			SceneManager.LoadScene ("splash_scene");
 		}
+		if (Input.GetKeyDown (KeyCode.Q)) {
+			SceneManager.LoadScene ("sceneBoss");
+		}
 	}
 }
