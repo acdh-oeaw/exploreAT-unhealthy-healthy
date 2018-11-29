@@ -22,9 +22,9 @@ public class BossMovementHandler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (ap.bossPoints > -1 && ap.bossPoints < 3) {speed = 160;}
-		else if (ap.bossPoints >=3 && ap.bossPoints < 6) {speed = 185;}
-		else if (ap.bossPoints >=6) {speed = 215;}
+		if (ap.bossPoints > -1 && ap.bossPoints < 3) {speed = 200;}
+		else if (ap.bossPoints >=3 && ap.bossPoints < 6) {speed = 300;}
+		else if (ap.bossPoints >=6) {speed = 400;}
 
 		if (gameObject.transform.position.x < 70) {
 			gameObject.GetComponent<Rigidbody2D> ().velocity = new Vector3 (speed, 0, 0);

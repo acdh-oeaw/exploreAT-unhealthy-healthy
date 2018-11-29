@@ -11,9 +11,11 @@ public class HorizontalSpawn : MonoBehaviour {
 	public GameObject RightSide;
 	public GameObject SpawnerHorizontal;
 	public GameObject Roller;
+	public GameObject Cloud;
 	public PhysicsMaterial2D noFrictMaterial;
 	public float startDelay, repeatRate;
 	public System.Random rand;
+	public Sprite[] cloudSprites;
 
 
 	// Use this for initialization
@@ -21,25 +23,11 @@ public class HorizontalSpawn : MonoBehaviour {
 
 		rand = new System.Random ();
 
-		if (string.Equals(SceneManager.GetActiveScene ().name,"scene")) {
-			startDelay = 2.5f;
-			repeatRate = 5.5f;
-		}
-		else if (string.Equals(SceneManager.GetActiveScene ().name,"scene2")) {
-			startDelay = 2.0f;
-			repeatRate = 4.5f;
-		}
-		else if (string.Equals(SceneManager.GetActiveScene ().name,"scene3")) {
-			startDelay = 1.5f;
-			repeatRate = 3.5f;
-		}
-
 		while(true)
 		{
-			yield return new WaitForSeconds(repeatRate);
-			//Spawn();
+			yield return new WaitForSeconds(2f);
+			Spawn();
 		}
-		//InvokeRepeating ("Spawn", startDelay, repeatRate);
 	}
 	
 	// Update is called once per frame
@@ -49,53 +37,30 @@ public class HorizontalSpawn : MonoBehaviour {
 
 	void Spawn () {
 
-		return;
-
-		// Random pizza roller spawn from left or right
 		bool goingLeft = true;
 		if (rand.NextDouble () >= 0.5) {
 			goingLeft = false;
 		}
 
-		int posX = 9; if (!goingLeft) {posX = -9;}
-		float randomSpeed = 0f;
+		int posX = 800; if (!goingLeft) {posX = -100;}
 
-		Vector3 pos = new Vector3 (posX, -4.2f, 0); 
+		Vector3 pos = new Vector3 (posX, UnityEngine.Random.Range (250,370), 0); 
 		GameObject newObject = null;
 		if (!goingLeft) {
-			newObject = Instantiate (Roller, pos, gameObject.transform.rotation);
+			newObject = Instantiate (Cloud, pos, gameObject.transform.rotation);
 		} else {
-			newObject = Instantiate (Roller, pos, gameObject.transform.rotation);
+			newObject = Instantiate (Cloud, pos, gameObject.transform.rotation);
 		}
 
-		// Each time a spawn occur, the objects rolls faster
-		if (string.Equals(SceneManager.GetActiveScene ().name,"scene")) {
-			newObject.GetComponent<Rigidbody2D>().gravityScale += (float)0.75;
-			randomSpeed = UnityEngine.Random.Range (3,7);
-		}
-		else if (string.Equals(SceneManager.GetActiveScene ().name,"scene2")) {
-			newObject.GetComponent<Rigidbody2D>().gravityScale += (float)1.25;
-			randomSpeed = UnityEngine.Random.Range (8,14);
-		}
-		else if (string.Equals(SceneManager.GetActiveScene ().name,"scene3")) {
-			newObject.GetComponent<Rigidbody2D>().gravityScale += (float)1.75;
-			randomSpeed = UnityEngine.Random.Range (15,21);
-		}
-
+		newObject.transform.localScale += new Vector3(20.0f, 20.0f, 0);
+		int randomSpeed = UnityEngine.Random.Range (50,100);
 		if (!goingLeft) {randomSpeed = -randomSpeed;}
 		newObject.GetComponent<Rigidbody2D>().velocity = new Vector3(-randomSpeed,0,0);
-		//newObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(4 * -4 * Time.deltaTime * 1 * -8, 0f));
 
-		// Also, object appear faster each time one is spawned
-		if(repeatRate>0.5)
-		if (string.Equals(SceneManager.GetActiveScene ().name,"scene")) {
-			repeatRate -= (float).025;
-		}
-		else if (string.Equals(SceneManager.GetActiveScene ().name,"scene2")) {
-			repeatRate -= (float).05;
-		}
-		else if (string.Equals(SceneManager.GetActiveScene ().name,"scene3")) {
-			repeatRate -= (float).075;
-		}
+		newObject.GetComponent<SpriteRenderer> ().sprite = cloudSprites [UnityEngine.Random.Range (0,cloudSprites.Length)];
+
+		Color tmp = newObject.GetComponent<SpriteRenderer>().color;
+		tmp.a = 0.0f+(float)UnityEngine.Random.Range (40,70)/100f;
+		newObject.GetComponent<SpriteRenderer>().color = tmp;
 	} 
 }

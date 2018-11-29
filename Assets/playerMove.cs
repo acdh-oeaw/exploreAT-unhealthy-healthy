@@ -49,7 +49,7 @@ public class playerMove : MonoBehaviour {
 			if ((Input.GetMouseButtonDown (0) || Input.GetKeyDown (KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) &&
 				!ap.isJumping) {  //makes player jump
 				audioSource.PlayOneShot(soundJump, 1.0f);
-				GetComponent<Rigidbody2D>().AddForce(new Vector2(0,65), ForceMode2D.Impulse);
+				GetComponent<Rigidbody2D>().AddForce(new Vector2(0,70), ForceMode2D.Impulse);
 				ap.isJumping = true;
 			}
 		}
