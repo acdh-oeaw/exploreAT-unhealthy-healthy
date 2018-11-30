@@ -64,7 +64,7 @@ public class advanceSplash : MonoBehaviour {
 				titleFood.GetComponent<Text> ().text = ap.en_titlePyramid;
 				textFood.GetComponent<Text> ().text = ap.en_infoPyramid;
 				advanceText.text = ap.en_pyramid_advanceText;
-				infoText.text = ap.en_pyramid_advanceText;
+				infoText.text = ap.en_pyramid_infoText;
 			} else if (ap.language == "es") {
 				titleFood.GetComponent<Text> ().text = ap.es_titlePyramid;
 				textFood.GetComponent<Text> ().text = ap.es_infoPyramid;
@@ -82,6 +82,8 @@ public class advanceSplash : MonoBehaviour {
 			checkMeatFish.SetActive (true);
 			checkMilkCheese.SetActive (true);
 			checkSweetSalty.SetActive (true);
+			Debug.Log("Screen Width : " + Screen.width);
+			Debug.Log("Screen Height : " + Screen.height);
 		}
 	}
 	

@@ -75,9 +75,9 @@ public class ApplicationModel {
 	static public string es_pyramid_source = "Fuente: GESUNDHEIT.GV.AT";
 	static public string de_pyramid_source = "Quelle: GESUNDHEIT.GV.AT";
 
-	static public string en_tutorial_advanceText = "Press 'N' to Advance\n\nPress 'S' to Skip";
-	static public string es_tutorial_advanceText = "Pulsa 'N' para avanzar\n\nPulsa 'S' para saltar";
-	static public string de_tutorial_advanceText = "Drücke 'N', um fortzufahren\n\nDrücke ‘S’ um zu springen";
+	static public string en_tutorial_advanceText = "Press 'N' to Advance\nPress 'S' to Skip";
+	static public string es_tutorial_advanceText = "Pulsa 'N' para avanzar\nPulsa 'S' para saltar";
+	static public string de_tutorial_advanceText = "Drücke 'N', um fortzufahren\nDrücke ‘S’ um zu springen";
 
 	static public string en_gameStart_controlsText = "Use the -- Arrow Keys -- to move your character Left and Right\n\nUse the -- Spacebar -- to Jump";
 	static public string en_gameStart_startText = "1) Select a Character Using the -- Arrow Keys -- of the keyboard\n\n2) Select a Season (Winter/Summer) to Play In\n\n3) Press 'N' to Start Playing!";
