@@ -79,11 +79,11 @@ public class ApplicationModel {
 	static public string es_tutorial_advanceText = "Pulsa 'N' para avanzar\nPulsa 'S' para saltar";
 	static public string de_tutorial_advanceText = "Drücke 'N', um fortzufahren\nDrücke ‘S’ um zu springen";
 
-	static public string en_gameStart_controlsText = "Use the -- Arrow Keys -- to move your character Left and Right\n\nUse the -- Spacebar -- to Jump";
+	static public string en_gameStart_controlsText = "Use the -- Arrow Keys -- to move your character Left and Right\n\nUse the -- Spacebar/Arrow Up -- to Jump";
 	static public string en_gameStart_startText = "1) Select a Character Using the -- Arrow Keys -- of the keyboard\n\n2) Select a Season (Winter/Summer) to Play In\n\n3) Press 'N' to Start Playing!";
-	static public string es_gameStart_controlsText = "Utiliza las -- Flechas -- para moverte a Izquierda y Derecha\n\nUsa la -- Barra Espaciadora -- para Saltar";
+	static public string es_gameStart_controlsText = "Utiliza las -- Flechas -- para moverte a Izquierda y Derecha\n\nUsa la -- Barra Espaciadora/Flecha Arriba -- para Saltar";
 	static public string es_gameStart_startText = "1) Selecciona un personaje con las -- Flechas -- del teclado\n\n2) Elige una estacion (Invierno/Verano) en la que jugar\n\n3) Pulsa 'N' para comenzar!";
-	static public string de_gameStart_controlsText = "Benutze die - Pfeiltasten - um deinen Avatar nach links und rechts zu bewegen\n\nVerwende die - Leertaste - um zu springen";
+	static public string de_gameStart_controlsText = "Benutze die - Pfeiltasten - um deinen Avatar nach links und rechts zu bewegen\n\nVerwende die - Leertaste/Pfeiltaste Hinauf - um zu springen";
 	static public string de_gameStart_startText = "1) Wähle einen Avatar mit den - Pfeiltasten - der Tastatur\n\n2) Wähle eine Jahreszeit (Sommer/Winter) für das Spiel\n\n3) Drücke 'N', um mit der Wiedergabe zu beginnen!";
 
 

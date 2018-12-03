@@ -25,7 +25,23 @@ public class openURL : MonoBehaviour, IPointerClickHandler {
 	
 	// Update is called once per frame
 	void Update () {
+		if (Input.GetKeyDown (KeyCode.Alpha1) || Input.GetKeyDown (KeyCode.Keypad1)) {ap.language = "en";}
+		else if (Input.GetKeyDown (KeyCode.Alpha2) || Input.GetKeyDown (KeyCode.Keypad2)) {ap.language = "es";}
+		else if (Input.GetKeyDown (KeyCode.Alpha3) || Input.GetKeyDown (KeyCode.Keypad2)) {ap.language = "de";}
 
+		if(Input.GetKeyDown (KeyCode.Alpha1) || Input.GetKeyDown (KeyCode.Keypad1) ||
+			Input.GetKeyDown (KeyCode.Alpha2) || Input.GetKeyDown (KeyCode.Keypad2) ||
+			Input.GetKeyDown (KeyCode.Alpha3) || Input.GetKeyDown (KeyCode.Keypad3)){
+			if (ap.language == "en") {
+				sourceText.text = ap.en_pyramid_source;
+			}
+			else if (ap.language == "es") {
+				sourceText.text = ap.es_pyramid_source;
+			}
+			else if (ap.language == "de") {
+				sourceText.text = ap.de_pyramid_source;
+			}
+		}
 	}
 
 	public void OnPointerClick(PointerEventData eventData)

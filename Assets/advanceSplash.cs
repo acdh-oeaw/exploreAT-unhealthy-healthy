@@ -9,6 +9,8 @@ public class advanceSplash : MonoBehaviour {
 
 	public RawImage rawimage;
 	public Texture[] spritesSplash;
+	public GameObject flagimage;
+	public Sprite[] spritesFlags;
 	public Texture en_firstTexture;
 	public Texture es_firstTexture;
 	public Texture de_firstTexture;
@@ -82,8 +84,6 @@ public class advanceSplash : MonoBehaviour {
 			checkMeatFish.SetActive (true);
 			checkMilkCheese.SetActive (true);
 			checkSweetSalty.SetActive (true);
-			Debug.Log("Screen Width : " + Screen.width);
-			Debug.Log("Screen Height : " + Screen.height);
 		}
 	}
 	
@@ -95,17 +95,44 @@ public class advanceSplash : MonoBehaviour {
 		else if (Input.GetKeyDown (KeyCode.Alpha2) || Input.GetKeyDown (KeyCode.Keypad2)) {ap.language = "es";}
 		else if (Input.GetKeyDown (KeyCode.Alpha3) || Input.GetKeyDown (KeyCode.Keypad2)) {ap.language = "de";}
 
+		if(Input.GetKeyDown (KeyCode.Alpha1) || Input.GetKeyDown (KeyCode.Keypad1) ||
+			Input.GetKeyDown (KeyCode.Alpha2) || Input.GetKeyDown (KeyCode.Keypad2) ||
+			Input.GetKeyDown (KeyCode.Alpha3) || Input.GetKeyDown (KeyCode.Keypad3)){
+			// Change pyramid info/advance msgs
+			if (string.Equals (SceneManager.GetActiveScene ().name, "pyramid_scene")) {
+				if (ap.language == "en") {
+					titleFood.GetComponent<Text> ().text = ap.en_titlePyramid;
+					textFood.GetComponent<Text> ().text = ap.en_infoPyramid;
+					advanceText.text = ap.en_pyramid_advanceText;
+					infoText.text = ap.en_pyramid_infoText;
+				} else if (ap.language == "es") {
+					titleFood.GetComponent<Text> ().text = ap.es_titlePyramid;
+					textFood.GetComponent<Text> ().text = ap.es_infoPyramid;
+					advanceText.text = ap.es_pyramid_advanceText;
+					infoText.text = ap.es_pyramid_infoText;
+				} else if (ap.language == "de") {
+					titleFood.GetComponent<Text> ().text = ap.de_titlePyramid;
+					textFood.GetComponent<Text> ().text = ap.de_infoPyramid;
+					advanceText.text = ap.de_pyramid_advanceText;
+					infoText.text = ap.de_pyramid_infoText;
+				}
+			}
+		}
+
 		// Change the messages of the splash screen depending on the language if it changed
 		if (string.Equals (SceneManager.GetActiveScene ().name, "splash_scene")) {
 			if (ap.language == "en") {
 				advanceText.text = ap.en_splash_text;
 				rawimage.texture = spritesSplash[0];
+				flagimage.GetComponent<SpriteRenderer> ().sprite = spritesFlags[0];
 			} else if (ap.language == "es") {
 				advanceText.text = ap.es_splash_text;
 				rawimage.texture = spritesSplash[1];
+				flagimage.GetComponent<SpriteRenderer> ().sprite = spritesFlags[1];
 			} else if (ap.language == "de") {
 				advanceText.text = ap.de_splash_text;
 				rawimage.texture = spritesSplash[2];
+				flagimage.GetComponent<SpriteRenderer> ().sprite = spritesFlags[2];
 			}
 		}
 
