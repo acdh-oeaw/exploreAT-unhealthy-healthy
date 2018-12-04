@@ -153,8 +153,10 @@ public class summaryHandler : MonoBehaviour {
 				checkBreadPastaMsg.GetComponent<Text> ().text += " (Ate "+ap.counterBreadPasta+" units, need between "+ap.counterBreadPastaMin+" and "+ap.counterBreadPastaMax+")";
 				} else if (ap.language == "es") {
 				checkBreadPastaMsg.GetComponent<Text> ().text = ap.es_summaryHandler_breadPastaMsgTextGood;
+				checkBreadPastaMsg.GetComponent<Text> ().text += " (Tomaste "+ap.counterBreadPasta+" unidades, necesitas entre "+ap.counterBreadPastaMin+" y "+ap.counterBreadPastaMax+")";
 			} else if (ap.language == "de") {
 				checkBreadPastaMsg.GetComponent<Text> ().text = ap.de_summaryHandler_breadPastaMsgTextGood;
+				checkBreadPastaMsg.GetComponent<Text> ().text += " ("+ap.counterBreadPasta+" Portionen gegessen, es werden zwischen "+ap.counterBreadPastaMin+" und "+ap.counterBreadPastaMax+" benötigt)";
 			}
 		} else {
 			if (ap.language == "en") {
@@ -162,8 +164,10 @@ public class summaryHandler : MonoBehaviour {
 				checkBreadPastaMsg.GetComponent<Text> ().text += " (Ate "+ap.counterBreadPasta+" units, need between "+ap.counterBreadPastaMin+" and "+ap.counterBreadPastaMax+")";
 			} else if (ap.language == "es") {
 				checkBreadPastaMsg.GetComponent<Text> ().text = ap.es_summaryHandler_breadPastaMsgTextBad;
+				checkBreadPastaMsg.GetComponent<Text> ().text += " (Tomaste "+ap.counterBreadPasta+" unidades, necesitas entre "+ap.counterBreadPastaMin+" y "+ap.counterBreadPastaMax+")";
 			} else if (ap.language == "de") {
 				checkBreadPastaMsg.GetComponent<Text> ().text = ap.de_summaryHandler_breadPastaMsgTextBad;
+				checkBreadPastaMsg.GetComponent<Text> ().text += " ("+ap.counterBreadPasta+" Portionen gegessen, es werden zwischen "+ap.counterBreadPastaMin+" und "+ap.counterBreadPastaMax+" benötigt)";
 			}
 		}
 
@@ -173,8 +177,10 @@ public class summaryHandler : MonoBehaviour {
 				checkFruitVeggiesMsg.GetComponent<Text> ().text += " (Ate "+ap.counterFruitVeggies+" units, need at least "+ap.counterFruitVeggiesValue+")";
 			} else if (ap.language == "es") {
 				checkFruitVeggiesMsg.GetComponent<Text> ().text = ap.es_summaryHandler_fruitVeggiesMsgTextGood;
+				checkFruitVeggiesMsg.GetComponent<Text> ().text += " (Tomaste "+ap.counterFruitVeggies+" unidades, necesitas al menos "+ap.counterFruitVeggiesValue+")";
 			} else if (ap.language == "de") {
 				checkFruitVeggiesMsg.GetComponent<Text> ().text = ap.de_summaryHandler_fruitVeggiesMsgTextGood;
+				checkFruitVeggiesMsg.GetComponent<Text> ().text += " ("+ap.counterFruitVeggies+" Portionen gegessen, es werden mindestens "+ap.counterFruitVeggiesValue+" benötigt)";
 			}
 		} else {
 			if (ap.language == "en") {
@@ -182,8 +188,10 @@ public class summaryHandler : MonoBehaviour {
 				checkFruitVeggiesMsg.GetComponent<Text> ().text += " (Ate "+ap.counterFruitVeggies+" units, need at least "+ap.counterFruitVeggiesValue+")";
 			} else if (ap.language == "es") {
 				checkFruitVeggiesMsg.GetComponent<Text> ().text = ap.es_summaryHandler_fruitVeggiesMsgTextBad;
+				checkFruitVeggiesMsg.GetComponent<Text> ().text += " (Tomaste "+ap.counterFruitVeggies+" unidades, necesitas al menos "+ap.counterFruitVeggiesValue+")";
 			} else if (ap.language == "de") {
 				checkFruitVeggiesMsg.GetComponent<Text> ().text = ap.de_summaryHandler_fruitVeggiesMsgTextBad;
+				checkFruitVeggiesMsg.GetComponent<Text> ().text += " ("+ap.counterFruitVeggies+" Portionen gegessen, es werden mindestens "+ap.counterFruitVeggiesValue+" benötigt)";
 			}
 		}
 
@@ -193,8 +201,10 @@ public class summaryHandler : MonoBehaviour {
 				checkMeatFishMsg.GetComponent<Text> ().text += " (Ate "+ap.counterMeatFish+" units, need between "+ap.counterMeatFishMin+" and "+ap.counterMeatFishMax+")";
 			} else if (ap.language == "es") {
 				checkMeatFishMsg.GetComponent<Text> ().text = ap.es_summaryHandler_meatFishMsgTextGood;
+				checkMeatFishMsg.GetComponent<Text> ().text += " (Tomaste "+ap.counterMeatFish+" unidades, necestias entre "+ap.counterMeatFishMin+" y "+ap.counterMeatFishMax+")";
 			} else if (ap.language == "de") {
 				checkMeatFishMsg.GetComponent<Text> ().text = ap.de_summaryHandler_meatFishMsgTextGood;
+				checkMeatFishMsg.GetComponent<Text> ().text += " ("+ap.counterMeatFish+" Portionen gegessen, es werden zwischen "+ap.counterMeatFishMin+" und "+ap.counterMeatFishMax+" benötigt)";
 			}
 		} else {
 			if (ap.language == "en") {
@@ -202,8 +212,10 @@ public class summaryHandler : MonoBehaviour {
 				checkMeatFishMsg.GetComponent<Text> ().text += " (Ate "+ap.counterMeatFish+" units, need between "+ap.counterMeatFishMin+" and "+ap.counterMeatFishMax+")";
 			} else if (ap.language == "es") {
 				checkMeatFishMsg.GetComponent<Text> ().text = ap.es_summaryHandler_meatFishMsgTextBad;
+				checkMeatFishMsg.GetComponent<Text> ().text += " (Tomaste "+ap.counterMeatFish+" unidades, necesitas entre "+ap.counterMeatFishMin+" y "+ap.counterMeatFishMax+")";
 			} else if (ap.language == "de") {
 				checkMeatFishMsg.GetComponent<Text> ().text = ap.de_summaryHandler_meatFishMsgTextBad;
+				checkMeatFishMsg.GetComponent<Text> ().text += " ("+ap.counterMeatFish+" Portionen gegessen, es werden zwischen "+ap.counterMeatFishMin+" und "+ap.counterMeatFishMax+" benötigt)";
 			}
 		}
 		if (ap.counterMilkCheese >= ap.counterMilkCheeseValue){
@@ -212,8 +224,10 @@ public class summaryHandler : MonoBehaviour {
 				checkMilkCheeseMsg.GetComponent<Text> ().text += " (Ate "+ap.counterMilkCheese+" units, need at least "+ap.counterMilkCheeseValue+")";
 			} else if (ap.language == "es") {
 				checkMilkCheeseMsg.GetComponent<Text> ().text = ap.es_summaryHandler_milkCheeseMsgTextGood;
+				checkMilkCheeseMsg.GetComponent<Text> ().text += " (Tomaste "+ap.counterMilkCheese+" unidades, necesitas al menos "+ap.counterMilkCheeseValue+")";
 			} else if (ap.language == "de") {
 				checkMilkCheeseMsg.GetComponent<Text> ().text = ap.de_summaryHandler_milkCheeseMsgTextGood;
+				checkMilkCheeseMsg.GetComponent<Text> ().text += " ("+ap.counterMilkCheese+" Portionen gegessen, es werden mindestens "+ap.counterMilkCheeseValue+" benötigt)";
 			}
 		} else {
 			if (ap.language == "en") {
@@ -221,8 +235,10 @@ public class summaryHandler : MonoBehaviour {
 				checkMilkCheeseMsg.GetComponent<Text> ().text += " (Ate "+ap.counterMilkCheese+" units, need at least "+ap.counterMilkCheeseValue+")";
 			} else if (ap.language == "es") {
 				checkMilkCheeseMsg.GetComponent<Text> ().text = ap.es_summaryHandler_milkCheeseMsgTextBad;
+				checkMilkCheeseMsg.GetComponent<Text> ().text += " (Tomaste "+ap.counterMilkCheese+" unidades, necesitas al menos "+ap.counterMilkCheeseValue+")";
 			} else if (ap.language == "de") {
 				checkMilkCheeseMsg.GetComponent<Text> ().text = ap.de_summaryHandler_milkCheeseMsgTextBad;
+				checkMilkCheeseMsg.GetComponent<Text> ().text += " ("+ap.counterMilkCheese+" Portionen gegessen, es werden mindestens "+ap.counterMilkCheeseValue+" benötigt)";
 			}
 		}
 		if (ap.counterSweetSalty <= ap.counterSweetSaltyValue){
@@ -231,8 +247,10 @@ public class summaryHandler : MonoBehaviour {
 				checkSweetSaltyMsg.GetComponent<Text> ().text += " (Ate "+ap.counterSweetSalty+" units, need no more than "+ap.counterSweetSaltyValue+")";
 			} else if (ap.language == "es") {
 				checkSweetSaltyMsg.GetComponent<Text> ().text = ap.es_summaryHandler_sweetSaltyMsgTextGood;
+				checkSweetSaltyMsg.GetComponent<Text> ().text += " (Tomaste "+ap.counterSweetSalty+" unidades, no debes superar "+ap.counterSweetSaltyValue+")";
 			} else if (ap.language == "de") {
 				checkSweetSaltyMsg.GetComponent<Text> ().text = ap.de_summaryHandler_sweetSaltyMsgTextGood;
+				checkSweetSaltyMsg.GetComponent<Text> ().text += " ("+ap.counterSweetSalty+" Portionen gegessen, es werden weniger als "+ap.counterSweetSaltyValue+")";
 			}
 		} else {
 			if (ap.language == "en") {
@@ -240,8 +258,10 @@ public class summaryHandler : MonoBehaviour {
 				checkSweetSaltyMsg.GetComponent<Text> ().text += " (Ate "+ap.counterSweetSalty+" units, need no more than "+ap.counterSweetSaltyValue+")";
 			} else if (ap.language == "es") {
 				checkSweetSaltyMsg.GetComponent<Text> ().text = ap.es_summaryHandler_sweetSaltyMsgTextBad;
+				checkSweetSaltyMsg.GetComponent<Text> ().text += " (Tomaste "+ap.counterSweetSalty+" unidades, no debes superar "+ap.counterSweetSaltyValue+")";
 			} else if (ap.language == "de") {
 				checkSweetSaltyMsg.GetComponent<Text> ().text = ap.de_summaryHandler_sweetSaltyMsgTextBad;
+				checkSweetSaltyMsg.GetComponent<Text> ().text += " ("+ap.counterSweetSalty+" Portionen gegessen, es werden weniger als "+ap.counterSweetSaltyValue+")";
 			}
 		}
 

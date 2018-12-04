@@ -10,6 +10,7 @@ public class playerInitializer : MonoBehaviour {
 	public GameObject GameOverObject; 
 	public GameObject PopUpObject; 
 	public GameObject TimeUpObject; 
+	public GameObject InfoPause;
 	public GameObject CheckProgressObject; 
 	public GameObject character;
 	public Sprite[] spritesBoys;
@@ -57,17 +58,31 @@ public class playerInitializer : MonoBehaviour {
 			if (ap.language == "en") {
 				GameOverObject.GetComponent < Text >().text = ap.en_scene_gameOverText;
 				TimeUpObject.GetComponent < Text >().text = ap.en_scene_timeupText;
+				InfoPause.GetComponent < Text >().text = ap.en_scene_pauseInfo;
 				CheckProgressObject.GetComponent < Text >().text = ap.en_scene_checkProgressText;
 			}
 			else if (ap.language == "es") {
 				GameOverObject.GetComponent < Text >().text = ap.es_scene_gameOverText;
 				TimeUpObject.GetComponent < Text >().text = ap.es_scene_timeupText;
+				InfoPause.GetComponent < Text >().text = ap.es_scene_pauseInfo;
 				CheckProgressObject.GetComponent < Text >().text = ap.es_scene_checkProgressText;
 			}
 			else if (ap.language == "de") {
 				GameOverObject.GetComponent < Text >().text = ap.de_scene_gameOverText;
 				TimeUpObject.GetComponent < Text >().text = ap.de_scene_timeupText;
+				InfoPause.GetComponent < Text >().text = ap.de_scene_pauseInfo;
 				CheckProgressObject.GetComponent < Text >().text = ap.de_scene_checkProgressText;
+			}
+		}
+		if (string.Equals(SceneManager.GetActiveScene ().name,"sceneBoss")) {
+			if (ap.language == "en") {
+				InfoPause.GetComponent < Text >().text = ap.en_scene_pauseInfo;
+			}
+			else if (ap.language == "es") {
+				InfoPause.GetComponent < Text >().text = ap.es_scene_pauseInfo;
+			}
+			else if (ap.language == "de") {
+				InfoPause.GetComponent < Text >().text = ap.de_scene_pauseInfo;
 			}
 		}
 

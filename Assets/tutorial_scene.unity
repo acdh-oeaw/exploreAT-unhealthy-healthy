@@ -268,10 +268,10 @@ Canvas:
   m_GameObject: {fileID: 1218379998}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 74809754}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -334,8 +334,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.9, y: -179.3}
-  m_SizeDelta: {x: 766, y: 27.2}
+  m_AnchoredPosition: {x: -0.0000076294, y: -180}
+  m_SizeDelta: {x: 484.7, y: 13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1280683973
 MonoBehaviour:
@@ -369,9 +369,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Press ''N'' to Advance
-
-    Press ''S'' to Skip'
+  m_Text: "Press 'N' to Advance  \_|   Press 'S' to Skip"
 --- !u!222 &1280683974
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -391,6 +389,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rawimage: {fileID: 2080097360}
   spritesSplash: []
+  flagimage: {fileID: 0}
+  spritesFlags: []
   en_firstTexture: {fileID: 2800000, guid: b18c0ed93271c40c69e8136537002938, type: 3}
   es_firstTexture: {fileID: 2800000, guid: df9236780e3d7459c88d9f3872c9b686, type: 3}
   de_firstTexture: {fileID: 2800000, guid: 3dcbc2ac31fc046a3b7fe356315b4b36, type: 3}

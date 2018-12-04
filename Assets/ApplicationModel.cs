@@ -68,16 +68,16 @@ public class ApplicationModel {
 	static public string en_pyramid_advanceText = "Press 'N' to Advance";
 	static public string es_pyramid_advanceText = "Pulsa 'N' para avanzar";
 	static public string de_pyramid_advanceText = "Drücke 'N', um fortzufahren";
-	static public string en_pyramid_infoText = "Put the mouse over each food group to get more information about it!";
+	static public string en_pyramid_infoText = "Put the mouse over each food group icon to get more information about it!";
 	static public string es_pyramid_infoText = "Coloca el cursor sobre cada grupo alimenticio para obtener más información!";
 	static public string de_pyramid_infoText = "Bewege den Mauszeiger über jede Lebensmittelgruppe um mehr Information zu erhalten";
 	static public string en_pyramid_source = "Source: GESUNDHEIT.GV.AT";
 	static public string es_pyramid_source = "Fuente: GESUNDHEIT.GV.AT";
 	static public string de_pyramid_source = "Quelle: GESUNDHEIT.GV.AT";
 
-	static public string en_tutorial_advanceText = "Press 'N' to Advance\nPress 'S' to Skip";
-	static public string es_tutorial_advanceText = "Pulsa 'N' para avanzar\nPulsa 'S' para saltar";
-	static public string de_tutorial_advanceText = "Drücke 'N', um fortzufahren\nDrücke ‘S’ um zu springen";
+	static public string en_tutorial_advanceText = "Press 'N' to Advance  |  Press 'S' to Skip";
+	static public string es_tutorial_advanceText = "Pulsa 'N' para avanzar  |  Pulsa 'S' para saltar";
+	static public string de_tutorial_advanceText = "Drücke 'N', um fortzufahren  |  Drücke 'S' um zu springen";
 
 	static public string en_gameStart_controlsText = "Use the -- Arrow Keys -- to move your character Left and Right\n\nUse the -- Spacebar/Arrow Up -- to Jump";
 	static public string en_gameStart_startText = "1) Select a Character Using the -- Arrow Keys -- of the keyboard\n\n2) Select a Season (Winter/Summer) to Play In\n\n3) Press 'N' to Start Playing!";
@@ -138,7 +138,7 @@ public class ApplicationModel {
 	static public string en_summaryHandler_sweetSaltyMsgTextBad = "You Did Not Ate the Right Amount of Sweets!";
 	static public string es_summaryHandler_sweetSaltyMsgTextBad = "Comiste demasiados Dulces!";
 	static public string de_summaryHandler_sweetSaltyMsgTextBad = "Du hast zu viele Süßigkeiten gegessen";
-	static public string en_summaryHandler_infoMsgText = "Put the mouse over each food group to get more information about it!";
+	static public string en_summaryHandler_infoMsgText = "Put the mouse over each food group icon to get more information about it!";
 	static public string es_summaryHandler_infoMsgText = "Coloca el cursor sobre cada grupo alimenticio para obtener más información!";
 	static public string de_summaryHandler_infoMsgText = "Bewege den Mauszeiger über jede Lebensmittelgruppe um mehr Information zu erhalten";
 
@@ -147,14 +147,18 @@ public class ApplicationModel {
 	static public string en_scene_checkProgressText = "Press -N- to Check Your Progress";
 	static public string en_scene_gameOverText = "Oh no! You Caught an Energy Drink or the Wrong Amount of Food (-N- to Restart)";
 	static public string en_scene_pauseText = "PAUSE";
+	static public string en_scene_pauseInfo = "Press 'P' to Pause";
 	static public string es_scene_timeupText = "TIEMPO!";
 	static public string es_scene_checkProgressText = "Pulsa -N- para Comprobar tu Progreso";
 	static public string es_scene_gameOverText = "Oh no! Tomaste una Bebida Energética o la Cantidad Incorrecta de Comida(-N- para Reiniciar)";
 	static public string es_scene_pauseText = "PAUSA";
+	static public string es_scene_pauseInfo = "Pulsa 'P' para pausar";
 	static public string de_scene_timeupText = "ZEIT ABGELAUFEN";
 	static public string de_scene_checkProgressText = "Drücke -N- um deinen Fortschritt anzuzeigen ";
 	static public string de_scene_gameOverText = "Oh nein! Du hast einen Energydrink gefangen oder die falsche Menge an bestimmten Lebensmitteln gegessen! (Drücke -N- um neu zu beginnen)";
 	static public string de_scene_pauseText = "PAUSE";
+	static public string de_scene_pauseInfo = "Drücke 'P' zum Pausieren";
+
 
 
 	static public string en_scene_scoreText = " Total Calories";
